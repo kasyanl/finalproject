@@ -1,9 +1,8 @@
 package kasyanl.kasyanlfinalproject;
 
-
 import java.awt.Dimension;
-
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class FrameBoot extends JFrame{
     public static void createGUI() {
