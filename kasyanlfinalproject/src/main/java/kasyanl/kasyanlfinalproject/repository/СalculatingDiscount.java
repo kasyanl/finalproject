@@ -8,7 +8,7 @@ public abstract class СalculatingDiscount implements ProductInterface{
 
     Product product = new Product();
 
-    protected BigDecimal calculating (){
-        return product.getPrice().multiply(product.getDiscount()).divide(new BigDecimal(100));
+    protected double calculating (){
+        return product.getPrice()*product.getDiscount()/100;
     }
 }

@@ -7,13 +7,14 @@ public class Product {
 
     private String name;
     private long id;
-    private BigDecimal price;
+    private double price;
     private Category category;
-    private BigDecimal discount;
-    private BigDecimal actualPrice;
+    private double discount;
+    private double actualPrice;
 
-    public Product(Category category, String name, BigDecimal price, BigDecimal discount) {
+    public Product(long id, Category category, String name, double price, double discount) {
         this.name = name;
+        this.id = id;
         this.price = price;
         this.category = category;
         this.discount = discount;
@@ -39,11 +40,11 @@ public class Product {
         this.id = id;
     }
 
-    public BigDecimal getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -55,19 +56,19 @@ public class Product {
         this.category = category;
     }
 
-    public BigDecimal getDiscount() {
+    public double getDiscount() {
         return discount;
     }
 
-    public void setDiscount(BigDecimal discount) {
+    public void setDiscount(double discount) {
         this.discount = discount;
     }
 
-    public BigDecimal getActualPrice() {
+    public double getActualPrice() {
         return actualPrice;
     }
 
-    public void setActualPrice(BigDecimal actualPrice) {
+    public void setActualPrice(double actualPrice) {
         this.actualPrice = actualPrice;
     }
 

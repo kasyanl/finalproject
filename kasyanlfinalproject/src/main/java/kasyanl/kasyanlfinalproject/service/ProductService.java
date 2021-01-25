@@ -10,12 +10,15 @@ public class ProductService implements ProductInterface {
 
     Product product = new Product();
 
-    long countId = 0;
 
-    public Product creatProduct(Map<Long, Product> productMap, Category category, String name, double price, double discount){
-        productMap.put(product.getId(), product);
-        product.setId(countId++);
-        return new Product(product.getCategory(), product.getName(), product.getPrice(), product.getDiscount());
+    public Product creatProduct(Map<Long, Product> productMap, Category category, String name, double price, double discount) {
+        long id;
+        if (productMap.size() == 0) {
+            id = 1;
+        } else {
+            id = productMap.get(productMap.size() - 1).getId() + 1;
+        }
+        return new Product(id, category, name, price, discount);
     }
 
     public void readeProduct(){
@@ -35,6 +38,28 @@ public class ProductService implements ProductInterface {
             update = true;
         }
         return update;
+    }
+
+    public static Product createNewProduct(Map<Long, Product> productMap) {
+        ImputNumberService imputNumberService = new ImputNumberService();
+        long id;
+        if (productMap.size() == 0) {
+            id = 1;
+        } else {
+            id = productMap.get(productMap.size() - 1).getId() + 1;
+        }
+        String selectCategory = imputNumberService.readString("Введите одну из категорий:"+
+                "\nFRUITS," +
+                "\nBERRIES," +
+                "\nVEGETABLES");
+        selectCategory = selectCategory.toUpperCase();
+        Category category = Category.valueOf(selectCategory);
+        String name = imputNumberService.readString("Введите название продукта: ");
+        double price = imputNumberService.readDouble("Введите цену продукта: ");
+        double discount = imputNumberService.readDouble("Введите скидку продукта: ");
+
+
+        return new Product(id, category, name, price, discount);
     }
 
 }
