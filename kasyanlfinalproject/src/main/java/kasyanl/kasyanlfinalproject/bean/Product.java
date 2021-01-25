@@ -12,13 +12,15 @@ public class Product {
     private BigDecimal discount;
     private BigDecimal actualPrice;
 
-    public Product(String name, long id, BigDecimal price, Category category, BigDecimal discount, BigDecimal actualPrice) {
+    public Product(Category category, String name, BigDecimal price, BigDecimal discount) {
         this.name = name;
-        this.id = id;
         this.price = price;
         this.category = category;
         this.discount = discount;
         this.actualPrice = actualPrice;
+    }
+
+    public Product() {
     }
 
     public String getName() {
