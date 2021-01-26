@@ -1,10 +1,8 @@
-package kasyanl.kasyanlfinalproject.repository;
+package kasyanl.kasyanlfinalproject.service;
 
 import kasyanl.kasyanlfinalproject.bean.Product;
 
-import java.math.BigDecimal;
-
-public abstract class СalculatingDiscount implements ProductInterface{
+public abstract class СalculatingDiscount{
 
     Product product = new Product();
 

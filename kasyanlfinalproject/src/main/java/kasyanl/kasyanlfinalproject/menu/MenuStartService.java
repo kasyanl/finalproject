@@ -6,25 +6,32 @@ import kasyanl.kasyanlfinalproject.database.ProductDataBaseService;
 import kasyanl.kasyanlfinalproject.service.ImputNumberService;
 import kasyanl.kasyanlfinalproject.service.ProductService;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class MenuStartService {
 
+    Scanner imput = new Scanner(System.in);
+    Product product = new Product();
+    ProductService productService = new ProductService();
+    StartMenu startMenu = new StartMenu();
+    ImputNumberService imputNumberService = new ImputNumberService();
+    ProductDataBaseService productDataBaseService = new ProductDataBaseService();
+    Map<Long, Product> productMap = new HashMap<>();
 
+    public void headMenu() {
 
-    public static void headMenu() {
-        StartMenu startMenu = new StartMenu();
-        ImputNumberService imputNumberService = new ImputNumberService();
-        ProductDataBaseService productDataBaseService = new ProductDataBaseService();
         boolean mainLoop = true;
-        
-        Map<Long, Product> productMap = ProductDataBase.createBase();
+        productMap = ProductDataBase.createBase();
         while (mainLoop) {
             startMenu.firstMenu();
-            int imputMemu = imputNumberService.readNumber("Смелее!!");
-            switch (imputMemu) {
+            int imputedMenu  = imputNumberService.readNumber("__________");
+            switch (imputedMenu) {
                 case 1:
-                    productDataBaseService.addProduct(productMap, ProductService.createNewProduct(productMap));
+                    productDataBaseService.addProduct(productMap, productService.createNewProduct(productMap, product));
+                    productDataBaseService.showBase(productMap);
+                   // productDataBaseService.addProduct(productMap, productService.createNewProduct(productMap));
                     break;
                 case 2:
                     productDataBaseService.baseCategory(productMap);

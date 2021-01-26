@@ -14,7 +14,6 @@ public class Product {
 
     public Product(long id, Category category, String name, double price, double discount) {
         this.name = name;
-        this.id = id;
         this.price = price;
         this.category = category;
         this.discount = discount;

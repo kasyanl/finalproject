@@ -8,58 +8,44 @@ import java.util.Map;
 
 public class ProductService implements ProductInterface {
 
-    Product product = new Product();
 
 
-    public Product creatProduct(Map<Long, Product> productMap, Category category, String name, double price, double discount) {
-        long id;
+
+    private static long idCounter = 0;
+
+    public Product creatProduct(long id, Category category, String name, double price, double discount) {
+        id = 0;
         if (productMap.size() == 0) {
-            id = 1;
+            idCounter = 1;
         } else {
-            id = productMap.get(productMap.size() - 1).getId() + 1;
+            idCounter++;
         }
+        id = idCounter;
         return new Product(id, category, name, price, discount);
     }
 
-    public void readeProduct(){
-        Product thisProduct = productMap.get(product.getId());
-    }
 
-    public void removeProduct(long id){
-
-        if(productMap.get(id)!=null){
-            productMap.remove(product.getId(), product);
-        }
-    }
-    public boolean updateProduct(long id, Product product1){
-        boolean update = false;
-        if(productMap.get(id)!=null){
-            productMap.put(product.getId(), product);
-            update = true;
-        }
-        return update;
-    }
-
-    public static Product createNewProduct(Map<Long, Product> productMap) {
+    public Product createNewProduct(Map<Long, Product> productMap, Product product) {
         ImputNumberService imputNumberService = new ImputNumberService();
-        long id;
         if (productMap.size() == 0) {
-            id = 1;
+           idCounter = 1;
         } else {
-            id = productMap.get(productMap.size() - 1).getId() + 1;
+            idCounter++;
         }
+
+
         String selectCategory = imputNumberService.readString("Введите одну из категорий:"+
-                "\nFRUITS," +
-                "\nBERRIES," +
-                "\nVEGETABLES");
+                "\n1. FRUITS" +
+                "\n2. BERRIES" +
+                "\n3. VEGETABLES");
         selectCategory = selectCategory.toUpperCase();
-        Category category = Category.valueOf(selectCategory);
-        String name = imputNumberService.readString("Введите название продукта: ");
-        double price = imputNumberService.readDouble("Введите цену продукта: ");
-        double discount = imputNumberService.readDouble("Введите скидку продукта: ");
+         Category category = Category.valueOf(selectCategory);
+         String name = imputNumberService.readString("Введите название продукта: ");
+         double price = imputNumberService.readDouble("Введите цену продукта: ");
+         double discount = imputNumberService.readDouble("Введите скидку продукта: ");
 
 
-        return new Product(id, category, name, price, discount);
+        return new Product(idCounter, category, name, price, discount);
     }
 
 }
