@@ -8,11 +8,10 @@ import kasyanl.kasyanlfinalproject.service.ProductService;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
+
 
 public class MenuStartService {
 
-    Scanner imput = new Scanner(System.in);
     Product product = new Product();
     ProductService productService = new ProductService();
     StartMenu startMenu = new StartMenu();

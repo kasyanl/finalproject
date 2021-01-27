@@ -30,7 +30,7 @@ public class ProductService implements ProductInterface {
         if (productMap.size() == 0) {
            idCounter = 1;
         } else {
-            idCounter++;
+            idCounter = productMap.size()+1;
         }
 
 

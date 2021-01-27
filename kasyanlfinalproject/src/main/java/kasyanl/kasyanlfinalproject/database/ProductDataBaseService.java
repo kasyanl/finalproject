@@ -31,7 +31,7 @@ public class ProductDataBaseService {
     }
 
     public void addProduct(Map<Long, Product> productMap, Product product) {
-        ProductService.
+
         productMap.put(product.getId(), product);
     }
 
@@ -99,7 +99,7 @@ public class ProductDataBaseService {
     public void showBase(Map<Long, Product> productMap) {
 
         for (Map.Entry<Long, Product> mapList: productMap.entrySet()){
-            log.info("{}", mapList);
+            System.out.println(mapList);
         }
     }
 
