@@ -1,6 +1,6 @@
 package kasyanl.kasyanlfinalproject;
 
-import kasyanl.kasyanlfinalproject.menu.MenuStartService;
+import kasyanl.kasyanlfinalproject.util.service.MenuStartService;
 
 public class App {
     public static void main(String[] args) {
