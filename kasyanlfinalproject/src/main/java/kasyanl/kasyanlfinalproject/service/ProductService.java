@@ -3,49 +3,46 @@ package kasyanl.kasyanlfinalproject.service;
 import kasyanl.kasyanlfinalproject.bean.Category;
 import kasyanl.kasyanlfinalproject.bean.Product;
 import kasyanl.kasyanlfinalproject.repository.ProductInterface;
+import java.util.*;
 
-import java.util.Map;
 
 public class ProductService implements ProductInterface {
 
+    private static long idCounter;
 
-
-
-    private static long idCounter = 0;
-
-    public Product creatProduct(long id, Category category, String name, double price, double discount) {
-        id = 0;
-        if (productMap.size() == 0) {
-            idCounter = 1;
-        } else {
-            idCounter++;
-        }
+    public Product creatProduct(long id, Category category, String name, double price, double discount, double actualPrice) {
         id = idCounter;
-        return new Product(id, category, name, price, discount);
+        idCounter++;
+        return new Product(id, category, name, price, discount, actualPrice);
     }
 
 
-    public Product createNewProduct(Map<Long, Product> productMap, Product product) {
+    public Product createNewProduct(List<Product> listProduct) {
         ImputNumberService imputNumberService = new ImputNumberService();
-        if (productMap.size() == 0) {
-           idCounter = 1;
-        } else {
-            idCounter = productMap.size()+1;
+
+        long id = 0;
+
+        if (listProduct.size() > 0) {
+            int i = 0;
+            for (Product product : listProduct) {
+               if (product.getId() == i) i++;
+               id = i;
+           }
+        }else id = ++idCounter;
+            String selectCategory = imputNumberService.readString("Введите одну из категорий:" +
+                    "\nFRUITS" +
+                    "\nBERRIES" +
+                    "\nVEGETABLES");
+            selectCategory = selectCategory.toUpperCase();
+            Category category = Category.valueOf(selectCategory);
+            String name = imputNumberService.readString("Введите название продукта: ");
+            double price = imputNumberService.readDouble("Введите цену продукта: ");
+            double discount = imputNumberService.readDouble("Введите скидку продукта: ");
+            double actualPrice = (price - (price * discount / 100));
+
+
+            return new Product(id, category, name, price, discount, actualPrice);
         }
 
-
-        String selectCategory = imputNumberService.readString("Введите одну из категорий:"+
-                "\n1. FRUITS" +
-                "\n2. BERRIES" +
-                "\n3. VEGETABLES");
-        selectCategory = selectCategory.toUpperCase();
-         Category category = Category.valueOf(selectCategory);
-         String name = imputNumberService.readString("Введите название продукта: ");
-         double price = imputNumberService.readDouble("Введите цену продукта: ");
-         double discount = imputNumberService.readDouble("Введите скидку продукта: ");
-
-
-        return new Product(idCounter, category, name, price, discount);
     }
 
-}

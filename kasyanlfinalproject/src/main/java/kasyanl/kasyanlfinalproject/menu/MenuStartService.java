@@ -6,8 +6,9 @@ import kasyanl.kasyanlfinalproject.database.ProductDataBaseService;
 import kasyanl.kasyanlfinalproject.service.ImputNumberService;
 import kasyanl.kasyanlfinalproject.service.ProductService;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+
 
 
 public class MenuStartService {
@@ -17,32 +18,36 @@ public class MenuStartService {
     StartMenu startMenu = new StartMenu();
     ImputNumberService imputNumberService = new ImputNumberService();
     ProductDataBaseService productDataBaseService = new ProductDataBaseService();
-    Map<Long, Product> productMap = new HashMap<>();
+    List<Product> listProduct = new ArrayList<>();
 
     public void headMenu() {
 
         boolean mainLoop = true;
-        productMap = ProductDataBase.createBase();
+        listProduct = ProductDataBase.createBase();
         while (mainLoop) {
             startMenu.firstMenu();
             int imputedMenu  = imputNumberService.readNumber("__________");
             switch (imputedMenu) {
                 case 1:
-                    productDataBaseService.addProduct(productMap, productService.createNewProduct(productMap, product));
-                    productDataBaseService.showBase(productMap);
-                   // productDataBaseService.addProduct(productMap, productService.createNewProduct(productMap));
+                    productDataBaseService.showBase(listProduct);
                     break;
                 case 2:
-                    productDataBaseService.baseCategory(productMap);
+                    productDataBaseService.baseCategory(listProduct);
                     break;
                 case 3:
-                    productDataBaseService.showBase(productMap);
+                    productDataBaseService.showPersonalProduct(listProduct);
                     break;
-
                 case 4:
-                    productDataBaseService.deleteProduct(productMap);
+                    productDataBaseService.addProduct(listProduct, productService.createNewProduct(listProduct));
+                    productDataBaseService.showBase(listProduct);
                     break;
                 case 5:
+                    productDataBaseService.deleteProduct(listProduct);
+                    break;
+                case 6:
+                    productDataBaseService.updateAnyProduct(listProduct);
+                    break;
+                case 7:
                     mainLoop = false;
                     System.out.println("Спасибо, что пользовались нашими услугами ))))");
                     break;

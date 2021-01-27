@@ -1,6 +1,5 @@
 package kasyanl.kasyanlfinalproject.service;
 
-import kasyanl.kasyanlfinalproject.bean.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

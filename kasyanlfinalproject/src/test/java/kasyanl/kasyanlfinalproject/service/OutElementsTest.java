@@ -5,7 +5,9 @@ import kasyanl.kasyanlfinalproject.bean.Product;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -16,14 +18,14 @@ public class OutElementsTest {
 
     OutElements outElements;
     Product product1;
-    Map<Long, Product> productMap;
+    List<Product> listProduct;
 
     @Before
     public void setUp(){
         product1 = new Product();
-        outElements = new OutElements();
+        outElements = new OutElements(product1);
 
-        productMap = new HashMap<>();
+        listProduct = new ArrayList<>();
     }
 
     @Test
@@ -42,17 +44,8 @@ public class OutElementsTest {
                 "\nRegular price: 10.0" +
                 "\nDiscount: 50.0%" +
                 "\nActual price: 5.0";
-        String actual = outElements.outValueProduct(productMap, product1);
+        String actual = outElements.outValueProduct(listProduct, product1);
         assertEquals(expected, actual);
     }
 
-    @Test
-    public void calculating() {
-
-        product1.setPrice(10.0);
-        product1.setDiscount(50);
-        double expected = 5.0;
-        double actual = outElements.calculating();
-        assertEquals(expected, actual, 0.0);
-    }
 }

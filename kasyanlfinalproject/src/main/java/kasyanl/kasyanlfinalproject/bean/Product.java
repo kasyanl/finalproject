@@ -12,8 +12,9 @@ public class Product {
     private double discount;
     private double actualPrice;
 
-    public Product(long id, Category category, String name, double price, double discount) {
+    public Product(long id, Category category, String name, double price, double discount, double actualPrice) {
         this.name = name;
+        this.id = id;
         this.price = price;
         this.category = category;
         this.discount = discount;
@@ -87,10 +88,10 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
+                "id=" + id +
+                ",category=" + category +
+                ", name='" + name +
                 ", price=" + price +
-                ", category=" + category +
                 ", discount=" + discount +
                 ", actualPrice=" + actualPrice +
                 '}';

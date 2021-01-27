@@ -5,49 +5,52 @@ import kasyanl.kasyanlfinalproject.bean.Product;
 import kasyanl.kasyanlfinalproject.menu.StartMenu;
 import kasyanl.kasyanlfinalproject.service.ImputNumberService;
 import kasyanl.kasyanlfinalproject.service.OutElements;
-import kasyanl.kasyanlfinalproject.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Iterator;
-import java.util.Map;
+import java.util.List;
+
 
 public class ProductDataBaseService {
     final Logger log = LoggerFactory.getLogger(ProductDataBaseService.class);
 
-    Product product = new Product();
     ImputNumberService imputNumberService = new ImputNumberService();
-    StartMenu startMenu = new StartMenu();
-    OutElements outElements = new OutElements();
+    Product product = new Product();
+    OutElements outElements = new OutElements(product);
 
-    public void deleteProduct(Map<Long, Product> productMap) {
-        int id = imputNumberService.readNumber("");
-        for(Iterator<Map.Entry<Long, Product>> mapRemove = productMap.entrySet().iterator(); mapRemove.hasNext(); ) {
-            Map.Entry<Long, Product> entry = mapRemove.next();
-            if(entry.getKey().equals(id)) {
-                mapRemove.remove();
+    public void deleteProduct(List<Product> listProduct) {
+        int id = imputNumberService.readNumber("Введите ID продукта");
+        Iterator<Product> productIterator = listProduct.iterator();
+        while (productIterator.hasNext()) {
+            Product nextProduct = productIterator.next();
+            if (nextProduct.getId() == id) {
+                productIterator.remove();
             }
         }
     }
 
-    public void addProduct(Map<Long, Product> productMap, Product product) {
+    public void addProduct(List<Product> listProduct, Product product) {
 
-        productMap.put(product.getId(), product);
+        listProduct.add((int) product.getId(), product);
     }
 
-    public void updateAnyProduct(Map<Long, Product> productMap) {
+    public void updateAnyProduct(List<Product> listProduct) {
         System.out.println("---------------------");
         int id = imputNumberService.readNumber("Введите ID продукта: ");
-        boolean updateLoop = true;
-        for (Map.Entry<Long, Product> mapList: productMap.entrySet()){
-            if (mapList.getKey() ==0) {
-                System.out.println(mapList);
-                while (updateLoop) {
+        boolean updateProduct = true;
+        for (Product product : listProduct) {
+            if (product.getId() == id) {
+                System.out.println(product);
+                while (updateProduct) {
                     StartMenu.menuUpdateProduct();
                     int select = imputNumberService.readNumber("Ваш выбор: ");
                     switch (select) {
                         case 1:
-                            String categorySelect = imputNumberService.readString("Введите одну из категорий 'ФРУКТЫ, ОВОЩИ, ЯГОДЫ': ");
+                            String categorySelect = imputNumberService.readString("Введите одну из категорий:" +
+                                    "\nFRUITS,"+
+                                    "\nBERRIES,"+
+                                    "\nVEGETABLES");
                             categorySelect = categorySelect.toUpperCase();
                             Category category = Category.valueOf(categorySelect);
                            product.setCategory(category);
@@ -55,20 +58,20 @@ public class ProductDataBaseService {
                         case 2:
                             String newName = imputNumberService.readString("Введите новое название: ");
                             product.setName(newName);
-                            System.out.println(product);
+                            log.info("{}", outElements.outValueProduct(listProduct, product));
                             break;
                         case 3:
                             double newPrice = imputNumberService.readDouble("Введите новую цену: ");
                             product.setPrice(newPrice);
-                            System.out.println(product);
+                            log.info("{}", outElements.outValueProduct(listProduct, product));
                             break;
                         case 4:
                             double newDiscount = imputNumberService.readDouble("Введите новую скидку: ");
                             product.setDiscount(newDiscount);
-                            System.out.println(product);
+                            log.info("{}", outElements.outValueProduct(listProduct, product));
                             break;
                         case 5:
-                            updateLoop = false;
+                            updateProduct = false;
                             break;
                         default:
                             System.out.println("Такого варианта выбора нет, повторите его: ");
@@ -78,11 +81,11 @@ public class ProductDataBaseService {
         }
     }
 
-    public void updateFromId(Map<Long, Product> productMap) {
+    public void updateFromId(List<Product> listProduct) {
         System.out.println("---------------------");
         int id =  imputNumberService.readNumber("Введите номер продукта: ");
-        for (Map.Entry<Long, Product> mapList: productMap.entrySet()){
-            if (product.getId()==id) {
+        for (Product product : listProduct) {
+            if (product.getId() ==id) {
                 String categorySelect = imputNumberService.readString("Введите одну из категорий 'ФРУКТЫ, ОВОЩИ, ЯГОДЫ': ");
                 categorySelect = categorySelect.toUpperCase();
                 Category category = Category.valueOf(categorySelect);
@@ -96,41 +99,54 @@ public class ProductDataBaseService {
         System.out.println("Изменения успешно внесены и сохранены.");
     }
 
-    public void showBase(Map<Long, Product> productMap) {
+    public void showBase(List<Product> listProduct) {
 
-        for (Map.Entry<Long, Product> mapList: productMap.entrySet()){
-            System.out.println(mapList);
+        for (Product product : listProduct) {
+            System.out.println(product);
         }
     }
 
-    public void baseCategory(Map<Long, Product> productMap) {
-        OutElements outElements = new OutElements();
+    public void showPersonalProduct(List<Product> listProduct) {
+        OutElements outElements = new OutElements(product);
+        int id = imputNumberService.readNumber("Введите ID продукта");
+        Iterator<Product> productIterator = listProduct.iterator();
+        while (productIterator.hasNext()) {
+            Product product1 = productIterator.next();
+            for (Product product : listProduct)
+                if (product.getId()==id) {
+                log.info("{}", outElements.outValueProduct(listProduct, product));
+            }
+        }
+    }
+
+    public void baseCategory(List<Product> listProduct) {
+        OutElements outElements = new OutElements(product);
        boolean categorySelect = true;
         while (categorySelect) {
-            startMenu.menuCategory();
+            StartMenu.menuCategory();
             int category = imputNumberService.readNumber("Выберите категорию");
             switch (category) {
                 case 1:
                     Category fruits = Category.FRUITS;
-                    for (Map.Entry<Long, Product> mapList: productMap.entrySet()){
-                        if (mapList.getValue().getCategory().equals(fruits)) {
-                            log.info("{}", outElements.outValueProduct(productMap, product));
+                    for (Product product : listProduct) {
+                        if (product.getCategory().equals(fruits)) {
+                            log.info("{}", outElements.outValueProduct(listProduct, product));
                         }
                     }
                     break;
                 case 2:
                     Category berries = Category.BERRIES;
-                    for (Map.Entry<Long, Product> mapList: productMap.entrySet()){
-                        if (mapList.getValue().getCategory().equals(berries)) {
-                            log.info("{}", mapList);
+                    for (Product product : listProduct) {
+                        if (product.getCategory().equals(berries)) {
+                            log.info("{}", outElements.outValueProduct(listProduct, product));
                         }
                     }
                     break;
                 case 3:
                     Category vegetables = Category.VEGETABLES;
-                    for (Map.Entry<Long, Product> mapList: productMap.entrySet()){
-                        if (mapList.getValue().getCategory().equals(vegetables)) {
-                            log.info("{}", mapList);
+                    for (Product product : listProduct) {
+                        if (product.getCategory().equals(vegetables)) {
+                            log.info("{}", outElements.outValueProduct(listProduct, product));
                         }
                     }
                     break;
@@ -138,7 +154,10 @@ public class ProductDataBaseService {
                     categorySelect = false;
                     break;
                 default:
-                    log.info("Попробуйте выбрать еще раз");
+                    log.info(""+
+                            "\n__________"+
+                            "\n!!!Такого пункта не существует. Попробуйте выбрать еще раз!!!"+
+                            "\n__________");
             }
         }
     }
