@@ -1,6 +1,5 @@
-package kasyanl.kasyanlfinalproject.bean;
+package kasyanl.kasyanlfinalproject.util.bean;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Product {
@@ -62,14 +61,6 @@ public class Product {
 
     public void setDiscount(double discount) {
         this.discount = discount;
-    }
-
-    public double getActualPrice() {
-        return actualPrice;
-    }
-
-    public void setActualPrice(double actualPrice) {
-        this.actualPrice = actualPrice;
     }
 
     @Override

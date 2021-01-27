@@ -1,11 +1,6 @@
-package kasyanl.kasyanlfinalproject.menu;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package kasyanl.kasyanlfinalproject.util;
 
 public class StartMenu {
-
-    final Logger log = LoggerFactory.getLogger(StartMenu.class);
 
     public static void firstMenu(){
         System.out.println("______" +
@@ -29,11 +24,11 @@ public class StartMenu {
 
     public static void menuUpdateProduct() {
         System.out.println("Какое действие вы желаете сделать?"+
-        "\n1. Изменить категорию продукта."+
-        "\n2. Изменить наименование продукта."+
-        "\n3. Изменить цену продукта."+
-        "\n4. Изменить скидку продукта."+
-        "\n5. Выход в предыдущее меню.");
+                "\n1. Изменить категорию продукта."+
+                "\n2. Изменить наименование продукта."+
+                "\n3. Изменить цену продукта."+
+                "\n4. Изменить скидку продукта."+
+                "\n5. Выход в предыдущее меню.");
     }
 
 }

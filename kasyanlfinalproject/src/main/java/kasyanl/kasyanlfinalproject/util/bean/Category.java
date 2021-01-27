@@ -1,4 +1,4 @@
-package kasyanl.kasyanlfinalproject.bean;
+package kasyanl.kasyanlfinalproject.util.bean;
 
 public enum Category {
     FRUITS,
