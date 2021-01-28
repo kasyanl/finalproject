@@ -38,12 +38,12 @@ public class UpdateValueProduct {
                             log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                             break;
                         case 3:
-                            double newPrice = ImputNumberService.readDouble("Введите новую цену: ");
+                            double newPrice = ImputNumberService.readDouble("Введите новую цену (BYN): ");
                             product.setPrice(newPrice);
                             log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                             break;
                         case 4:
-                            double newDiscount = ImputNumberService.readDouble("Введите новую скидку: ");
+                            double newDiscount = ImputNumberService.readDouble("Введите новую скидку (%): ");
                             product.setDiscount(newDiscount);
                             log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                             break;

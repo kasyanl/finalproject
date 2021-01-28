@@ -38,8 +38,8 @@ public class CreateProduct implements ProductInterface {
         String selectCategory = UpdateCategoryService.updateCategory();
         Category category = Category.valueOf(selectCategory);
         String name = ImputNumberService.readString("Введите название продукта: ");
-        double price = ImputNumberService.readDouble("Введите цену продукта: ");
-        double discount = ImputNumberService.readDouble("Введите скидку продукта: ");
+        double price = ImputNumberService.readDouble("Введите цену продукта (BYN): ");
+        double discount = ImputNumberService.readDouble("Введите скидку продукта (%): ");
         double actualPrice = (price - (price * discount / 100));
 
         log.info("______________________________" +

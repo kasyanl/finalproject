@@ -15,13 +15,16 @@ public class UpdateCategoryDiscount {
     static final Logger log = LoggerFactory.getLogger(UpdateCategoryDiscount.class);
 
     public static void discontCategory(List<Product> listProduct) {
+
+        String message = "Введите новую скидку для категории (%):";
+
         boolean discontSelect = true;
         while (discontSelect) {
             StartMenu.menuCategory();
             int category = ImputNumberService.readNumber("Выберите категорию");
             switch (category) {
                 case 1:
-                    double discont1 = ImputNumberService.readDouble("Введите новую скидку для категории FRUITS:");
+                    double discont1 = ImputNumberService.readDouble(message);
                     Category fruits = Category.FRUITS;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(fruits)) {
@@ -31,7 +34,7 @@ public class UpdateCategoryDiscount {
                     }
                     break;
                 case 2:
-                    double discont2 = ImputNumberService.readDouble("Введите новую скидку для категории BERRIES:");
+                    double discont2 = ImputNumberService.readDouble(message);
                     Category berries = Category.BERRIES;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(berries)) {
@@ -41,7 +44,7 @@ public class UpdateCategoryDiscount {
                     }
                     break;
                 case 3:
-                    double discont3 = ImputNumberService.readDouble("Введите новую скидку для категории VEGETABLES:");
+                    double discont3 = ImputNumberService.readDouble(message);
                     Category vegetables = Category.VEGETABLES;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(vegetables)) {
@@ -51,7 +54,7 @@ public class UpdateCategoryDiscount {
                     }
                     break;
                 case 4:
-                    double discont4 = ImputNumberService.readDouble("Введите новую скидку для категории MILK_PRODUCT:");
+                    double discont4 = ImputNumberService.readDouble(message);
                     Category milProduct = Category.MILK_PRODUCT;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(milProduct)) {
@@ -61,7 +64,7 @@ public class UpdateCategoryDiscount {
                     }
                     break;
                 case 5:
-                    double discont5 = ImputNumberService.readDouble("Введите новую скидку для категории MEAT:");
+                    double discont5 = ImputNumberService.readDouble(message);
                     Category meat = Category.MEAT;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(meat)) {
@@ -71,7 +74,7 @@ public class UpdateCategoryDiscount {
                     }
                     break;
                 case 6:
-                    double discont6 = ImputNumberService.readDouble("Введите новую скидку для категории ALCOHOLIC_BEVERAGES:");
+                    double discont6 = ImputNumberService.readDouble(message);
                     Category alcoholicBeverages = Category.ALCOHOLIC_BEVERAGES;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(alcoholicBeverages)) {
