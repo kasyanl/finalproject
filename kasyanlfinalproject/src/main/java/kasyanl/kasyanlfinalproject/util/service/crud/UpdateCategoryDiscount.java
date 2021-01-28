@@ -1,4 +1,4 @@
-package kasyanl.kasyanlfinalproject.util.service.CRUD;
+package kasyanl.kasyanlfinalproject.util.service.crud;
 
 import kasyanl.kasyanlfinalproject.util.StartMenu;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
@@ -12,7 +12,7 @@ import java.util.List;
 
 public class UpdateCategoryDiscount {
 
-    final static Logger log = LoggerFactory.getLogger(UpdateCategoryDiscount.class);
+    static final Logger log = LoggerFactory.getLogger(UpdateCategoryDiscount.class);
 
     public static void discontCategory(List<Product> listProduct) {
         boolean discontSelect = true;
@@ -21,62 +21,62 @@ public class UpdateCategoryDiscount {
             int category = ImputNumberService.readNumber("Выберите категорию");
             switch (category) {
                 case 1:
-                    double discont1 = ImputNumberService.readDouble("Введите новую скидку для категории:");
+                    double discont1 = ImputNumberService.readDouble("Введите новую скидку для категории FRUITS:");
                     Category fruits = Category.FRUITS;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(fruits)) {
                             product.setDiscount(discont1);
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                         }
                     }
                     break;
                 case 2:
-                    double discont2 = ImputNumberService.readDouble("Введите новую скидку для категории:");
+                    double discont2 = ImputNumberService.readDouble("Введите новую скидку для категории BERRIES:");
                     Category berries = Category.BERRIES;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(berries)) {
                             product.setDiscount(discont2);
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                         }
                     }
                     break;
                 case 3:
-                    double discont3 = ImputNumberService.readDouble("Введите новую скидку для категории:");
+                    double discont3 = ImputNumberService.readDouble("Введите новую скидку для категории VEGETABLES:");
                     Category vegetables = Category.VEGETABLES;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(vegetables)) {
                             product.setDiscount(discont3);
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                         }
                     }
                     break;
                 case 4:
-                    double discont4 = ImputNumberService.readDouble("Введите новую скидку для категории:");
+                    double discont4 = ImputNumberService.readDouble("Введите новую скидку для категории MILK_PRODUCT:");
                     Category milProduct = Category.MILK_PRODUCT;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(milProduct)) {
                             product.setDiscount(discont4);
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                         }
                     }
                     break;
                 case 5:
-                    double discont5 = ImputNumberService.readDouble("Введите новую скидку для категории:");
+                    double discont5 = ImputNumberService.readDouble("Введите новую скидку для категории MEAT:");
                     Category meat = Category.MEAT;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(meat)) {
                             product.setDiscount(discont5);
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                         }
                     }
                     break;
                 case 6:
-                    double discont6 = ImputNumberService.readDouble("Введите новую скидку для категории:");
+                    double discont6 = ImputNumberService.readDouble("Введите новую скидку для категории ALCOHOLIC_BEVERAGES:");
                     Category alcoholicBeverages = Category.ALCOHOLIC_BEVERAGES;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(alcoholicBeverages)) {
                             product.setDiscount(discont6);
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                         }
                     }
                     break;

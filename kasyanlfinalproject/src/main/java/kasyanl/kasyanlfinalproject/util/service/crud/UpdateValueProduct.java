@@ -1,4 +1,4 @@
-package kasyanl.kasyanlfinalproject.util.service.CRUD;
+package kasyanl.kasyanlfinalproject.util.service.crud;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class UpdateValueProduct {
 
-    final static Logger log = LoggerFactory.getLogger(UpdateValueProduct.class);
+    static final Logger log = LoggerFactory.getLogger(UpdateValueProduct.class);
 
     public static void updateAnyProduct(List<Product> listProduct) {
         log.info("" +
@@ -22,7 +22,7 @@ public class UpdateValueProduct {
         boolean updateProduct = true;
         for (Product product : listProduct) {
             if (product.getId() == id) {
-                System.out.println(product);
+                log.info("{}",product);
                 while (updateProduct) {
                     StartMenu.menuUpdateProduct();
                     int select = ImputNumberService.readNumber("Ваш выбор: ");
@@ -35,17 +35,17 @@ public class UpdateValueProduct {
                         case 2:
                             String newName = ImputNumberService.readString("Введите новое название: ");
                             product.setName(newName);
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                             break;
                         case 3:
                             double newPrice = ImputNumberService.readDouble("Введите новую цену: ");
                             product.setPrice(newPrice);
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                             break;
                         case 4:
                             double newDiscount = ImputNumberService.readDouble("Введите новую скидку: ");
                             product.setDiscount(newDiscount);
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                             break;
                         case 5:
                             updateProduct = false;

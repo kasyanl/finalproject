@@ -6,47 +6,38 @@ import org.slf4j.LoggerFactory;
 
 public class UpdateCategoryService {
 
-    final static Logger log = LoggerFactory.getLogger(UpdateCategoryService.class);
+    static final Logger log = LoggerFactory.getLogger(UpdateCategoryService.class);
 
     public static String updateCategory() {
 
+        String message= ""+
+                "\n___________________"+
+                "\nВаш выбор - ";
         StartMenu.menuCategory();
         int categorySelect = ImputNumberService.readNumber("");
 
         if (categorySelect == 1) {
-            log.info(""+
-                    "\n___________________"+
-                    "\nВаш выбор - FRUITS");
+            log.info("{} FRUITS", message);
             return "FRUITS";
         }
         if (categorySelect == 2) {
-            log.info(""+
-                    "\n___________________"+
-                    "\nВаш выбор - BERRIES");
+            log.info("{} BERRIES", message);
             return "BERRIES";
         }
         if (categorySelect == 3) {
-            log.info(""+
-                    "\n___________________"+
-                    "\nВаш выбор - VEGETABLES");
+            log.info("{} VEGETABLES", message);
             return "VEGETABLES";
         }
         if (categorySelect == 4) {
-            log.info(""+
-                    "\n___________________"+
-                    "\nВаш выбор - MILK_PRODUCT");
+            log.info("{} MILK_PRODUCT", message);
             return "MILK_PRODUCT";
         }
         if (categorySelect == 5) {
-            log.info(""+
-                    "\n___________________"+
-                    "\nВаш выбор - MEAT");
+            log.info("{} MEAT", message);
             return "MEAT";
         }
         if (categorySelect == 6) {
-            log.info(""+
-                    "\n___________________"+
-                    "\nВаш выбор - ALCOHOLIC_BEVERAGES");
+            log.info("{} ALCOHOLIC_BEVERAGES", message);
             return "ALCOHOLIC_BEVERAGES";
         }
         else  return "Такого варианта выбора нет, повторите его";

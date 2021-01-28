@@ -1,4 +1,4 @@
-package kasyanl.kasyanlfinalproject.util.service.CRUD;
+package kasyanl.kasyanlfinalproject.util.service.crud;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
@@ -12,11 +12,11 @@ import java.util.List;
 
 public class ReadProduct {
 
-    final static Logger log = LoggerFactory.getLogger(ReadProduct.class);
+    static final Logger log = LoggerFactory.getLogger(ReadProduct.class);
 
     public static void showBase(List<Product> listProduct) {
         for (Product product : listProduct) {
-            System.out.println(product);
+            log.info("{}",product);
         }
     }
 
@@ -25,7 +25,7 @@ public class ReadProduct {
 
             for (Product product : listProduct)
                 if (product.getId() == id) {
-                    System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                    log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                 }
         }
 
@@ -39,7 +39,7 @@ public class ReadProduct {
                     Category fruits = Category.FRUITS;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(fruits)) {
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                         }
                     }
                     break;
@@ -47,7 +47,7 @@ public class ReadProduct {
                     Category berries = Category.BERRIES;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(berries)) {
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                         }
                     }
                     break;
@@ -55,7 +55,7 @@ public class ReadProduct {
                     Category vegetables = Category.VEGETABLES;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(vegetables)) {
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                         }
                     }
                     break;
@@ -63,7 +63,7 @@ public class ReadProduct {
                     Category milProduct = Category.MILK_PRODUCT;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(milProduct)) {
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                         }
                     }
                     break;
@@ -71,7 +71,7 @@ public class ReadProduct {
                     Category meat = Category.MEAT;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(meat)) {
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                         }
                     }
                     break;
@@ -79,7 +79,7 @@ public class ReadProduct {
                     Category alcoholicBeverages = Category.ALCOHOLIC_BEVERAGES;
                     for (Product product : listProduct) {
                         if (product.getCategory().equals(alcoholicBeverages)) {
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            log.info("{}",OutElementsService.outValueProduct(listProduct, product));
                         }
                     }
                     break;

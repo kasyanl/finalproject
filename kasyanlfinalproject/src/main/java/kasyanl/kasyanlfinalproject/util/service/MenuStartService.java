@@ -4,7 +4,7 @@ import kasyanl.kasyanlfinalproject.util.StartMenu;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
-import kasyanl.kasyanlfinalproject.util.service.CRUD.*;
+import kasyanl.kasyanlfinalproject.util.service.crud.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class MenuStartService implements ProductInterface {
 
-    final static Logger log = LoggerFactory.getLogger(MenuStartService.class);
+    static final Logger log = LoggerFactory.getLogger(MenuStartService.class);
 
     List<Product> listProduct = new ArrayList<>();
 

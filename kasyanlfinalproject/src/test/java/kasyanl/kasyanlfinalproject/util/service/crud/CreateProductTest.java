@@ -1,4 +1,4 @@
-package kasyanl.kasyanlfinalproject.util.service.CRUD;
+package kasyanl.kasyanlfinalproject.util.service.crud;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;

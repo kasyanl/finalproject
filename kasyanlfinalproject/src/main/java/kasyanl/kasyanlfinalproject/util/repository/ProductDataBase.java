@@ -1,7 +1,7 @@
 package kasyanl.kasyanlfinalproject.util.repository;
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.service.CRUD.CreateProduct;
+import kasyanl.kasyanlfinalproject.util.service.crud.CreateProduct;
 
 import java.util.List;
 
@@ -9,8 +9,10 @@ import static kasyanl.kasyanlfinalproject.util.bean.Category.*;
 
 public class ProductDataBase implements ProductInterface {
 
-        public static List<Product> createBase() {
+    private ProductDataBase() {
+    }
 
+    public static List<Product> createBase() {
 
             listProduct.add( CreateProduct.creatProduct(FRUITS, "Apple", 10.0, 50.0));
             listProduct.add( CreateProduct.creatProduct(FRUITS, "Orange",  12.10, 10.0));

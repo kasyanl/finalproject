@@ -12,7 +12,7 @@ public class OutElementsService {
         this.thisProduct = thisProduct;
     }
 
-    public static String outValueProduct(List<Product> listProduct, Product product){
+    static public String outValueProduct(List<Product> listProduct, Product product){
         long id = product.getId();
         Category category = product.getCategory();
         String name = product.getName();
