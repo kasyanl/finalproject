@@ -5,11 +5,15 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import kasyanl.kasyanlfinalproject.util.service.CRUD.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MenuStartService implements ProductInterface {
+
+    final static Logger log = LoggerFactory.getLogger(MenuStartService.class);
 
     List<Product> listProduct = new ArrayList<>();
 
@@ -32,36 +36,40 @@ public class MenuStartService implements ProductInterface {
                     break;
                 case 4:
                     CreateProduct.addProduct(listProduct, CreateProduct.createNewProduct(listProduct));
-                    System.out.println("___________________________________" +
-                                    "\n| Продукт успешно добавлен в базу! |"+
-                                    "\n -----------------------------------");
+                    log.info(""+
+                            "\n___________________________________" +
+                            "\n| Продукт успешно добавлен в базу! |"+
+                            "\n -----------------------------------");
                     break;
                 case 5:
                     DeleteProduct.deleteProduct(listProduct);
-                    System.out.println("_________________________" +
-                                    "\n| Продукт удален из базы.|" +
-                                     "\n------------------------");
+                    log.info(""+
+                            "\n_________________________" +
+                            "\n| Продукт удален из базы.|" +
+                             "\n------------------------");
                     break;
                 case 6:
                     UpdateValueProduct.updateAnyProduct(listProduct);
-                    System.out.println("________________________________" +
-                                    "\n| Спасибо, Ваш продукт изменен! |"+
-                                    "\n --------------------------------");
+                    log.info(""+
+                            "\n________________________________" +
+                            "\n| Спасибо, Ваш продукт изменен! |"+
+                            "\n --------------------------------");
                     break;
                 case 7:
-                    UpdateCategoryDiscont.discontCategory(listProduct);
-                    System.out.println("________________________________" +
+                    UpdateCategoryDiscount.discontCategory(listProduct);
+                    log.info(""+
+                            "\n________________________________" +
                             "\n| Спасибо, Ваш продукт изменен! |"+
                             "\n --------------------------------");
                     break;
                 case 8:
                     mainLoop = false;
-                    System.out.println(""+
+                    log.info(""+
                            "\n"+
                            "\nДо встречи!");
                     break;
                 default:
-                    System.out.println(""+
+                    log.info(""+
                             "\n"+
                             "\nТакого пункта не существует, повторите выбор: ");
             }

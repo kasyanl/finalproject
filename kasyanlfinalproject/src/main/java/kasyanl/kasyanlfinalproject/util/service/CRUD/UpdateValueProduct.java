@@ -6,13 +6,17 @@ import kasyanl.kasyanlfinalproject.util.StartMenu;
 import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.OutElementsService;
 import kasyanl.kasyanlfinalproject.util.service.UpdateCategoryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class UpdateValueProduct {
 
+    final static Logger log = LoggerFactory.getLogger(UpdateValueProduct.class);
+
     public static void updateAnyProduct(List<Product> listProduct) {
-        System.out.println("" +
+        log.info("" +
                 "\n---------------------");
         int id = ImputNumberService.readNumber("Введите ID продукта: ");
         boolean updateProduct = true;
@@ -47,7 +51,7 @@ public class UpdateValueProduct {
                             updateProduct = false;
                             break;
                         default:
-                            System.out.println("Такого варианта выбора нет, повторите его: ");
+                            log.info("Такого варианта выбора нет, повторите его: ");
                     }
                 }
             }

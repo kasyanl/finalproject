@@ -5,10 +5,15 @@ import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.OutElementsService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-public class UpdateCategoryDiscont {
+public class UpdateCategoryDiscount {
+
+    final static Logger log = LoggerFactory.getLogger(UpdateCategoryDiscount.class);
+
     public static void discontCategory(List<Product> listProduct) {
         boolean discontSelect = true;
         while (discontSelect) {
@@ -79,7 +84,7 @@ public class UpdateCategoryDiscont {
                     discontSelect = false;
                     break;
                 default:
-                    System.out.println("" +
+                    log.info("" +
                             "\n__________" +
                             "\n!!!Такого пункта не существует. Попробуйте выбрать еще раз!!!" +
                             "\n__________");

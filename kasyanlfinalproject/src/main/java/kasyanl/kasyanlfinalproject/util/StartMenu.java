@@ -1,9 +1,15 @@
 package kasyanl.kasyanlfinalproject.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class StartMenu {
 
+    final static Logger log = LoggerFactory.getLogger(StartMenu.class);
+
     public static void firstMenu(){
-        System.out.println("______" +
+        log.info("" +
+                "\n______" +
                 "\nЗдравствуйте! Вас приветствует Система учета продуктов." +
                 "\nДля выбора действия, выберите пункт из меню и введите в консоль соответствующую цифру:" +
                 "\n1. Получить список всех продуктов;" +
@@ -16,7 +22,9 @@ public class StartMenu {
                 "\n8. Выйти из программы.");
     }
     public static void menuCategory() {
-        System.out.println("Выберите категорию продукта:" +
+        log.info("" +
+                "\n______" +
+                "\nВыберите категорию продукта:" +
                 "\n1. FRUITS," +
                 "\n2. BERRIES," +
                 "\n3. VEGETABLES" +
@@ -28,7 +36,9 @@ public class StartMenu {
     }
 
     public static void menuUpdateProduct() {
-        System.out.println("Какое действие вы желаете сделать?"+
+        log.info("" +
+                "\n______" +
+                "\nВыберите действие:"+
                 "\n1. Изменить категорию продукта."+
                 "\n2. Изменить наименование продукта."+
                 "\n3. Изменить цену продукта."+

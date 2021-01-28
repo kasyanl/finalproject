@@ -5,9 +5,14 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.StartMenu;
 import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.OutElementsService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 
 public class ReadProduct {
+
+    final static Logger log = LoggerFactory.getLogger(ReadProduct.class);
 
     public static void showBase(List<Product> listProduct) {
         for (Product product : listProduct) {
@@ -82,7 +87,7 @@ public class ReadProduct {
                     categorySelect = false;
                     break;
                 default:
-                    System.out.println(""+
+                    log.info(""+
                             "\n__________"+
                             "\n!!!Такого пункта не существует. Попробуйте выбрать еще раз!!!"+
                             "\n__________");

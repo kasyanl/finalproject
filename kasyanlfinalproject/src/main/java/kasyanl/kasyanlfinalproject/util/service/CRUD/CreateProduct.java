@@ -5,11 +5,13 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.UpdateCategoryService;
-
-import java.util.*;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import java.util.List;
 
 public class CreateProduct implements ProductInterface {
+
+    final static Logger log = LoggerFactory.getLogger(CreateProduct.class);
 
     private static long idCounter;
 
@@ -17,9 +19,10 @@ public class CreateProduct implements ProductInterface {
         listProduct.add((int) product.getId(), product);
     }
 
-    public static Product creatProduct(Category category, String name, double price, double discount, double actualPrice) {
+    public static Product creatProduct(Category category, String name, double price, double discount) {
         long id = idCounter;
         idCounter++;
+        double actualPrice = (price -(price*discount/100));
         return new Product(id, category, name, price, discount, actualPrice);
     }
 
@@ -39,14 +42,14 @@ public class CreateProduct implements ProductInterface {
         double discount = ImputNumberService.readDouble("Введите скидку продукта: ");
         double actualPrice = (price - (price * discount / 100));
 
-        System.out.println("______________________________" +
+        log.info("______________________________" +
                 "\nProduct:" +
                 ", id= " + id +
                 ", category=" + category +
                 ", name='" + name +
-                ", price=" + price +
-                ", discount=" + discount +
-                ", actualPrice=" + actualPrice +
+                ", price=" + price+" BYN" +
+                ", discount=" + discount+" %" +
+                ", actualPrice=" + actualPrice+" BYN" +
                 "\n______________________________");
 
         return new Product(id, category, name, price, discount, actualPrice);

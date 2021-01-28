@@ -32,7 +32,7 @@ public class CreateProductTest {
         product.setActualPrice(10.0);
 
         Product expected = new Product (0, Category.FRUITS, "Cocos", 20.0,50.0,10.0);
-        Product actual = CreateProduct.creatProduct(product.getCategory(), product.getName(), product.getPrice(), product.getDiscount(), product.getActualPrice());
+        Product actual = CreateProduct.creatProduct(product.getCategory(), product.getName(), product.getPrice(), product.getDiscount());
         assertEquals(expected, actual);
     }
 
@@ -45,7 +45,7 @@ public class CreateProductTest {
         product.setActualPrice(10.0);
 
         Product expected = new Product (1, Category.FRUITS, "Cocos", 20.0,50.0,10.0);
-        Product actual = CreateProduct.creatProduct(product.getCategory(), product.getName(), product.getPrice(), product.getDiscount(), product.getActualPrice());
+        Product actual = CreateProduct.creatProduct(product.getCategory(), product.getName(), product.getPrice(), product.getDiscount());
         assertEquals(expected, actual);
     }
 }

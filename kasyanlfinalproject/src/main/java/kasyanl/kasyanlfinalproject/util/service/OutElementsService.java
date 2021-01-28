@@ -26,9 +26,9 @@ public class OutElementsService {
                 "\nId: " + id +
                 "\nCategory: " + category +
                 "\nName: " + name +
-                "\nRegular price: "+ price +
-                "\nDiscount: " + discount + "%" +
-                "\nActual price: " + actualPrice +
+                "\nRegular price: "+ price+" BYN" +
+                "\nDiscount: " + discount + " %" +
+                "\nActual price: " + actualPrice+" BYN" +
                 "\n";
     }
 
