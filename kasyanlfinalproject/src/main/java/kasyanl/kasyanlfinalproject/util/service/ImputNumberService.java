@@ -21,4 +21,5 @@ public class ImputNumberService {
         return Double.parseDouble(on.nextLine());
     }
 
+
 }

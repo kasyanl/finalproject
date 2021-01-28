@@ -4,10 +4,8 @@ import kasyanl.kasyanlfinalproject.util.StartMenu;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
-import kasyanl.kasyanlfinalproject.util.service.CRUD.DeleteProduct;
-import kasyanl.kasyanlfinalproject.util.service.CRUD.ReadProduct;
-import kasyanl.kasyanlfinalproject.util.service.CRUD.UpdateValueProduct;
-import kasyanl.kasyanlfinalproject.util.service.CRUD.CreateProduct;
+import kasyanl.kasyanlfinalproject.util.service.CRUD.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +49,12 @@ public class MenuStartService implements ProductInterface {
                                     "\n --------------------------------");
                     break;
                 case 7:
+                    UpdateCategoryDiscont.discontCategory(listProduct);
+                    System.out.println("________________________________" +
+                            "\n| Спасибо, Ваш продукт изменен! |"+
+                            "\n --------------------------------");
+                    break;
+                case 8:
                     mainLoop = false;
                     System.out.println(""+
                            "\n"+
