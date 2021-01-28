@@ -1,4 +1,4 @@
-package kasyanl.kasyanlfinalproject.util.service.CRUD;
+package kasyanl.kasyanlfinalproject.util.service.crud;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
@@ -34,12 +34,12 @@ public class UpdateValueProduct {
                             System.out.println(OutElementsService.outValueProduct(listProduct, product));
                             break;
                         case 3:
-                            double newPrice = ImputNumberService.readDouble("Введите новую цену: ");
+                            double newPrice = ImputNumberService.readDouble("Введите новую цену (BYN): ");
                             product.setPrice(newPrice);
                             System.out.println(OutElementsService.outValueProduct(listProduct, product));
                             break;
                         case 4:
-                            double newDiscount = ImputNumberService.readDouble("Введите новую скидку: ");
+                            double newDiscount = ImputNumberService.readDouble("Введите новую скидку (%): ");
                             product.setDiscount(newDiscount);
                             System.out.println(OutElementsService.outValueProduct(listProduct, product));
                             break;

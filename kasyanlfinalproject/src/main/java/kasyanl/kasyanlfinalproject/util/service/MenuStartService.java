@@ -4,7 +4,7 @@ import kasyanl.kasyanlfinalproject.util.StartMenu;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
-import kasyanl.kasyanlfinalproject.util.service.CRUD.*;
+import kasyanl.kasyanlfinalproject.util.service.crud.*;
 
 import java.util.ArrayList;
 import java.util.List;

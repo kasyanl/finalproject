@@ -1,4 +1,4 @@
-package kasyanl.kasyanlfinalproject.util.service.CRUD;
+package kasyanl.kasyanlfinalproject.util.service.crud;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
@@ -17,9 +17,11 @@ public class CreateProduct implements ProductInterface {
         listProduct.add((int) product.getId(), product);
     }
 
-    public static Product creatProduct(Category category, String name, double price, double discount, double actualPrice) {
+    public static Product creatProduct(Category category, String name, double price, double discount) {
         long id = idCounter;
         idCounter++;
+        double actualPrice;
+        actualPrice = (price - (price*discount/100));
         return new Product(id, category, name, price, discount, actualPrice);
     }
 
@@ -35,8 +37,8 @@ public class CreateProduct implements ProductInterface {
         String selectCategory = UpdateCategoryService.updateCategory();
         Category category = Category.valueOf(selectCategory);
         String name = ImputNumberService.readString("Введите название продукта: ");
-        double price = ImputNumberService.readDouble("Введите цену продукта: ");
-        double discount = ImputNumberService.readDouble("Введите скидку продукта: ");
+        double price = ImputNumberService.readDouble("Введите цену продукта (BYN): ");
+        double discount = ImputNumberService.readDouble("Введите скидку продукта (%): ");
         double actualPrice = (price - (price * discount / 100));
 
         System.out.println("______________________________" +
@@ -44,9 +46,9 @@ public class CreateProduct implements ProductInterface {
                 ", id= " + id +
                 ", category=" + category +
                 ", name='" + name +
-                ", price=" + price +
-                ", discount=" + discount +
-                ", actualPrice=" + actualPrice +
+                ", price=" + price+" BYN" +
+                ", discount=" + discount+" %" +
+                ", actualPrice=" + actualPrice+" BYN" +
                 "\n______________________________");
 
         return new Product(id, category, name, price, discount, actualPrice);

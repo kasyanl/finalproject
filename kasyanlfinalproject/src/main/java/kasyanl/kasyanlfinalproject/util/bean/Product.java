@@ -90,9 +90,9 @@ public class Product {
                 "id=" + id +
                 ",category=" + category +
                 ", name='" + name +
-                "', price=" + price +
-                ", discount=" + discount +
-                ", actualPrice=" + actualPrice +
+                "', price=" + price+" BYN" +
+                ", discount=" + discount+" %" +
+                ", actualPrice=" + actualPrice+" BYN" +
                 '}';
     }
 }
