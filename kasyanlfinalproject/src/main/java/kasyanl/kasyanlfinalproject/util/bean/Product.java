@@ -89,7 +89,7 @@ public class Product {
                 ", name = '" + name +
                 "', price = " + price+" BYN" +
                 ", discount = " + discount+" %" +
-                ", actualPrice = " + actualPrice+" BYN" +
+                ", actualPrice = " + (price - (price * discount / 100))+" BYN" +
                 '}';
     }
 }
