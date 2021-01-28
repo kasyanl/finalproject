@@ -10,43 +10,39 @@ public class UpdateCategoryService {
 
     public static String updateCategory() {
 
-        String message= ""+
-                "\n___________________"+
+        String category = "";
+        String message = "" +
+                "\n___________________" +
                 "\nВаш выбор - ";
         StartMenu.menuCategory();
         int categorySelect = ImputNumberService.readNumber("");
 
-        if (categorySelect == 1) {
-            log.info("{} FRUITS", message);
-            return "FRUITS";
+        switch (categorySelect) {
+            case 1:
+                log.info("{} FRUITS", message);
+                category = "FRUITS";
+                break;
+            case 2:
+                log.info("{} BERRIES", message);
+                category = "BERRIES";
+                break;
+            case 3:
+                log.info("{} VEGETABLES", message);
+                category = "VEGETABLES";
+                break;
+            case 4:
+                log.info("{} MILK_PRODUCT", message);
+                category = "MILK_PRODUCT";
+                break;
+            case 5:
+                log.info("{} MEAT", message);
+                category = "MEAT";
+                break;
+            case 6:
+                log.info("{} ALCOHOLIC_BEVERAGES", message);
+                category = "ALCOHOLIC_BEVERAGES";
+                break;
         }
-        if (categorySelect == 2) {
-            log.info("{} BERRIES", message);
-            return "BERRIES";
-        }
-        if (categorySelect == 3) {
-            log.info("{} VEGETABLES", message);
-            return "VEGETABLES";
-        }
-        if (categorySelect == 4) {
-            log.info("{} MILK_PRODUCT", message);
-            return "MILK_PRODUCT";
-        }
-        if (categorySelect == 5) {
-            log.info("{} MEAT", message);
-            return "MEAT";
-        }
-        if (categorySelect == 6) {
-            log.info("{} ALCOHOLIC_BEVERAGES", message);
-            return "ALCOHOLIC_BEVERAGES";
-        }
-        else  return "Такого варианта выбора нет, повторите его";
-
+        return category;
     }
 }
-
-
-
-
-
-
