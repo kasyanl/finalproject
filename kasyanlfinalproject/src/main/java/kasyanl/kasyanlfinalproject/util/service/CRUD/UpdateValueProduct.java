@@ -5,12 +5,14 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.StartMenu;
 import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.OutElementsService;
+import kasyanl.kasyanlfinalproject.util.service.UpdateCategoryService;
+
 import java.util.List;
 
 public class UpdateValueProduct {
 
     public static void updateAnyProduct(List<Product> listProduct) {
-        System.out.println(""+
+        System.out.println("" +
                 "\n---------------------");
         int id = ImputNumberService.readNumber("Введите ID продукта: ");
         boolean updateProduct = true;
@@ -22,12 +24,8 @@ public class UpdateValueProduct {
                     int select = ImputNumberService.readNumber("Ваш выбор: ");
                     switch (select) {
                         case 1:
-                            String categorySelect = ImputNumberService.readString("Введите одну из категорий:" +
-                                    "\nFRUITS,"+
-                                    "\nBERRIES,"+
-                                    "\nVEGETABLES");
-                            categorySelect = categorySelect.toUpperCase();
-                            Category category = Category.valueOf(categorySelect);
+                            String selectCategory = UpdateCategoryService.updateCategory();
+                            Category category = Category.valueOf(selectCategory);
                             product.setCategory(category);
                             break;
                         case 2:

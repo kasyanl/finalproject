@@ -63,6 +63,14 @@ public class Product {
         this.discount = discount;
     }
 
+    public void setActualPrice(double actualPrice) {
+        this.actualPrice = actualPrice;
+    }
+
+    public double getActualPrice() {
+        return actualPrice;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -82,7 +90,7 @@ public class Product {
                 "id=" + id +
                 ",category=" + category +
                 ", name='" + name +
-                ", price=" + price +
+                "', price=" + price +
                 ", discount=" + discount +
                 ", actualPrice=" + actualPrice +
                 '}';

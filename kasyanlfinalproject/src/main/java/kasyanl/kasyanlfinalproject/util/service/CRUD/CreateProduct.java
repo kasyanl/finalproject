@@ -4,6 +4,7 @@ import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
+import kasyanl.kasyanlfinalproject.util.service.UpdateCategoryService;
 
 import java.util.*;
 
@@ -31,17 +32,22 @@ public class CreateProduct implements ProductInterface {
                 id = i;
             }
         } else id = ++idCounter;
-        String selectCategory = ImputNumberService.readString("Введите одну из категорий:" +
-                "\nFRUITS" +
-                "\nBERRIES" +
-                "\nVEGETABLES");
-        selectCategory = selectCategory.toUpperCase();
+        String selectCategory = UpdateCategoryService.updateCategory();
         Category category = Category.valueOf(selectCategory);
         String name = ImputNumberService.readString("Введите название продукта: ");
         double price = ImputNumberService.readDouble("Введите цену продукта: ");
         double discount = ImputNumberService.readDouble("Введите скидку продукта: ");
         double actualPrice = (price - (price * discount / 100));
 
+        System.out.println("______________________________" +
+                "\nProduct:" +
+                ", id= " + id +
+                ", category=" + category +
+                ", name='" + name +
+                ", price=" + price +
+                ", discount=" + discount +
+                ", actualPrice=" + actualPrice +
+                "\n______________________________");
 
         return new Product(id, category, name, price, discount, actualPrice);
     }
