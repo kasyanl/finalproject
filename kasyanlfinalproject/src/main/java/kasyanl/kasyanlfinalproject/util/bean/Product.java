@@ -67,9 +67,6 @@ public class Product {
         this.actualPrice = actualPrice;
     }
 
-    public double getActualPrice() {
-        return actualPrice;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -92,7 +89,7 @@ public class Product {
                 ", name='" + name +
                 "', price=" + price+" BYN" +
                 ", discount=" + discount+" %" +
-                ", actualPrice=" + actualPrice+" BYN" +
+                ", actualPrice=" + (price - (price * discount / 100))+" BYN" +
                 '}';
     }
 }
