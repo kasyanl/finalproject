@@ -20,8 +20,7 @@ public class CreateProduct implements ProductInterface {
     public static Product creatProduct(Category category, String name, double price, double discount) {
         long id = idCounter;
         idCounter++;
-        double actualPrice;
-        actualPrice = (price - (price*discount/100));
+        double actualPrice = (price -(price*discount/100));
         return new Product(id, category, name, price, discount, actualPrice);
     }
 

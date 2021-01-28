@@ -6,35 +6,40 @@ public class UpdateCategoryService {
 
     public static String updateCategory() {
 
+        String category = "";
+        String message = "" +
+                "\n___________________" +
+                "\nВаш выбор - ";
         StartMenu.menuCategory();
         int categorySelect = ImputNumberService.readNumber("");
 
-        if (categorySelect == 1) {
-            System.out.println("Ваш выбор - FRUITS");
-            return "FRUITS";
+        switch (categorySelect) {
+            case 1:
+                System.out.println(message + " FRUITS");
+                category = "FRUITS";
+                break;
+            case 2:
+                System.out.println(message + "BERRIES");
+                category = "BERRIES";
+                break;
+            case 3:
+                System.out.println(message + "VEGETABLES");
+                category = "VEGETABLES";
+                break;
+            case 4:
+                System.out.println(message + "MILK_PRODUCT");
+                category = "MILK_PRODUCT";
+                break;
+            case 5:
+                System.out.println(message + "MEAT");
+                category = "MEAT";
+                break;
+            case 6:
+                System.out.println(message + "ALCOHOLIC_BEVERAGES");
+                category = "ALCOHOLIC_BEVERAGES";
+                break;
         }
-        if (categorySelect == 2) {
-            System.out.println("Ваш выбор - BERRIES");
-            return "BERRIES";
-        }
-        if (categorySelect == 3) {
-            System.out.println("Ваш выбор - VEGETABLES");
-            return "VEGETABLES";
-        }
-        if (categorySelect == 4) {
-            System.out.println("Ваш выбор - MILK_PRODUCT");
-            return "MILK_PRODUCT";
-        }
-        if (categorySelect == 5) {
-            System.out.println("Ваш выбор - MEAT");
-            return "MEAT";
-        }
-        if (categorySelect == 6) {
-            System.out.println("Ваш выбор - ALCOHOLIC_BEVERAGES");
-            return "ALCOHOLIC_BEVERAGES";
-        }
-        else  return "Такого варианта выбора нет, повторите его";
-
+        return category;
     }
 }
 
