@@ -39,15 +39,15 @@ public class MenuStartService implements ProductInterface {
                     break;
                 case 6:
                     UpdateValueProduct.updateAnyProduct();
-                    System.out.println("________________________________" +
-                                    "\n| Спасибо, Ваш продукт изменен! |"+
-                                    "\n --------------------------------");
+                    System.out.println("_______________________" +
+                                    "\n| Dаш продукт изменен! |"+
+                                    "\n -----------------------");
                     break;
                 case 7:
                     UpdateCategoryDiscont.discontCategory();
-                    System.out.println("________________________________" +
-                            "\n| Спасибо, Ваш продукт изменен! |"+
-                            "\n --------------------------------");
+                    System.out.println("___________________________________" +
+                                    "\n| Скидка для категории установлена! |"+
+                                    "\n -----------------------------------");
                     break;
                 case 8:
                     mainLoop = false;
