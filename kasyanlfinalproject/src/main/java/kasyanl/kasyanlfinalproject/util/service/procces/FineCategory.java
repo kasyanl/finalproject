@@ -1,4 +1,4 @@
-package kasyanl.kasyanlfinalproject.util.procces;
+package kasyanl.kasyanlfinalproject.util.service.procces;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;

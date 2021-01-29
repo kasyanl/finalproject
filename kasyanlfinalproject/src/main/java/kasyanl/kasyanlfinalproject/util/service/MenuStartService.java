@@ -1,24 +1,17 @@
 package kasyanl.kasyanlfinalproject.util.service;
 
-import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.menu.*;
-import kasyanl.kasyanlfinalproject.util.procces.FirstAddProduct;
-import kasyanl.kasyanlfinalproject.util.procces.UpdateCategoryDiscont;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
+import kasyanl.kasyanlfinalproject.util.service.menu.*;
+import kasyanl.kasyanlfinalproject.util.service.procces.AddProduct;
+import kasyanl.kasyanlfinalproject.util.service.procces.UpdateCategoryDiscont;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class MenuStartService implements ProductInterface {
-
-   List<Product> listProduct = new ArrayList<>();
 
     public void headMenu() {
 
         boolean mainLoop = true;
-
+        ProductDataBase.createList();
         while (mainLoop) {
             StartMenu.firstMenu();
             int imputedMenu  = ImputNumberService.readNumber("__________");
@@ -33,13 +26,13 @@ public class MenuStartService implements ProductInterface {
                     ReadProduct.finePersonalProduct();
                     break;
                 case 4:
-                    FirstAddProduct.addProduct(CreateProduct.createNewProduct());
+                    AddProduct.addProduct(CreateProduct.createNewProduct());
                     System.out.println("___________________________________" +
                                     "\n| Продукт успешно добавлен в базу! |"+
                                     "\n -----------------------------------");
                     break;
                 case 5:
-                    DeleteProduct.deleteProduct();
+                    ProductService.deleteProduct();
                     System.out.println("_________________________" +
                                     "\n| Продукт удален из базы.|" +
                                      "\n------------------------");

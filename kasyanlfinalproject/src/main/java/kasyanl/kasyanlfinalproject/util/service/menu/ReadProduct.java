@@ -1,12 +1,11 @@
-package kasyanl.kasyanlfinalproject.util.menu;
+package kasyanl.kasyanlfinalproject.util.service.menu;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.procces.FineCategory;
+import kasyanl.kasyanlfinalproject.util.service.procces.FineCategory;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.ProductService;
-import java.util.List;
 
 public class ReadProduct {
 

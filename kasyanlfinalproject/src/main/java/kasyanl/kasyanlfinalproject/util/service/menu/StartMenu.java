@@ -1,4 +1,4 @@
-package kasyanl.kasyanlfinalproject.util.menu;
+package kasyanl.kasyanlfinalproject.util.service.menu;
 
 public class StartMenu {
 

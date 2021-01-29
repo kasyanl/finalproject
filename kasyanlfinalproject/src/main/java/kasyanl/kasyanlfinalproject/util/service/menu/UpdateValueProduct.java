@@ -1,12 +1,11 @@
-package kasyanl.kasyanlfinalproject.util.menu;
+package kasyanl.kasyanlfinalproject.util.service.menu;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.ProductService;
-import kasyanl.kasyanlfinalproject.util.procces.UpdateCategoryService;
-
+import kasyanl.kasyanlfinalproject.util.service.procces.UpdateCategoryService;
 
 public class UpdateValueProduct {
 
@@ -15,7 +14,7 @@ public class UpdateValueProduct {
                 "\n---------------------");
         int id = ImputNumberService.readNumber("Введите ID продукта: ");
         boolean updateProduct = true;
-        for (Product product : ProductDataBase.createBase()) {
+        for (Product product : ProductDataBase.listProduct) {
             if (product.getId() == id) {
                 ProductService.readProduct(product);
                 while (updateProduct) {
@@ -26,6 +25,7 @@ public class UpdateValueProduct {
                             String selectCategory = UpdateCategoryService.updateCategory();
                             Category category = Category.valueOf(selectCategory);
                             product.setCategory(category);
+                            ProductService.readProduct(product);
                             break;
                         case 2:
                             product.setName(ImputNumberService.readString("Введите новое название: "));

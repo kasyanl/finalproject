@@ -39,9 +39,9 @@ public class ProductTest {
                 "id=2" +
                 ",category=FRUITS" +
                 ", name='Cocos'" +
-                ", price=20.0" +
-                ", discount=50.0" +
-                ", actualPrice=10.0}";
+                ", price=20.0 BYN" +
+                ", discount=50.0 %" +
+                ", actualPrice=10.0 BYN}";
         String actual = product.toString();
         assertEquals(expected, actual);
     }
