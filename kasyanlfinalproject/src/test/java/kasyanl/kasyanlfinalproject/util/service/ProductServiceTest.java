@@ -30,6 +30,11 @@ public class ProductServiceTest {
     }
 
     @Test
+    public void creatProductByZeroSize(){
+
+    }
+
+    @Test
     public void readProduct() {
 
     }

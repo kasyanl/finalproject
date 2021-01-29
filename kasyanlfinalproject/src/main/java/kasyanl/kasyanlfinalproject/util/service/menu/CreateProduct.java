@@ -2,12 +2,11 @@ package kasyanl.kasyanlfinalproject.util.service.menu;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.ProductService;
 import kasyanl.kasyanlfinalproject.util.service.procces.UpdateCategoryService;
 
-public class CreateProduct implements ProductInterface {
+public class CreateProduct {
 
 
     public static Product createNewProduct() {

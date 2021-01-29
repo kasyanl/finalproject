@@ -6,40 +6,32 @@ import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
 public class UpdateCategoryService {
 
     public static String updateCategory() {
-
         String category = "";
-        String message = "" +
-                "\n___________________" +
-                "\nВаш выбор - ";
         StartMenu.menuCategory();
         int categorySelect = ImputNumberService.readNumber("Выберите категорию");
+            switch (categorySelect) {
+                case 1:
+                    category = "FRUITS";
+                    break;
+                case 2:
+                    category = "BERRIES";
+                    break;
+                case 3:
+                    category = "VEGETABLES";
+                    break;
+                case 4:
+                    category = "MILK_PRODUCT";
+                    break;
+                case 5:
+                    category = "MEAT";
+                    break;
+                case 6:
+                    category = "ALCOHOLIC_BEVERAGES";
+                    break;
+                default:
+                    System.out.println("Такого варианта выбора нет, повторите его: ");
+            }
 
-        switch (categorySelect) {
-            case 1:
-                System.out.println(message + " FRUITS");
-                category = "FRUITS";
-                break;
-            case 2:
-                System.out.println(message + "BERRIES");
-                category = "BERRIES";
-                break;
-            case 3:
-                System.out.println(message + "VEGETABLES");
-                category = "VEGETABLES";
-                break;
-            case 4:
-                System.out.println(message + "MILK_PRODUCT");
-                category = "MILK_PRODUCT";
-                break;
-            case 5:
-                System.out.println(message + "MEAT");
-                category = "MEAT";
-                break;
-            case 6:
-                System.out.println(message + "ALCOHOLIC_BEVERAGES");
-                category = "ALCOHOLIC_BEVERAGES";
-                break;
-        }
         return category;
     }
 }

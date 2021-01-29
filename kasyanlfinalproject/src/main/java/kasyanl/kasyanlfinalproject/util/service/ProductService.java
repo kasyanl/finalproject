@@ -13,7 +13,7 @@ public class ProductService {
 
         long id = idCounter;
         if (ProductDataBase.listProduct.size() == 0) id = 0;
-        else if (ProductDataBase.listProduct.size() > 0) {
+        else if (ProductDataBase.listProduct.isEmpty()) {
             int i = 0;
             for (Product product : ProductDataBase.listProduct) {
                 if (product.getId() == i) i++;
