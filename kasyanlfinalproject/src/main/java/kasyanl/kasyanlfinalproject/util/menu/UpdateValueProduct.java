@@ -1,24 +1,23 @@
-package kasyanl.kasyanlfinalproject.util.service.crud;
+package kasyanl.kasyanlfinalproject.util.menu;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.StartMenu;
+import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
-import kasyanl.kasyanlfinalproject.util.service.OutElementsService;
-import kasyanl.kasyanlfinalproject.util.service.UpdateCategoryService;
+import kasyanl.kasyanlfinalproject.util.service.ProductService;
+import kasyanl.kasyanlfinalproject.util.procces.UpdateCategoryService;
 
-import java.util.List;
 
 public class UpdateValueProduct {
 
-    public static void updateAnyProduct(List<Product> listProduct) {
+    public static void updateAnyProduct() {
         System.out.println("" +
                 "\n---------------------");
         int id = ImputNumberService.readNumber("Введите ID продукта: ");
         boolean updateProduct = true;
-        for (Product product : listProduct) {
+        for (Product product : ProductDataBase.createBase()) {
             if (product.getId() == id) {
-                System.out.println(product);
+                ProductService.readProduct(product);
                 while (updateProduct) {
                     StartMenu.menuUpdateProduct();
                     int select = ImputNumberService.readNumber("Ваш выбор: ");
@@ -29,19 +28,19 @@ public class UpdateValueProduct {
                             product.setCategory(category);
                             break;
                         case 2:
-                            String newName = ImputNumberService.readString("Введите новое название: ");
-                            product.setName(newName);
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            product.setName(ImputNumberService.readString("Введите новое название: "));
+                            ProductService.updateProduct(product);
+                            ProductService.readProduct(product);
                             break;
                         case 3:
-                            double newPrice = ImputNumberService.readDouble("Введите новую цену (BYN): ");
-                            product.setPrice(newPrice);
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            product.setPrice(ImputNumberService.readDouble("Введите новую цену (BYN): "));
+                            ProductService.updateProduct(product);
+                            ProductService.readProduct(product);
                             break;
                         case 4:
-                            double newDiscount = ImputNumberService.readDouble("Введите новую скидку (%): ");
-                            product.setDiscount(newDiscount);
-                            System.out.println(OutElementsService.outValueProduct(listProduct, product));
+                            product.setDiscount(ImputNumberService.readDouble("Введите новую скидку (%): "));
+                            ProductService.updateProduct(product);
+                            ProductService.readProduct(product);
                             break;
                         case 5:
                             updateProduct = false;
