@@ -29,17 +29,14 @@ public class UpdateValueProduct {
                             break;
                         case 2:
                             product.setName(ImputNumberService.readString("Введите новое название: "));
-                            ProductService.updateProduct(product);
                             ProductService.readProduct(product);
                             break;
                         case 3:
                             product.setPrice(ImputNumberService.readDouble("Введите новую цену (BYN): "));
-                            ProductService.updateProduct(product);
                             ProductService.readProduct(product);
                             break;
                         case 4:
                             product.setDiscount(ImputNumberService.readDouble("Введите новую скидку (%): "));
-                            ProductService.updateProduct(product);
                             ProductService.readProduct(product);
                             break;
                         case 5:

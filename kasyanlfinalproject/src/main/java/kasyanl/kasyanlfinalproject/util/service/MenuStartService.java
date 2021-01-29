@@ -2,12 +2,14 @@ package kasyanl.kasyanlfinalproject.util.service;
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.menu.*;
+import kasyanl.kasyanlfinalproject.util.procces.FirstAddProduct;
 import kasyanl.kasyanlfinalproject.util.procces.UpdateCategoryDiscont;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MenuStartService implements ProductInterface {
 
@@ -22,7 +24,7 @@ public class MenuStartService implements ProductInterface {
             int imputedMenu  = ImputNumberService.readNumber("__________");
             switch (imputedMenu) {
                 case 1:
-                    ReadProduct.fineAllproduct(listProduct);
+                    ReadProduct.fineAllproduct();
                     break;
                 case 2:
                     ReadProduct.fineCategoryProguct();
@@ -31,8 +33,7 @@ public class MenuStartService implements ProductInterface {
                     ReadProduct.finePersonalProduct();
                     break;
                 case 4:
-                    CreateProduct.createNewProduct();
-                    ReadProduct.finePersonalProduct();
+                    FirstAddProduct.addProduct(CreateProduct.createNewProduct());
                     System.out.println("___________________________________" +
                                     "\n| Продукт успешно добавлен в базу! |"+
                                     "\n -----------------------------------");

@@ -12,7 +12,7 @@ public class UpdateCategoryService {
                 "\n___________________" +
                 "\nВаш выбор - ";
         StartMenu.menuCategory();
-        int categorySelect = ImputNumberService.readNumber("");
+        int categorySelect = ImputNumberService.readNumber("Выберите категорию");
 
         switch (categorySelect) {
             case 1:

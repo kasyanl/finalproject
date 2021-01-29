@@ -5,33 +5,28 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.procces.CalculaterActualPrice;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 
-import java.util.List;
-
 public class ProductService {
 
     private static long idCounter;
 
     public static Product creatProduct(Category category, String name, double price, double discount) {
-        long id = idCounter;
-        idCounter++;
+
+        long id = 0;
+        if (ProductDataBase.listProduct.size() == 0) id = 0;
+        else if (ProductDataBase.listProduct.size() > 0) {
+            int i = 0;
+            for (Product product : ProductDataBase.listProduct) {
+                if (product.getId() == i) i++;
+                id = i;
+            }
+        } else id = ++idCounter;
         double actualPrice = CalculaterActualPrice.calcuiating();
-       return new Product(id, category, name, price, discount, actualPrice);
-    }
-
-    public static void deleteProduct(Product product) {
-        ProductDataBase.listProduct.remove(product);
-    }
-
-    public static void updateProduct(Product product) {
-       product.setCategory(product.getCategory());
-       product.setName(product.getName());
-       product.setPrice(product.getPrice());
-       product.setDiscount(product.getDiscount());
-
+        Product product = new Product(id, category, name, price, discount, actualPrice);
+        ProductService.readProduct(product);
+        return product;
     }
 
     public static void readProduct(Product product) {
         System.out.println(product);
     }
-
 }

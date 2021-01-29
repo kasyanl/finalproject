@@ -10,11 +10,11 @@ import java.util.List;
 
 public class ReadProduct {
 
-    public static void fineAllproduct(List<Product> listProduct) {
-        if (listProduct.size() == 0) {
+    public static void fineAllproduct() {
+        if (ProductDataBase.listProduct.size() == 0) {
             System.out.println("В базе отсутствуют элементы");
         } else {
-            for (Product product : listProduct) {
+            for (Product product : ProductDataBase.listProduct) {
                 ProductService.readProduct(product);
             }
         }
