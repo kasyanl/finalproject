@@ -4,11 +4,19 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 
 import java.util.Comparator;
 
-public class SortCollection extends Product implements Comparable<Product>{
+public class SortCollection extends Product implements Comparator<Product> {
 
+
+    public static Comparator<Product> NameComparator = new Comparator<Product>() {
+
+        @Override
+        public int compare(Product o1, Product o2) {
+            return 0;
+        }
+    };
 
     @Override
-    public int compareTo(Product o) {
+    public int compare(Product o1, Product o2) {
         return 0;
     }
 }

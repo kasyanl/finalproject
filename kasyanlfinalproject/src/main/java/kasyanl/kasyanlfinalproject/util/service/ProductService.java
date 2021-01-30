@@ -9,9 +9,8 @@ import org.slf4j.LoggerFactory;
 
 public class ProductService {
 
-    private static long idCounter;
+    private static long idCounter = 0;
 
-    static final Logger log = LoggerFactory.getLogger(ProductService.class);
     public static Product creatProduct(Category category, String name, double price, double discount) {
 
         long id = idCounter;
