@@ -1,14 +1,15 @@
 package kasyanl.kasyanlfinalproject.util.service.procces;
 
 import kasyanl.kasyanlfinalproject.util.service.menu.StartMenu;
-import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
+import kasyanl.kasyanlfinalproject.util.service.InputNumberService;
 
 public class UpdateCategoryService {
 
     public static String updateCategory() {
         String category = "";
         StartMenu.menuCategory();
-        int categorySelect = ImputNumberService.readNumber("Выберите категорию");
+        System.out.println("Выберите категорию");
+        int categorySelect = InputNumberService.readNumber();
             switch (categorySelect) {
                 case 1:
                     category = "FRUITS";

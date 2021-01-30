@@ -2,7 +2,7 @@ package kasyanl.kasyanlfinalproject.util.service.menu;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
+import kasyanl.kasyanlfinalproject.util.service.InputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.ProductService;
 import kasyanl.kasyanlfinalproject.util.service.procces.UpdateCategoryService;
 
@@ -13,9 +13,12 @@ public class CreateProduct {
 
         String selectCategory = UpdateCategoryService.updateCategory();
         Category category = Category.valueOf(selectCategory);
-        String name = ImputNumberService.readString("Введите название продукта: ");
-        double price = ImputNumberService.readDouble("Введите цену продукта (BYN): ");
-        double discount = ImputNumberService.readDouble("Введите скидку продукта (%): ");
+        System.out.println("Введите название продукта: ");
+        String name = InputNumberService.readString();
+        System.out.println("Введите цену продукта (BYN): ");
+        double price = InputNumberService.readDouble();
+        System.out.println("Введите скидку продукта (%): ");
+        double discount = InputNumberService.readDouble();
 
       return ProductService.creatProduct(category, name, price, discount);
     }

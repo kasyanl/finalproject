@@ -14,16 +14,16 @@ public class MenuStartService implements ProductInterface {
         ProductDataBase.createList();
         while (mainLoop) {
             StartMenu.firstMenu();
-            int imputedMenu  = ImputNumberService.readNumber("__________");
+            int imputedMenu  = InputNumberService.readNumber();
             switch (imputedMenu) {
                 case 1:
                     ReadProduct.fineAllproduct();
                     break;
                 case 2:
-                    ReadProduct.fineCategoryProguct();
+                    ReadProduct.fineCategoryProguct(imputedMenu);
                     break;
                 case 3:
-                    ReadProduct.finePersonalProduct();
+                    ReadProduct.finePersonalProduct(imputedMenu);
                     break;
                 case 4:
                     AddProduct.addProduct(CreateProduct.createNewProduct());

@@ -4,8 +4,6 @@ import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.service.procces.CalculaterActualPrice;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ProductService {
 
@@ -28,12 +26,14 @@ public class ProductService {
         return product;
     }
 
-    public static void readProduct(Product product) {
+    public static String readProduct(Product product) {
         System.out.println(product);
+        return product.toString();
     }
 
     public static void deleteProduct() {
-        int id = ImputNumberService.readNumber("Введите ID продукта");
+        System.out.println("Введите ID продукта");
+        int id = InputNumberService.readNumber();
         ProductDataBase.listProduct.removeIf(nextProduct -> nextProduct.getId() == id);
     }
 }

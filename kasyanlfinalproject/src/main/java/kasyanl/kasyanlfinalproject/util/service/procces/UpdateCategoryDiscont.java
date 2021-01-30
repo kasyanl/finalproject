@@ -2,7 +2,7 @@ package kasyanl.kasyanlfinalproject.util.service.procces;
 
 import kasyanl.kasyanlfinalproject.util.service.menu.StartMenu;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
-import kasyanl.kasyanlfinalproject.util.service.ImputNumberService;
+import kasyanl.kasyanlfinalproject.util.service.InputNumberService;
 
 public class UpdateCategoryDiscont {
     public static void discontCategory() {
@@ -12,35 +12,42 @@ public class UpdateCategoryDiscont {
         boolean discontSelect = true;
         while (discontSelect) {
             StartMenu.menuCategory();
-            int category = ImputNumberService.readNumber("Выберите категорию");
+            System.out.println("Выберите категорию");
+            int category = InputNumberService.readNumber();
             switch (category) {
                 case 1:
-                    double discount1 = ImputNumberService.readDouble(message);
+                    System.out.println(message);
+                    double discount1 = InputNumberService.readDouble();
                     Category fruits = Category.FRUITS;
                     FineCategory.fineCategoryForSelectDiscount(fruits, discount1);
                     break;
                 case 2:
-                    double discount2 = ImputNumberService.readDouble(message);
+                    System.out.println(message);
+                    double discount2 = InputNumberService.readDouble();
                     Category berries = Category.BERRIES;
                     FineCategory.fineCategoryForSelectDiscount(berries, discount2);
                     break;
                 case 3:
-                    double discount3 = ImputNumberService.readDouble(message);
+                    System.out.println(message);
+                    double discount3 = InputNumberService.readDouble();
                     Category vegetables = Category.VEGETABLES;
                     FineCategory.fineCategoryForSelectDiscount(vegetables, discount3);
                     break;
                 case 4:
-                    double discount4 = ImputNumberService.readDouble(message);
+                    System.out.println(message);
+                    double discount4 = InputNumberService.readDouble();
                     Category milProduct = Category.MILK_PRODUCT;
                     FineCategory.fineCategoryForSelectDiscount(milProduct, discount4);
                     break;
                 case 5:
-                    double discount5 = ImputNumberService.readDouble(message);
+                    System.out.println(message);
+                    double discount5 = InputNumberService.readDouble();
                     Category meat = Category.MEAT;
                     FineCategory.fineCategoryForSelectDiscount(meat, discount5);
                     break;
                 case 6:
-                    double discount6 = ImputNumberService.readDouble(message);
+                    System.out.println(message);
+                    double discount6 = InputNumberService.readDouble();
                     Category alcoholicBeverages = Category.ALCOHOLIC_BEVERAGES;
                     FineCategory.fineCategoryForSelectDiscount(alcoholicBeverages, discount6);
                     break;

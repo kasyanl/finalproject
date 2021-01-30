@@ -7,10 +7,14 @@ import kasyanl.kasyanlfinalproject.util.service.ProductService;
 
 public class FineCategory {
 
-    public static void fineCategoryForRead(Category category) {
+    public static String fineCategoryForRead(Category category) {
+        String text = "";
         for (Product product : ProductDataBase.listProduct) {
-            if (product.getCategory().equals(category)) ProductService.readProduct(product);
+            if (product.getCategory().equals(category)) {
+                text +=ProductService.readProduct(product);
+            }
         }
+        return text;
     }
 
     public static void fineCategoryForSelectDiscount(Category category, double discont) {
