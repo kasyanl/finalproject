@@ -9,13 +9,13 @@ import org.slf4j.LoggerFactory;
 
 public class ProductService {
 
-    private static long idCounter = 0;
+    private static long idCounter;
 
     public static Product creatProduct(Category category, String name, double price, double discount) {
 
         long id = idCounter;
         if (ProductDataBase.listProduct.size() == 0) id = 0;
-        else if (ProductDataBase.listProduct.isEmpty()) {
+        else if (ProductDataBase.listProduct.size()>0) {
             int i = 0;
             for (Product product : ProductDataBase.listProduct) {
                 if (product.getId() == i) i++;

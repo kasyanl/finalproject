@@ -1,12 +1,11 @@
 package kasyanl.kasyanlfinalproject.util.repository;
 
 import kasyanl.kasyanlfinalproject.util.service.ProductService;
-
 import static kasyanl.kasyanlfinalproject.util.bean.Category.*;
 
-public class ProductDataBase implements ProductInterface {
+public class ProductDataBase implements ProductInterface  {
 
-    public static void createList(){
+    public static void createList () throws  UnsupportedOperationException{
     }
 
       static {
