@@ -29,6 +29,7 @@ public class ProductDataBase implements ProductInterface  {
       listProduct.add(ProductService.creatProduct(ALCOHOLIC_BEVERAGES, "Beer", 10.5, 00.0));
       listProduct.add(ProductService.creatProduct(ALCOHOLIC_BEVERAGES, "Whisky", 100.00, 00.0));
       listProduct.add(ProductService.creatProduct(ALCOHOLIC_BEVERAGES, "Wine", 40.10, 00.0));
+
       return listProduct;
     }
 }

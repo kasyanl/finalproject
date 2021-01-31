@@ -1,43 +1,76 @@
 package kasyanl.kasyanlfinalproject.util.service.menu;
 
+import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.service.InputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.ProductService;
-import kasyanl.kasyanlfinalproject.util.service.procces.SelectCategory;
+import kasyanl.kasyanlfinalproject.util.service.procces.FineCategory;
+import kasyanl.kasyanlfinalproject.util.service.procces.FinePersonalProductProcessor;
 
 public class ReadProduct {
-    public static boolean categorySelect;
 
-    public static String fineAllproduct() {
-        String text = "";
+    public static void fineAllproduct() {
+
         if (ProductDataBase.listProduct.size() == 0) {
             System.out.println("В базе отсутствуют элементы");
         } else {
             for (Product product : ProductDataBase.listProduct) {
-               text+= ProductService.readProduct(product);
+                ProductService.readProduct(product);
             }
         }
-        return text;
     }
 
-    public static void fineCategoryProguct(int category) {
-        categorySelect = true;
+    public static void fineCategoryProguct() {
+        boolean categorySelect = true;
         while (categorySelect) {
             StartMenu.menuCategory();
-            SelectCategory.selectCategory(category);
+            System.out.println("Выберите категорию");
+            int categoryNumber = InputNumberService.readNumber();
+            switch (categoryNumber) {
+                case 1:
+                    Category fruits = Category.FRUITS;
+                    FineCategory.fineCategoryForRead(fruits);
+                    break;
+                case 2:
+                    Category berries = Category.BERRIES;
+                    FineCategory.fineCategoryForRead(berries);
+                    break;
+                case 3:
+                    Category vegetables = Category.VEGETABLES;
+                    FineCategory.fineCategoryForRead(vegetables);
+                    break;
+                case 4:
+                    Category milProduct = Category.MILK_PRODUCT;
+                    FineCategory.fineCategoryForRead(milProduct);
+                    break;
+                case 5:
+                    Category meat = Category.MEAT;
+                    FineCategory.fineCategoryForRead(meat);
+                    break;
+                case 6:
+                    Category alcoholicBeverages = Category.ALCOHOLIC_BEVERAGES;
+                    FineCategory.fineCategoryForRead(alcoholicBeverages);
+                    break;
+                case 7:
+                    categorySelect = false;
+                default:
+                    System.out.println("" +
+                            "\n__________" +
+                            "\n!!!Такого пункта не существует. Попробуйте выбрать еще раз!!!" +
+                            "\n__________");
+
+            }
         }
     }
 
-    public static String finePersonalProduct(int id) {
-        String text = "";
+    public static Product finePersonalProduct() {
+        Product product = new Product();
         System.out.println("Введите ID продукта");
-         id = InputNumberService.readNumber();
+        int id = InputNumberService.readNumber();
+        FinePersonalProductProcessor.personalProductProcessor(id);
 
-        for (Product product : ProductDataBase.listProduct)
-            if (product.getId() == id) {
-               text =  ProductService.readProduct(product);
-            }
-        return text;
+        return  product;
     }
 }
+

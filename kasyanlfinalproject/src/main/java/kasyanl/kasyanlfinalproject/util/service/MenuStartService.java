@@ -1,6 +1,5 @@
 package kasyanl.kasyanlfinalproject.util.service;
 
-import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.service.menu.*;
 import kasyanl.kasyanlfinalproject.util.service.procces.AddProduct;
 import kasyanl.kasyanlfinalproject.util.service.procces.UpdateCategoryDiscont;
@@ -11,7 +10,6 @@ public class MenuStartService implements ProductInterface {
     public void headMenu() {
 
         boolean mainLoop = true;
-        ProductDataBase.createList();
         while (mainLoop) {
             StartMenu.firstMenu();
             int imputedMenu  = InputNumberService.readNumber();
@@ -20,10 +18,11 @@ public class MenuStartService implements ProductInterface {
                     ReadProduct.fineAllproduct();
                     break;
                 case 2:
-                    ReadProduct.fineCategoryProguct(imputedMenu);
+                    ReadProduct.fineCategoryProguct();
                     break;
                 case 3:
-                    ReadProduct.finePersonalProduct(imputedMenu);
+
+                    ReadProduct.finePersonalProduct();
                     break;
                 case 4:
                     AddProduct.addProduct(CreateProduct.createNewProduct());

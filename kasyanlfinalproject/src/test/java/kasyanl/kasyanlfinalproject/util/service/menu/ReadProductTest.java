@@ -3,29 +3,12 @@ package kasyanl.kasyanlfinalproject.util.service.menu;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
-import kasyanl.kasyanlfinalproject.util.service.ProductService;
-import org.junit.Before;
 import org.junit.Test;
-import org.springframework.boot.autoconfigure.batch.BatchDataSource;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static kasyanl.kasyanlfinalproject.util.bean.Category.*;
-import static kasyanl.kasyanlfinalproject.util.bean.Category.ALCOHOLIC_BEVERAGES;
 import static org.junit.Assert.*;
 
 public class ReadProductTest {
-
-    ReadProduct readProduct;
-    Product product;
-//
-//    @Before
-//    public void setUp(){
-//        readProduct = new ReadProduct();
-//        product = new Product(product.getId(), p);
-//    }
-
 
 
     @Test
@@ -55,11 +38,4 @@ public class ReadProductTest {
 
         assertEquals(expected, actual);
     }
-
-
-//    @Test
-//    public void finePersonalProduct() {
-//        ReadProduct.finePersonalProduct();
-//        ReadProduct.finePersonalProduct();
-//    }
 }
