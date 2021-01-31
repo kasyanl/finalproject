@@ -1,4 +1,4 @@
-package kasyanl.kasyanlfinalproject.util.service;
+package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 import java.util.Scanner;
 

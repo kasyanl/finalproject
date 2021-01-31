@@ -1,6 +1,6 @@
 package kasyanl.kasyanlfinalproject.util.service.menu;
 
-public class StartMenu {
+public class Menu {
 
     public static void firstMenu(){
         System.out.println("______" +

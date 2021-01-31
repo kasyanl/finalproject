@@ -2,9 +2,9 @@ package kasyanl.kasyanlfinalproject.util.service.menu;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.service.InputNumberService;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.ProductService;
-import kasyanl.kasyanlfinalproject.util.service.procces.UpdateCategoryService;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.UpdateCategoryService;
 
 public class CreateProduct {
 

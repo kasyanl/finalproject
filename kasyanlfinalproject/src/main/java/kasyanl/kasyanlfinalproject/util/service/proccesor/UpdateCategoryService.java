@@ -1,13 +1,12 @@
-package kasyanl.kasyanlfinalproject.util.service.procces;
+package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
-import kasyanl.kasyanlfinalproject.util.service.menu.StartMenu;
-import kasyanl.kasyanlfinalproject.util.service.InputNumberService;
+import kasyanl.kasyanlfinalproject.util.service.menu.Menu;
 
 public class UpdateCategoryService {
 
     public static String updateCategory() {
         String category = "";
-        StartMenu.menuCategory();
+        Menu.menuCategory();
         System.out.println("Выберите категорию");
         int categorySelect = InputNumberService.readNumber();
             switch (categorySelect) {

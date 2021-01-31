@@ -3,10 +3,10 @@ package kasyanl.kasyanlfinalproject.util.service.menu;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
-import kasyanl.kasyanlfinalproject.util.service.InputNumberService;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.ProductService;
-import kasyanl.kasyanlfinalproject.util.service.procces.FineCategory;
-import kasyanl.kasyanlfinalproject.util.service.procces.FinePersonalProductProcessor;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.FineCategory;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.FinePersonalProductProcessor;
 
 public class ReadProduct {
 
@@ -24,7 +24,7 @@ public class ReadProduct {
     public static void fineCategoryProguct() {
         boolean categorySelect = true;
         while (categorySelect) {
-            StartMenu.menuCategory();
+            Menu.menuCategory();
             System.out.println("Выберите категорию");
             int categoryNumber = InputNumberService.readNumber();
             switch (categoryNumber) {
@@ -54,6 +54,7 @@ public class ReadProduct {
                     break;
                 case 7:
                     categorySelect = false;
+                    break;
                 default:
                     System.out.println("" +
                             "\n__________" +

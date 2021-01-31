@@ -19,7 +19,7 @@ public class DeleteProductTest {
         List<Product> list = new ArrayList<>();
         list.add(new Product(0, FRUITS, "Apple", 10.0, 50.0, 5.0));
         list.add(new Product(1, FRUITS, "Orange", 12.10, 10.0, 10.89));
-        list.add(new Product(2, FRUITS, "Banana", 9.50, 20.0, 7.63));
+      //  list.add(new Product(2, FRUITS, "Banana", 9.50, 20.0, 7.63));
         list.add(new Product(3, BERRIES, "Cherry", 25.00, 5.0, 23.75));
         list.add(new Product(4, BERRIES, "Marshmallow", 15.25, 60.0, 6.1));
         list.add(new Product(5, BERRIES, "Strawberry", 50.20, 15.0, 42.67));
@@ -37,9 +37,7 @@ public class DeleteProductTest {
         list.add(new Product(17, ALCOHOLIC_BEVERAGES, "Wine", 40.10, 00.0, 40.10));
 
         List<Product> expected = list;
-
-        ProductService.deleteProduct(expected, 2);
-        List<Product> actual = DeleteProduct.deleteProductService(ProductInterface.listProduct);
+        List<Product> actual = ProductService.deleteProduct(expected, 2);
         assertEquals(expected, actual);
     }
     }

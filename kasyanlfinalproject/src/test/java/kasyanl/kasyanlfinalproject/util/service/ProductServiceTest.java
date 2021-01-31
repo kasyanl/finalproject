@@ -34,7 +34,7 @@ public class ProductServiceTest {
         product1.setName("Apple");
         product1.setPrice(20.0);
         product1.setDiscount(50.0);
-        Product expected = new Product(0, Category.FRUITS, "Apple", 20.0, 50.0, 10.0);
+        Product expected = new Product(2, Category.FRUITS, "Apple", 20.0, 50.0, 10.0);
         Product actual = ProductService.creatProduct(Category.FRUITS, "Apple", 20.0, 50.0);
 
         assertEquals(expected, actual);

@@ -2,7 +2,7 @@ package kasyanl.kasyanlfinalproject.util.service;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.service.procces.CalculaterActualPrice;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.CalculaterActualPrice;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

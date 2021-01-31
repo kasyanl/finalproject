@@ -1,8 +1,7 @@
-package kasyanl.kasyanlfinalproject.util.service.procces;
+package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
-import kasyanl.kasyanlfinalproject.util.service.menu.StartMenu;
+import kasyanl.kasyanlfinalproject.util.service.menu.Menu;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
-import kasyanl.kasyanlfinalproject.util.service.InputNumberService;
 
 public class UpdateCategoryDiscont {
     public static void discontCategory() {
@@ -11,7 +10,7 @@ public class UpdateCategoryDiscont {
 
         boolean discontSelect = true;
         while (discontSelect) {
-            StartMenu.menuCategory();
+            Menu.menuCategory();
             int category = InputNumberService.readNumber();
             switch (category) {
                 case 1:
