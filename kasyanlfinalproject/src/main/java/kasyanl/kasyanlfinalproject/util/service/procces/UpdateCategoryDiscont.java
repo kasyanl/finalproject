@@ -12,7 +12,6 @@ public class UpdateCategoryDiscont {
         boolean discontSelect = true;
         while (discontSelect) {
             StartMenu.menuCategory();
-            System.out.println("Выберите категорию");
             int category = InputNumberService.readNumber();
             switch (category) {
                 case 1:

@@ -31,7 +31,7 @@ public class MenuStartService implements ProductInterface {
                                     "\n -----------------------------------");
                     break;
                 case 5:
-                    ProductService.deleteProduct();
+                    DeleteProduct.deleteProductService(listProduct);
                     System.out.println("_________________________" +
                                     "\n| Продукт удален из базы.|" +
                                      "\n------------------------");

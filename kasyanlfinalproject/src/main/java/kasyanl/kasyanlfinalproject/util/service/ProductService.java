@@ -7,6 +7,8 @@ import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+
 public class ProductService extends Product{
 
     Product product;
@@ -40,10 +42,9 @@ public class ProductService extends Product{
         System.out.println(product);;
     }
 
-    public static void deleteProduct() {
-        System.out.println("Введите ID продукта");
-        int id = InputNumberService.readNumber();
-        ProductDataBase.listProduct.removeIf(nextProduct -> nextProduct.getId() == id);
+    public static List<Product> deleteProduct(List<Product> listProduct, int id) {
+               ProductDataBase.listProduct.removeIf(nextProduct -> nextProduct.getId() == id);
+               return  listProduct;
     }
 }
 

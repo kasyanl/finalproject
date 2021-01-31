@@ -1,12 +1,8 @@
-package kasyanl.kasyanlfinalproject.util.service;
+package kasyanl.kasyanlfinalproject.util.service.menu;
 
-import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-
-import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
-import kasyanl.kasyanlfinalproject.util.service.menu.DeleteProduct;
-import org.junit.Before;
+import kasyanl.kasyanlfinalproject.util.service.ProductService;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -16,34 +12,14 @@ import static kasyanl.kasyanlfinalproject.util.bean.Category.*;
 import static kasyanl.kasyanlfinalproject.util.bean.Category.ALCOHOLIC_BEVERAGES;
 import static org.junit.Assert.*;
 
-public class ProductServiceTest {
-
-    Product product1;
-    ProductService productService;
-
-    @Before
-    public void setUp(){
-        product1 = new Product();
-        productService = new ProductService(0, Category.FRUITS, "Apple", 20.0, 50.0, 10.0, product1);
-    }
+public class DeleteProductTest {
 
     @Test
-    public void creatProduct() {
-        product1.setId(0);
-        product1.setCategory(Category.FRUITS);
-        product1.setName("Apple");
-        product1.setPrice(20.0);
-        product1.setDiscount(50.0);
-        Product expected = new Product(0, Category.FRUITS, "Apple", 20.0, 50.0, 10.0);
-        Product actual = ProductService.creatProduct(Category.FRUITS, "Apple", 20.0, 50.0);
-
-        assertEquals(expected, actual);
-    }
-    @Test
-    public void deleteProduct() {
+    public void deleteProductService() {
         List<Product> list = new ArrayList<>();
         list.add(new Product(0, FRUITS, "Apple", 10.0, 50.0, 5.0));
         list.add(new Product(1, FRUITS, "Orange", 12.10, 10.0, 10.89));
+        list.add(new Product(2, FRUITS, "Banana", 9.50, 20.0, 7.63));
         list.add(new Product(3, BERRIES, "Cherry", 25.00, 5.0, 23.75));
         list.add(new Product(4, BERRIES, "Marshmallow", 15.25, 60.0, 6.1));
         list.add(new Product(5, BERRIES, "Strawberry", 50.20, 15.0, 42.67));
@@ -62,8 +38,8 @@ public class ProductServiceTest {
 
         List<Product> expected = list;
 
-        ProductDataBase.createList();
-        List<Product> actual = ProductService.deleteProduct(ProductDataBase.listProduct, 2);
+        ProductService.deleteProduct(expected, 2);
+        List<Product> actual = DeleteProduct.deleteProductService(ProductInterface.listProduct);
         assertEquals(expected, actual);
     }
-}
+    }
