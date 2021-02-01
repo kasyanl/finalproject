@@ -3,19 +3,13 @@ package kasyanl.kasyanlfinalproject.util.service;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 
-import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
-import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
-import kasyanl.kasyanlfinalproject.util.service.menu.DeleteProduct;
-import kasyanl.kasyanlfinalproject.util.service.proccesor.AddProduct;
-import org.junit.After;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.ProductService;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static kasyanl.kasyanlfinalproject.util.bean.Category.*;
-import static kasyanl.kasyanlfinalproject.util.bean.Category.ALCOHOLIC_BEVERAGES;
 import static org.junit.Assert.*;
 
 public class ProductServiceTest {

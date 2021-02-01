@@ -1,10 +1,10 @@
-package kasyanl.kasyanlfinalproject.util.service.menu;
+package kasyanl.kasyanlfinalproject.util.service.menu.menuService;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.ProductService;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumberService;
-import kasyanl.kasyanlfinalproject.util.service.ProductService;
-import kasyanl.kasyanlfinalproject.util.service.proccesor.UpdateCategoryService;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.UpdateCategoryServiceProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,7 +14,7 @@ public class CreateProduct {
 
     public static Product createNewProduct() {
 
-        String selectCategory = UpdateCategoryService.updateCategory();
+        String selectCategory = UpdateCategoryServiceProcessor.updateCategory();
         Category category = Category.valueOf(selectCategory);
         log.info(""+
                 "\n_________________"+
@@ -31,6 +31,4 @@ public class CreateProduct {
 
       return ProductService.creatProduct(category, name, price, discount);
     }
-
 }
-

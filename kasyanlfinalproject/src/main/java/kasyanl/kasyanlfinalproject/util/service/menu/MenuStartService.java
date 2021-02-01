@@ -1,9 +1,7 @@
-package kasyanl.kasyanlfinalproject.util.service;
+package kasyanl.kasyanlfinalproject.util.service.menu;
 
-import kasyanl.kasyanlfinalproject.util.service.menu.*;
-import kasyanl.kasyanlfinalproject.util.service.proccesor.AddProduct;
-import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumberService;
-import kasyanl.kasyanlfinalproject.util.service.proccesor.UpdateCategoryDiscont;
+import kasyanl.kasyanlfinalproject.util.service.menu.menuService.*;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.*;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,11 +1,12 @@
-package kasyanl.kasyanlfinalproject.util.service.menu;
+package kasyanl.kasyanlfinalproject.util.service.menu.menuService;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.ProductService;
+import kasyanl.kasyanlfinalproject.util.service.menu.Menu;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumberService;
-import kasyanl.kasyanlfinalproject.util.service.ProductService;
-import kasyanl.kasyanlfinalproject.util.service.proccesor.UpdateCategoryService;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.UpdateCategoryServiceProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +28,7 @@ public class UpdateValueProduct {
                    int select = InputNumberService.readNumber();
                     switch (select) {
                         case 1:
-                            String selectCategory = UpdateCategoryService.updateCategory();
+                            String selectCategory = UpdateCategoryServiceProcessor.updateCategory();
                             Category category = Category.valueOf(selectCategory);
                             product.setCategory(category);
                             ProductService.readProduct(product);

@@ -45,7 +45,7 @@ public class FineCategoryTest {
         newList.add(new Product(2, Category.FRUITS, "Banana", 9.50, 20.0, 7.63));
 
         String expected = newList.toString();
-        String actual = FineCategory.fineCategoryForRead(newList, Category.FRUITS).toString();
+        String actual = FineCategoryProcessor.fineCategoryForRead(newList, Category.FRUITS).toString();
         assertEquals(expected, actual);
 
     }
@@ -58,7 +58,7 @@ public class FineCategoryTest {
         newList.add(new Product(5, Category.BERRIES, "Strawberry", 50.20, 15.0, 42.67));
 
         String expected = newList.toString();
-        String actual = FineCategory.fineCategoryForRead(newList, Category.BERRIES).toString();
+        String actual = FineCategoryProcessor.fineCategoryForRead(newList, Category.BERRIES).toString();
         assertEquals(expected, actual);
     }
     @Test
@@ -69,7 +69,7 @@ public class FineCategoryTest {
         newList.add(new Product(8, Category.VEGETABLES, "Onion", 10.10, 40.0, 6.06));
 
         String expected = newList.toString();
-        String actual = FineCategory.fineCategoryForRead(newList, Category.VEGETABLES).toString();
+        String actual = FineCategoryProcessor.fineCategoryForRead(newList, Category.VEGETABLES).toString();
         assertEquals(expected, actual);
     }
 
@@ -81,7 +81,7 @@ public class FineCategoryTest {
         newList.add(new Product(11, Category.MILK_PRODUCT, "Yogurt", 20.50, 10.0, 18.45));
 
         String expected = newList.toString();
-        String actual = FineCategory.fineCategoryForRead(newList, Category.MILK_PRODUCT).toString();
+        String actual = FineCategoryProcessor.fineCategoryForRead(newList, Category.MILK_PRODUCT).toString();
         assertEquals(expected, actual);
     }
 
@@ -93,7 +93,7 @@ public class FineCategoryTest {
         newList.add(new Product(14, Category.MEAT, "Chicken meat", 15.10, 00.0, 15.10));
 
         String expected = newList.toString();
-        String actual = FineCategory.fineCategoryForRead(newList, Category.MEAT).toString();
+        String actual = FineCategoryProcessor.fineCategoryForRead(newList, Category.MEAT).toString();
         assertEquals(expected, actual);
     }
 
@@ -105,7 +105,7 @@ public class FineCategoryTest {
         newList.add(new Product(17, Category.ALCOHOLIC_BEVERAGES, "Wine", 40.10, 00.0, 40.10));
 
         String expected = newList.toString();
-        String actual = FineCategory.fineCategoryForRead(newList, Category.ALCOHOLIC_BEVERAGES).toString();
+        String actual = FineCategoryProcessor.fineCategoryForRead(newList, Category.ALCOHOLIC_BEVERAGES).toString();
         assertEquals(expected, actual);
     }
 
@@ -117,7 +117,7 @@ public class FineCategoryTest {
         newList.add(new Product(2, Category.FRUITS, "Banana", 9.50, 50.0, 4.75));
 
         String expected = newList.toString();
-        String actual = FineCategory.fineCategoryForSelectDiscount(newList, Category.FRUITS, 50.0).toString();
+        String actual = FineCategoryProcessor.fineCategoryForSelectDiscount(newList, Category.FRUITS, 50.0).toString();
         assertEquals(expected, actual);
     }
 
@@ -129,7 +129,7 @@ public class FineCategoryTest {
         newList.add(new Product(5, Category.BERRIES, "Strawberry", 50.20, 50.0, 25.10));
 
         String expected = newList.toString();
-        String actual = FineCategory.fineCategoryForSelectDiscount(newList, Category.BERRIES, 50.0).toString();
+        String actual = FineCategoryProcessor.fineCategoryForSelectDiscount(newList, Category.BERRIES, 50.0).toString();
         assertEquals(expected, actual);
     }
     @Test
@@ -140,7 +140,7 @@ public class FineCategoryTest {
         newList.add(new Product(8, Category.VEGETABLES, "Onion", 10.10, 50.0, 5.05));
 
         String expected = newList.toString();
-        String actual = FineCategory.fineCategoryForSelectDiscount(newList, Category.VEGETABLES, 50.0).toString();
+        String actual = FineCategoryProcessor.fineCategoryForSelectDiscount(newList, Category.VEGETABLES, 50.0).toString();
         assertEquals(expected, actual);
     }
     @Test
@@ -151,7 +151,7 @@ public class FineCategoryTest {
         newList.add(new Product(11, Category.MILK_PRODUCT, "Yogurt", 20.50, 50.0, 10.25));
 
         String expected = newList.toString();
-        String actual = FineCategory.fineCategoryForSelectDiscount(newList, Category.MILK_PRODUCT, 50.0).toString();
+        String actual = FineCategoryProcessor.fineCategoryForSelectDiscount(newList, Category.MILK_PRODUCT, 50.0).toString();
         assertEquals(expected, actual);
     }
     @Test
@@ -162,7 +162,7 @@ public class FineCategoryTest {
         newList.add(new Product(14, Category.MEAT, "Chicken meat", 15.10, 50.0, 7.55));
 
         String expected = newList.toString();
-        String actual = FineCategory.fineCategoryForSelectDiscount(newList, Category.MEAT, 50.0).toString();
+        String actual = FineCategoryProcessor.fineCategoryForSelectDiscount(newList, Category.MEAT, 50.0).toString();
         assertEquals(expected, actual);
     }
     @Test
@@ -173,7 +173,7 @@ public class FineCategoryTest {
         newList.add(new Product(17, Category.ALCOHOLIC_BEVERAGES, "Wine", 40.10, 50.0, 40.10));
 
         String expected = newList.toString();
-        String actual = FineCategory.fineCategoryForSelectDiscount(newList, Category.ALCOHOLIC_BEVERAGES, 50.0).toString();
+        String actual = FineCategoryProcessor.fineCategoryForSelectDiscount(newList, Category.ALCOHOLIC_BEVERAGES, 50.0).toString();
         assertEquals(expected, actual);
     }
 

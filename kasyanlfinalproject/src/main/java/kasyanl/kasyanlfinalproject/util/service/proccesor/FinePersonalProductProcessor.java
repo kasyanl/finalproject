@@ -1,10 +1,8 @@
 package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.List;
 
 public class FinePersonalProductProcessor {

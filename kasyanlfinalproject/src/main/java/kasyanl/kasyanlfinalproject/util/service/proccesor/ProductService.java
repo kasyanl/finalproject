@@ -1,10 +1,8 @@
-package kasyanl.kasyanlfinalproject.util.service;
+package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
-import kasyanl.kasyanlfinalproject.util.service.proccesor.CalculaterActualPrice;
-import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 
 import java.util.List;
 

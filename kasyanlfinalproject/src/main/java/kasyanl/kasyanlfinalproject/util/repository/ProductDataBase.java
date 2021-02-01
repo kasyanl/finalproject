@@ -1,7 +1,7 @@
 package kasyanl.kasyanlfinalproject.util.repository;
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.service.ProductService;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.ProductService;
 
 import java.util.List;
 

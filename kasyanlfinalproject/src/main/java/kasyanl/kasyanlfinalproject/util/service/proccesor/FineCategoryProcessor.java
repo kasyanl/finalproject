@@ -3,12 +3,10 @@ package kasyanl.kasyanlfinalproject.util.service.proccesor;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
-import kasyanl.kasyanlfinalproject.util.service.ProductService;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class FineCategory implements ProductInterface {
+public class FineCategoryProcessor implements ProductInterface {
 
     public static List<Product> fineCategoryForRead(List<Product> listProduct, Category category) {
         List <Product> newList = new ArrayList<>();
