@@ -2,17 +2,19 @@ package kasyanl.kasyanlfinalproject.util.service.menu;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.junit.MockitoJUnitRunner;
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.*;
 
+@RunWith(MockitoJUnitRunner.class)
 public class ReadProductTest {
-
 
     @Test
     public void fineAllproduct() {
+
         List<Product> newList = new ArrayList<>();
         newList.add(new Product(0, Category.FRUITS, "Apple", 10.0, 50.0, 5.0));
         newList.add(new Product(1, Category.FRUITS, "Orange", 12.10, 10.0, 10.89));
@@ -33,9 +35,32 @@ public class ReadProductTest {
         newList.add(new Product(16, Category.ALCOHOLIC_BEVERAGES, "Whisky", 100.00, 00.0, 100.00));
         newList.add(new Product(17, Category.ALCOHOLIC_BEVERAGES, "Wine", 40.10, 00.0, 40.10));
 
-        String expected = newList.toString();
-        String actual = ProductDataBase.createList().toString();
+        List<Product> actual = ReadProduct.fineAllproduct(newList);
 
-        assertEquals(expected, actual);
+        assertEquals(newList, actual);
     }
+
+    @Test
+    public void fineAllproductZeroSize() {
+
+        List<Product> newList = new ArrayList<>();
+        List<Product> actual = ReadProduct.fineAllproduct(newList);
+
+        assertEquals(newList, actual);
+    }
+
+//    @Test
+//    public void fineCategoryProguct() {
+//      // InputNumberService val = Mockito.mock(InputNumberService.class);
+//       Mockito.when(InputNumberService.readNumber(Mockito.anyString())).thenReturn(1);
+//
+//        List<Product> newList = new ArrayList<>();
+//        newList.add(new Product(0, Category.FRUITS, "Apple", 10.0, 50.0, 5.0));
+//        newList.add(new Product(1, Category.FRUITS, "Orange", 12.10, 10.0, 10.89));
+//        newList.add(new Product(2, Category.FRUITS, "Banana", 9.50, 20.0, 7.63));
+//
+//        List<Product> actual = ReadProduct.fineCategoryProguct(newList);
+//
+//        assertEquals(newList, actual);
+//    }
 }

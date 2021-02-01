@@ -2,10 +2,9 @@ package kasyanl.kasyanlfinalproject.util.service;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
+import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.CalculaterActualPrice;
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -18,16 +17,15 @@ public class ProductService extends Product{
         this.product = product;
     }
 
-    static final Logger log = LoggerFactory.getLogger(ProductService.class);
     private static long idCounter;
 
     public static Product creatProduct(Category category, String name, double price, double discount) {
 
         long id = idCounter;
-        if (ProductDataBase.listProduct.size() == 0) id = 0;
-        else if (ProductDataBase.listProduct.size()>0) {
+        if (ProductInterface.listProduct.size() == 0) id = 0;
+        else if (ProductInterface.listProduct.size()>0) {
             int i = 0;
-            for (Product product : ProductDataBase.listProduct) {
+            for (Product product : ProductInterface.listProduct) {
                 if (product.getId() == i) i++;
                 id = i;
             }
@@ -38,12 +36,13 @@ public class ProductService extends Product{
         return product;
     }
 
-    public static void readProduct(Product product) {
-        System.out.println(product);;
+    public static Product readProduct(Product product) {
+        System.out.println(product);
+        return product;
     }
 
     public static List<Product> deleteProduct(List<Product> listProduct, int id) {
-               ProductDataBase.listProduct.removeIf(nextProduct -> nextProduct.getId() == id);
+               listProduct.removeIf(nextProduct -> nextProduct.getId() == id);
                return  listProduct;
     }
 }

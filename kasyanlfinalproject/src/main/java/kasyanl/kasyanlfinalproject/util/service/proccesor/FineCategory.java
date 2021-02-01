@@ -2,25 +2,34 @@ package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
+import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import kasyanl.kasyanlfinalproject.util.service.ProductService;
 
-public class FineCategory {
+import java.util.ArrayList;
+import java.util.List;
 
-    public static void fineCategoryForRead(Category category) {
-        for (Product product : ProductDataBase.listProduct) {
+public class FineCategory implements ProductInterface {
+
+    public static List<Product> fineCategoryForRead(List<Product> listProduct, Category category) {
+        List <Product> newList = new ArrayList<>();
+        for (Product product : listProduct) {
             if (product.getCategory().equals(category)) {
                ProductService.readProduct(product);
+               newList.add(product);
             }
         }
+        return newList;
     }
 
-    public static void fineCategoryForSelectDiscount(Category category, double discont) {
-        for (Product product : ProductDataBase.listProduct) {
+    public static List<Product> fineCategoryForSelectDiscount(List<Product> listProduct, Category category, double discont) {
+        List <Product> newList = new ArrayList<>();
+        for (Product product : listProduct) {
             if (product.getCategory().equals(category)) {
                 product.setDiscount(discont);
                 ProductService.readProduct(product);
+                newList.add(product);
             }
         }
+        return newList;
     }
 }

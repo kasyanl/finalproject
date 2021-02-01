@@ -2,6 +2,7 @@ package kasyanl.kasyanlfinalproject.util.repository;
 
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
+import org.junit.AfterClass;
 import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,7 @@ import static kasyanl.kasyanlfinalproject.util.bean.Category.*;
 import static org.junit.Assert.*;
 
 public class ProductDataBaseTest implements ProductInterface{
+
 
     @Test
   public void createBase() {
@@ -38,7 +40,12 @@ public class ProductDataBaseTest implements ProductInterface{
        String actual = ProductDataBase.createList().toString();
         assertEquals(expected, actual);
 
-
    }
+
+    @AfterClass
+    public static void afterClass(){
+        listProduct.clear();
+
+    }
 }
 

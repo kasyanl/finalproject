@@ -5,8 +5,12 @@ import kasyanl.kasyanlfinalproject.util.service.proccesor.AddProduct;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.UpdateCategoryDiscont;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MenuStartService implements ProductInterface {
+
+    static final Logger log = LoggerFactory.getLogger(MenuStartService.class);
 
     public void headMenu() {
 
@@ -16,47 +20,51 @@ public class MenuStartService implements ProductInterface {
             int imputedMenu  = InputNumberService.readNumber();
             switch (imputedMenu) {
                 case 1:
-                    ReadProduct.fineAllproduct();
+                    ReadProduct.fineAllproduct(listProduct);
                     break;
                 case 2:
-                    ReadProduct.fineCategoryProguct();
+                    ReadProduct.fineCategoryProguct(listProduct);
                     break;
                 case 3:
                     ReadProduct.finePersonalProduct();
                     break;
                 case 4:
-                    AddProduct.addProduct(CreateProduct.createNewProduct());
-                    System.out.println("___________________________________" +
-                                    "\n| Продукт успешно добавлен в базу! |"+
-                                    "\n -----------------------------------");
+                    AddProduct.addProduct(listProduct, CreateProduct.createNewProduct());
+                    log.info(""+
+                            "\n___________________________________" +
+                            "\n| Продукт успешно добавлен в базу! |"+
+                            "\n -----------------------------------");
                     break;
                 case 5:
                     DeleteProduct.deleteProductService(listProduct);
-                    System.out.println("_________________________" +
-                                    "\n| Продукт удален из базы.|" +
-                                     "\n------------------------");
+                    log.info(""+
+                            "\n_________________________" +
+                            "\n| Продукт удален из базы.|" +
+                            "\n------------------------");
                     break;
                 case 6:
                     UpdateValueProduct.updateAnyProduct();
-                    System.out.println("_______________________" +
-                                    "\n| Dаш продукт изменен! |"+
-                                    "\n -----------------------");
+                    log.info(""+
+                            "\n_______________________" +
+                            "\n| Ваш продукт изменен! |"+
+                            "\n -----------------------");
                     break;
                 case 7:
                     UpdateCategoryDiscont.discontCategory();
-                    System.out.println("___________________________________" +
-                                    "\n| Скидка для категории установлена! |"+
-                                    "\n -----------------------------------");
+                    log.info(""+
+                            "\n___________________________________" +
+                            "\n| Скидка для категории установлена! |"+
+                            "\n -----------------------------------");
                     break;
                 case 8:
                     mainLoop = false;
-                    System.out.println(""+
-                           "\n"+
-                           "\nДо встречи!");
+                    log.info(""+
+                            "\n____________" +
+                            "\nДо встречи!");
                     break;
                 default:
-                    System.out.println(""+
-                            "\n"+
+                    log.info(""+
+                            "\n____________" +
                             "\nТакого пункта не существует, повторите выбор: ");
             }
         }

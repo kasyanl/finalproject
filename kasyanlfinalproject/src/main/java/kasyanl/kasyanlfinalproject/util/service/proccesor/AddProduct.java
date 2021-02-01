@@ -1,11 +1,12 @@
 package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
+import java.util.List;
 
 public class AddProduct {
 
-    public static void addProduct( Product product) {
-        ProductDataBase.listProduct.add((int) product.getId(), product);
+    public static List<Product> addProduct(List<Product> listProduct, Product product) {
+        listProduct.add((int) product.getId(), product);
+        return listProduct;
     }
 }

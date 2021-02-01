@@ -1,9 +1,15 @@
 package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
-import kasyanl.kasyanlfinalproject.util.service.menu.Menu;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
+import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
+import kasyanl.kasyanlfinalproject.util.service.menu.Menu;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class UpdateCategoryDiscont {
+public class UpdateCategoryDiscont implements ProductInterface {
+
+    static final Logger log = LoggerFactory.getLogger(UpdateCategoryDiscont.class);
+
     public static void discontCategory() {
 
         String message = "Введите новую скидку для категории (%):";
@@ -17,46 +23,46 @@ public class UpdateCategoryDiscont {
                     System.out.println(message);
                     double discount1 = InputNumberService.readDouble();
                     Category fruits = Category.FRUITS;
-                    FineCategory.fineCategoryForSelectDiscount(fruits, discount1);
+                    FineCategory.fineCategoryForSelectDiscount(listProduct, fruits, discount1);
                     break;
                 case 2:
                     System.out.println(message);
                     double discount2 = InputNumberService.readDouble();
                     Category berries = Category.BERRIES;
-                    FineCategory.fineCategoryForSelectDiscount(berries, discount2);
+                    FineCategory.fineCategoryForSelectDiscount(listProduct, berries, discount2);
                     break;
                 case 3:
                     System.out.println(message);
                     double discount3 = InputNumberService.readDouble();
                     Category vegetables = Category.VEGETABLES;
-                    FineCategory.fineCategoryForSelectDiscount(vegetables, discount3);
+                    FineCategory.fineCategoryForSelectDiscount(listProduct, vegetables, discount3);
                     break;
                 case 4:
                     System.out.println(message);
                     double discount4 = InputNumberService.readDouble();
                     Category milProduct = Category.MILK_PRODUCT;
-                    FineCategory.fineCategoryForSelectDiscount(milProduct, discount4);
+                    FineCategory.fineCategoryForSelectDiscount(listProduct, milProduct, discount4);
                     break;
                 case 5:
                     System.out.println(message);
                     double discount5 = InputNumberService.readDouble();
                     Category meat = Category.MEAT;
-                    FineCategory.fineCategoryForSelectDiscount(meat, discount5);
+                    FineCategory.fineCategoryForSelectDiscount(listProduct, meat, discount5);
                     break;
                 case 6:
                     System.out.println(message);
                     double discount6 = InputNumberService.readDouble();
                     Category alcoholicBeverages = Category.ALCOHOLIC_BEVERAGES;
-                    FineCategory.fineCategoryForSelectDiscount(alcoholicBeverages, discount6);
+                    FineCategory.fineCategoryForSelectDiscount(listProduct, alcoholicBeverages, discount6);
                     break;
                 case 7:
                     discontSelect = false;
                     break;
                 default:
-                    System.out.println("" +
-                            "\n__________" +
+                    log.info(""+
+                            "\n________________"+
                             "\n!!!Такого пункта не существует. Попробуйте выбрать еще раз!!!" +
-                            "\n__________");
+                            "\n________________");
             }
         }
     }

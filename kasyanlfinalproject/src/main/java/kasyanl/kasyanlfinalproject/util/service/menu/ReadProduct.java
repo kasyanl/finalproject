@@ -2,76 +2,85 @@ package kasyanl.kasyanlfinalproject.util.service.menu;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
+import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumberService;
 import kasyanl.kasyanlfinalproject.util.service.ProductService;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.FineCategory;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.FinePersonalProductProcessor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class ReadProduct {
+import java.util.List;
 
-    public static void fineAllproduct() {
+public class ReadProduct implements ProductInterface {
 
-        if (ProductDataBase.listProduct.size() == 0) {
-            System.out.println("В базе отсутствуют элементы");
-        } else {
-            for (Product product : ProductDataBase.listProduct) {
-                ProductService.readProduct(product);
-            }
+    static final Logger log = LoggerFactory.getLogger(ReadProduct.class);
+
+    public static List<Product> fineAllproduct(List<Product> listProduct) {
+        if (listProduct.size() == 0) {
+            log.info(""+
+                    "\n________________"+
+                    "\nВ базе отсутствуют элементы");
+        } for (Product product : listProduct){
+            ProductService.readProduct(product);
+
         }
+        return listProduct;
     }
 
-    public static void fineCategoryProguct() {
+
+    public static void fineCategoryProguct(List<Product> listProduct) {
         boolean categorySelect = true;
         while (categorySelect) {
             Menu.menuCategory();
-            System.out.println("Выберите категорию");
-            int categoryNumber = InputNumberService.readNumber();
+            log.info(""+
+                    "\n________________"+
+                    "\nВыберите категорию");
+           int categoryNumber = InputNumberService.readNumber();
             switch (categoryNumber) {
                 case 1:
                     Category fruits = Category.FRUITS;
-                    FineCategory.fineCategoryForRead(fruits);
+                    FineCategory.fineCategoryForRead(listProduct, fruits);
                     break;
                 case 2:
                     Category berries = Category.BERRIES;
-                    FineCategory.fineCategoryForRead(berries);
+                    FineCategory.fineCategoryForRead(listProduct, berries);
                     break;
                 case 3:
                     Category vegetables = Category.VEGETABLES;
-                    FineCategory.fineCategoryForRead(vegetables);
+                    FineCategory.fineCategoryForRead(listProduct, vegetables);
                     break;
                 case 4:
                     Category milProduct = Category.MILK_PRODUCT;
-                    FineCategory.fineCategoryForRead(milProduct);
+                    FineCategory.fineCategoryForRead(listProduct, milProduct);
                     break;
                 case 5:
                     Category meat = Category.MEAT;
-                    FineCategory.fineCategoryForRead(meat);
+                    FineCategory.fineCategoryForRead(listProduct, meat);
                     break;
                 case 6:
                     Category alcoholicBeverages = Category.ALCOHOLIC_BEVERAGES;
-                    FineCategory.fineCategoryForRead(alcoholicBeverages);
+                    FineCategory.fineCategoryForRead(listProduct, alcoholicBeverages);
                     break;
                 case 7:
                     categorySelect = false;
                     break;
                 default:
-                    System.out.println("" +
-                            "\n__________" +
+                    log.info(""+
+                            "\n________________"+
                             "\n!!!Такого пункта не существует. Попробуйте выбрать еще раз!!!" +
                             "\n__________");
-
             }
         }
     }
 
-    public static Product finePersonalProduct() {
-        Product product = new Product();
-        System.out.println("Введите ID продукта");
+    public static void finePersonalProduct() {
+        log.info(""+
+                "\n________________"+
+                "\nВведите ID продукта");
         int id = InputNumberService.readNumber();
-        FinePersonalProductProcessor.personalProductProcessor(id);
+        FinePersonalProductProcessor.personalProductProcessor(listProduct, id);
 
-        return  product;
     }
 }
 

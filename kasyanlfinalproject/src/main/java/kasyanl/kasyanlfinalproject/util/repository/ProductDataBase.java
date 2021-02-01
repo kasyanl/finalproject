@@ -11,6 +11,10 @@ public class ProductDataBase implements ProductInterface  {
 
     public static List<Product> createList (){
 
+      return listProduct;
+    }
+
+    static {
       listProduct.add(ProductService.creatProduct(FRUITS, "Apple", 10.0, 50.0));
       listProduct.add(ProductService.creatProduct(FRUITS, "Orange", 12.10, 10.0));
       listProduct.add(ProductService.creatProduct(FRUITS, "Banana", 9.50, 20.0));
@@ -29,8 +33,6 @@ public class ProductDataBase implements ProductInterface  {
       listProduct.add(ProductService.creatProduct(ALCOHOLIC_BEVERAGES, "Beer", 10.5, 00.0));
       listProduct.add(ProductService.creatProduct(ALCOHOLIC_BEVERAGES, "Whisky", 100.00, 00.0));
       listProduct.add(ProductService.creatProduct(ALCOHOLIC_BEVERAGES, "Wine", 40.10, 00.0));
-
-      return listProduct;
     }
 }
 
