@@ -1,4 +1,4 @@
-package kasyanl.kasyanlfinalproject.util.service.menu.menuService;
+package kasyanl.kasyanlfinalproject.util.service.menu.menuservise;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;

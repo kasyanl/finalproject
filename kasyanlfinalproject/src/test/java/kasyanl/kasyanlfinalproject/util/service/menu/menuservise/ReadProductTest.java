@@ -1,8 +1,8 @@
-package kasyanl.kasyanlfinalproject.util.service.proccesor;
+package kasyanl.kasyanlfinalproject.util.service.menu.menuservise;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.service.menu.menuService.ReadProduct;
+import kasyanl.kasyanlfinalproject.util.service.menu.menuservise.ReadProduct;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;

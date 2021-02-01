@@ -1,8 +1,10 @@
-package kasyanl.kasyanlfinalproject.util.service;
+package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 
+import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
+import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.ProductService;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +12,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static kasyanl.kasyanlfinalproject.util.bean.Category.BERRIES;
 import static org.junit.Assert.*;
 
 public class ProductServiceTest {
@@ -24,17 +27,26 @@ public class ProductServiceTest {
     }
 
     @Test
+    public void creatProductNullPozition() {
+        ProductDataBase.createList();
+        ProductService.deleteProduct(ProductInterface.listProduct, 5);
+
+        Product expected = new Product(0, Category.BERRIES, "Strawberry", 50.20, 15.0, 42.67);
+        Product actual = ProductService.creatProduct(Category.BERRIES, "Strawberry", 50.20, 15.0);
+
+        assertEquals(expected, actual);
+        ProductInterface.listProduct.clear();
+    }
+
+    @Test
     public void creatProduct() {
-        product1.setId(0);
-        product1.setCategory(Category.FRUITS);
-        product1.setName("Apple");
-        product1.setPrice(20.0);
-        product1.setDiscount(50.0);
+
         Product expected = new Product(0, Category.FRUITS, "Apple", 20.0, 50.0, 10.0);
         Product actual = ProductService.creatProduct(Category.FRUITS, "Apple", 20.0, 50.0);
 
         assertEquals(expected, actual);
     }
+
     @Test
     public void deleteProduct() {
         List<Product> newList = new ArrayList<>();

@@ -1,4 +1,4 @@
-package kasyanl.kasyanlfinalproject.util.service.menu.menuService;
+package kasyanl.kasyanlfinalproject.util.service.menu.menuservise;
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import java.util.List;

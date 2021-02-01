@@ -1,6 +1,6 @@
 package kasyanl.kasyanlfinalproject.util.service.menu;
 
-import kasyanl.kasyanlfinalproject.util.service.menu.menuService.*;
+import kasyanl.kasyanlfinalproject.util.service.menu.menuservise.*;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.*;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import org.slf4j.Logger;
