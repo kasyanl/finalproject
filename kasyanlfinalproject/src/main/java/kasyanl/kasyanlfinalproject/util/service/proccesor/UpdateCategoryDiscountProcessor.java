@@ -10,13 +10,13 @@ import static kasyanl.kasyanlfinalproject.util.bean.Category.*;
 
 public class UpdateCategoryDiscountProcessor {
 
-    public UpdateCategoryDiscountProcessor() {
+    private UpdateCategoryDiscountProcessor() {
         throw new IllegalStateException("Класс для поиска категории и установления скидки для нее");
     }
 
     static final Logger log = LoggerFactory.getLogger(UpdateCategoryDiscountProcessor.class);
-    public static final String message = "Введите новую скидку для категории (%):";
-    public static final String iterator = "__________________________________";
+    public static final String MESSAGE = "Введите новую скидку для категории (%):";
+    public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
 
     public static List<Product> fineCategory(List<Product> listProduct, int category, InputNumber in) {
 
@@ -24,42 +24,42 @@ public class UpdateCategoryDiscountProcessor {
             case 1:
                 log.info("" +
                         "\n{}" +
-                        "\n{}: ",message, iterator);
+                        "\n{}: ", MESSAGE, ITERATOR);
                 double discount1 = in.readDouble();
                 FineCategoryProcessor.fineCategoryForSelectDiscount(listProduct, FRUITS, discount1);
                 break;
             case 2:
                 log.info("" +
                         "\n{}" +
-                        "\n{}: ",message, iterator);
+                        "\n{}: ", MESSAGE, ITERATOR);
                 double discount2 = in.readDouble();
                 FineCategoryProcessor.fineCategoryForSelectDiscount(listProduct, BERRIES, discount2);
                 break;
             case 3:
                 log.info("" +
                         "\n{}" +
-                        "\n{}: ",message, iterator);
+                        "\n{}: ", MESSAGE, ITERATOR);
                 double discount3 = in.readDouble();
                 FineCategoryProcessor.fineCategoryForSelectDiscount(listProduct, VEGETABLES, discount3);
                 break;
             case 4:
                 log.info("" +
                         "\n{}" +
-                        "\n{}: ",message, iterator);
+                        "\n{}: ", MESSAGE, ITERATOR);
                 double discount4 = in.readDouble();
                 FineCategoryProcessor.fineCategoryForSelectDiscount(listProduct, MILK_PRODUCT, discount4);
                 break;
             case 5:
                 log.info("" +
                         "\n{}" +
-                        "\n{}: ",message, iterator);
+                        "\n{}: ", MESSAGE, ITERATOR);
                 double discount5 = in.readDouble();
                 FineCategoryProcessor.fineCategoryForSelectDiscount(listProduct, MEAT, discount5);
                 break;
             case 6:
                 log.info("" +
                         "\n{}" +
-                        "\n{}: ",message, iterator);
+                        "\n{}: ", MESSAGE, ITERATOR);
                 double discount6 = in.readDouble();
                 FineCategoryProcessor.fineCategoryForSelectDiscount(listProduct, ALCOHOLIC_BEVERAGES, discount6);
                 break;
@@ -67,7 +67,7 @@ public class UpdateCategoryDiscountProcessor {
                 log.info("" +
                         "\n{}" +
                         "\n!!!Такого пункта не существует. Попробуйте выбрать еще раз!!!" +
-                        "\n{}", iterator, iterator);
+                        "\n{}", ITERATOR, ITERATOR);
         }
         return listProduct;
     }

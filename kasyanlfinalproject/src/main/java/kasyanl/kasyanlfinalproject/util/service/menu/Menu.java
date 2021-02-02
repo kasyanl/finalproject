@@ -5,12 +5,12 @@ import org.slf4j.LoggerFactory;
 
 public class Menu {
 
-    public Menu() {
+    private Menu() {
         throw new IllegalStateException("Текстовое меню");
     }
 
     static final Logger log = LoggerFactory.getLogger(Menu.class);
-    public static final String iterator = "_______________________________";
+    public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ ";
 
     public static void firstMenu(){
         log.info(""+
@@ -25,7 +25,7 @@ public class Menu {
                 "\n6. Обновить информацию о продукте;" +
                 "\n7. Установить единую скидку для одной категории продуктов," +
                 "\n8. Выйти из программы." +
-                "\n{}", iterator, iterator);
+                "\n{}", ITERATOR, ITERATOR);
     }
     public static void menuCategory() {
         log.info(""+
@@ -38,7 +38,7 @@ public class Menu {
                 "\n5. MEAT" +
                 "\n6. ALCOHOLIC_BEVERAGES" +
                 "\n7. Возврат в главное меню."+
-                "\n{}", iterator, iterator);
+                "\n{}", ITERATOR, ITERATOR);
 
     }
 
@@ -51,7 +51,7 @@ public class Menu {
                 "\n3. Изменить цену продукта."+
                 "\n4. Изменить скидку продукта."+
                 "\n5. Выход в предыдущее меню."+
-                "\n{}", iterator, iterator);
+                "\n{}", ITERATOR, ITERATOR);
     }
 
 }

@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class UpdateValueProductProcessor {
 
-    public UpdateValueProductProcessor() {
+    private UpdateValueProductProcessor() {
         throw new IllegalStateException("Класс для обновления параметров продукта");
     }
 
@@ -28,12 +28,12 @@ public class UpdateValueProductProcessor {
         return product;
     }
 
-    public static final String iterator = "________________";
-    public static final String message = "Введите новое название: ";
+    public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
+    public static final String MESSAGE = "Введите новое название: ";
     public static Product selectName(InputNumber input, Product product) {
         log.info("" +
                 "\n{}" +
-                "\n{}", iterator, message);
+                "\n{}", ITERATOR, MESSAGE);
         product.setName(input.readString());
         ProductService.readProduct(product);
         return product;
@@ -42,7 +42,7 @@ public class UpdateValueProductProcessor {
     public static Product selectPrice(InputNumber input, Product product) {
         log.info("" +
                 "\n{}" +
-                "\n{}", iterator, message);
+                "\n{}", ITERATOR, MESSAGE);
         product.setPrice(input.readDouble());
         ProductService.readProduct(product);
         return product;
@@ -51,7 +51,7 @@ public class UpdateValueProductProcessor {
     public static Product selectDiscount(InputNumber input, Product product) {
         log.info("" +
                 "\n{}" +
-                "\n{}", iterator, message);
+                "\n{}", ITERATOR, MESSAGE);
         product.setDiscount(input.readDouble());
         ProductService.readProduct(product);
         return product;

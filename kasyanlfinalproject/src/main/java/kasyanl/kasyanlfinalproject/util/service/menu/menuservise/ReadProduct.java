@@ -14,17 +14,19 @@ import java.util.List;
 
 public class ReadProduct implements ProductInterface {
 
-    public ReadProduct() {
+    private ReadProduct() {
         throw new IllegalStateException("Класс для просмотра продуктов");
     }
 
     static final Logger log = LoggerFactory.getLogger(ReadProduct.class);
-    public static final String iterator = "________________";
+    public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
 
     public static List<Product> fineAllproduct(List<Product> listProduct) {
-        if (listProduct.size() == 0) log.info("" +
-                "\n{}" +
-                "\nВ базе отсутствуют элементы!", iterator);
+        if (listProduct.size() == 0) {
+            System.out.println("" +
+                    "\n" +
+                    "\nВ базе отсутствуют элементы!");
+        }
         for (Product product : listProduct) ProductService.readProduct(product);
         return listProduct;
     }
@@ -38,7 +40,7 @@ public class ReadProduct implements ProductInterface {
     public static Product finePersonalProduct(List<Product> listProduct, InputNumber input) {
         log.info("" +
                 "\n{}" +
-                "\nВведите ID продукта", iterator);
+                "\nВведите ID продукта", ITERATOR);
         int id = input.readNumber();
         return FinePersonalProductProcessor.personalProductProcessor(listProduct, id);
     }

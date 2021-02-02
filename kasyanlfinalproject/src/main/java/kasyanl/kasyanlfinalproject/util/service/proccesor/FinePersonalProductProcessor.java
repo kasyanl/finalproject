@@ -8,7 +8,7 @@ import java.util.List;
 
 public class FinePersonalProductProcessor {
 
-    public FinePersonalProductProcessor() {
+    private FinePersonalProductProcessor() {
         throw new IllegalStateException("Класс для поиска конкретного продукта");
     }
 
@@ -22,7 +22,7 @@ public class FinePersonalProductProcessor {
             }
         }
         log.info("" +
-                "\n_______________________________" +
+                "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " +
                 "\nТакого продукта не существует");
         return new Product();
     }

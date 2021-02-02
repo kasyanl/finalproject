@@ -9,7 +9,7 @@ import java.util.List;
 
 public class FineCategoryProcessor implements ProductInterface {
 
-    public FineCategoryProcessor() {
+    private FineCategoryProcessor() {
         throw new IllegalStateException("Класс для поиска продуктов по нужной категории");
     }
 

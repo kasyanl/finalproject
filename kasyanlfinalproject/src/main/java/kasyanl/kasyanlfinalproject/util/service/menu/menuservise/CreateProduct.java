@@ -12,7 +12,7 @@ public class CreateProduct {
 
     UpdateCategoryServiceProcessor updateCategoryServiceProcessor = new UpdateCategoryServiceProcessor();
     static final Logger log = LoggerFactory.getLogger(CreateProduct.class);
-    public static final String iterator = "________________";
+    public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
 
     public Product createNewProduct( InputNumber inputNumber) {
 
@@ -20,15 +20,15 @@ public class CreateProduct {
         Category category = Category.valueOf(selectCategory);
         log.info(""+
                 "\n{}"+
-                "\nВведите название продукта:", iterator);
+                "\nВведите название продукта:", ITERATOR);
         String name = inputNumber.readString();
         log.info(""+
                 "\n{}"+
-                "\nВведите цену продукта (BYN):", iterator);
+                "\nВведите цену продукта (BYN):", ITERATOR);
         double price = inputNumber.readDouble();
         log.info(""+
                 "\n{}"+
-                "\nВведите скидку продукта (%):", iterator);
+                "\nВведите скидку продукта (%):", ITERATOR);
         double discount = inputNumber.readDouble();
 
       return ProductService.creatProduct(category, name, price, discount);

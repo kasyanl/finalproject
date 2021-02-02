@@ -10,7 +10,7 @@ import static kasyanl.kasyanlfinalproject.util.bean.Category.*;
 
 public class FineProductOfCategoryProcessor {
 
-    public FineProductOfCategoryProcessor() {
+    private FineProductOfCategoryProcessor() {
         throw new IllegalStateException("Класс для выбора категории");
     }
 
@@ -39,9 +39,9 @@ public class FineProductOfCategoryProcessor {
                 break;
             default:
                 log.info("" +
-                        "\n___________________________________________________________" +
+                        "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " +
                         "\n!!!Такого пункта не существует. Попробуйте выбрать еще раз!!!" +
-                        "\n-----------------------------------------------------------");
+                        "\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
         }
         return listProduct;
     }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AddProduct {
 
-    public AddProduct() {
+    private AddProduct() {
         throw new IllegalStateException("Класс для добавления продукта");
     }
 

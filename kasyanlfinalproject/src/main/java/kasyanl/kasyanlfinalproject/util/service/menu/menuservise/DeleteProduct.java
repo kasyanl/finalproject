@@ -14,7 +14,7 @@ public class DeleteProduct implements ProductInterface {
 
     public List<Product> deleteProductService(List<Product> listProduct, InputNumber inputNumber){
        log.info(""+
-               "\n__________________"+
+               "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _"+
                "\nВведите ID продукта");
         int id = inputNumber.readNumber();
         ProductService.deleteProduct(listProduct, id);

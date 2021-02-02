@@ -15,7 +15,7 @@ public class UpdateValueProduct {
 
     public Product updateAnyProduct(InputNumber inputer, List<Product> listProduct) {
         log.info("" +
-                "\n________________" +
+                "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" +
                 "\nВведите ID продукта");
         int id = inputer.readNumber();
         return FineID.fineProductByID(inputer, FinePersonalProductProcessor.personalProductProcessor(listProduct, id));

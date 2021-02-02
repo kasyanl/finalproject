@@ -14,7 +14,7 @@ public class MenuStartService implements ProductInterface {
     UpdateCategoryDiscont updateCategoryDiscont = new UpdateCategoryDiscont();
     InputNumber inputNumber = new InputNumber(System.in, System.out);
     final Logger log = LoggerFactory.getLogger(MenuStartService.class);
-    public static final String iterator = "___________________________________";
+    public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
 
     public void headMenu(InputNumber inputNumber) {
 
@@ -37,39 +37,39 @@ public class MenuStartService implements ProductInterface {
                     log.info("" +
                             "\n{}" +
                             "\n Продукт успешно добавлен в базу! " +
-                            "\n{}", iterator, iterator);
+                            "\n{}", ITERATOR, ITERATOR);
                     break;
                 case 5:
                     deleteProduct.deleteProductService(listProduct, inputNumber);
                     log.info("" +
                             "\n{}" +
                             "\n| Продукт удален из базы.|" +
-                            "\n{}", iterator, iterator);
+                            "\n{}", ITERATOR, ITERATOR);
                     break;
                 case 6:
                     updateValueProduct.updateAnyProduct(inputNumber, listProduct);
                     log.info("" +
                             "\n{}" +
                             "\n| Ваш продукт изменен! |" +
-                            "\n{}", iterator, iterator);
+                            "\n{}", ITERATOR, ITERATOR);
                     break;
                 case 7:
                     updateCategoryDiscont.discountCategory(listProduct, inputNumber, this.inputNumber);
                     log.info("" +
                             "\n{}" +
                             "\n| Скидка для категории установлена! |" +
-                            "\n{}", iterator, iterator);
+                            "\n{}", ITERATOR, ITERATOR);
                     break;
                 case 8:
                     mainLoop = false;
                     log.info("" +
                             "\n{}" +
-                            "\nДо встречи!", iterator);
+                            "\nДо встречи!", ITERATOR);
                     break;
                 default:
                     log.info("" +
                             "\n{}" +
-                            "\nТакого пункта не существует, повторите выбор:", iterator);
+                            "\nТакого пункта не существует, повторите выбор:", ITERATOR);
             }
         }
     }

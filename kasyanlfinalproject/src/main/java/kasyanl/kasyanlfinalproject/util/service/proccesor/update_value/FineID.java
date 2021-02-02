@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class FineID {
-    public FineID() {
+    private FineID() {
         throw new IllegalStateException("Класс обновления конкретного продукта");
     }
 
@@ -31,7 +31,7 @@ public class FineID {
                 break;
             default:
                 log.info("" +
-                        "\n________________" +
+                        "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" +
                         "\nТакого варианта выбора нет, повторите его: ");
         }
         return newProduct;
