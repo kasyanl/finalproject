@@ -5,11 +5,16 @@ import org.slf4j.LoggerFactory;
 
 public class Menu {
 
+    public Menu() {
+        throw new IllegalStateException("Текстовое меню");
+    }
+
     static final Logger log = LoggerFactory.getLogger(Menu.class);
+    public static final String iterator = "_______________________________";
 
     public static void firstMenu(){
         log.info(""+
-                "\n______" +
+                "\n{}" +
                 "\nЗдравствуйте! Вас приветствует Система учета продуктов." +
                 "\nДля выбора действия, выберите пункт из меню и введите в консоль соответствующую цифру:" +
                 "\n1. Получить список всех продуктов;" +
@@ -19,11 +24,12 @@ public class Menu {
                 "\n5. Удалить продукт;"+
                 "\n6. Обновить информацию о продукте;" +
                 "\n7. Установить единую скидку для одной категории продуктов," +
-                "\n8. Выйти из программы.");
+                "\n8. Выйти из программы." +
+                "\n{}", iterator, iterator);
     }
     public static void menuCategory() {
         log.info(""+
-                "\n______" +
+                "\n{}" +
                 "\nВыберите категорию продукта:" +
                 "\n1. FRUITS," +
                 "\n2. BERRIES," +
@@ -31,19 +37,21 @@ public class Menu {
                 "\n4. MILK_PRODUCT" +
                 "\n5. MEAT" +
                 "\n6. ALCOHOLIC_BEVERAGES" +
-                "\n7. Возврат в главное меню.");
+                "\n7. Возврат в главное меню."+
+                "\n{}", iterator, iterator);
 
     }
 
     public static void menuUpdateProduct() {
         log.info(""+
-                "\n______" +
+                "\n{}" +
                 "\nКакое действие вы желаете сделать?"+
                 "\n1. Изменить категорию продукта."+
                 "\n2. Изменить наименование продукта."+
                 "\n3. Изменить цену продукта."+
                 "\n4. Изменить скидку продукта."+
-                "\n5. Выход в предыдущее меню.");
+                "\n5. Выход в предыдущее меню."+
+                "\n{}", iterator, iterator);
     }
 
 }

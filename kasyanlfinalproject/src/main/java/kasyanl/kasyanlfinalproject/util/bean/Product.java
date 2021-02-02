@@ -4,18 +4,18 @@ import java.util.Objects;
 
 public class Product {
 
-    private String name;
     private long id;
-    private double price;
     private Category category;
+    private String name;
+    private double price;
     private double discount;
     private double actualPrice;
 
     public Product(long id, Category category, String name, double price, double discount, double actualPrice) {
-        this.name = name;
         this.id = id;
-        this.price = price;
         this.category = category;
+        this.name = name;
+        this.price = price;
         this.discount = discount;
         this.actualPrice = actualPrice;
     }
@@ -61,12 +61,12 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return id == product.id && Objects.equals(name, product.name) && Objects.equals(price, product.price) && category == product.category && Objects.equals(discount, product.discount) && Objects.equals(actualPrice, product.actualPrice);
+        return id == product.id && Double.compare(product.price, price) == 0 && Double.compare(product.discount, discount) == 0 && Double.compare(product.actualPrice, actualPrice) == 0 && category == product.category && Objects.equals(name, product.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, id, price, category, discount, actualPrice);
+        return Objects.hash(id, category, name, price, discount, actualPrice);
     }
 
     @Override

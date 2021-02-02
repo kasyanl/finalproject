@@ -3,8 +3,10 @@ package kasyanl.kasyanlfinalproject.util.service.proccesor;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class FineProductOfCategoryTest {
@@ -30,6 +32,7 @@ public class FineProductOfCategoryTest {
         List<Product> actual = FineProductOfCategoryProcessor.selectCategoryByAllList(newList, 2);
         assertEquals(newList, actual);
     }
+
     @Test
     public void selectCategoryByAllList3Category() {
         List<Product> newList = new ArrayList<>();
@@ -41,6 +44,7 @@ public class FineProductOfCategoryTest {
         List<Product> actual = FineProductOfCategoryProcessor.selectCategoryByAllList(newList, 3);
         assertEquals(newList, actual);
     }
+
     @Test
     public void selectCategoryByAllList4Category() {
         List<Product> newList = new ArrayList<>();
@@ -52,6 +56,7 @@ public class FineProductOfCategoryTest {
         List<Product> actual = FineProductOfCategoryProcessor.selectCategoryByAllList(newList, 4);
         assertEquals(newList, actual);
     }
+
     @Test
     public void selectCategoryByAllList5Category() {
         List<Product> newList = new ArrayList<>();
@@ -62,6 +67,7 @@ public class FineProductOfCategoryTest {
         List<Product> actual = FineProductOfCategoryProcessor.selectCategoryByAllList(newList, 5);
         assertEquals(newList, actual);
     }
+
     @Test
     public void selectCategoryByAllList6Category() {
         List<Product> newList = new ArrayList<>();
@@ -73,6 +79,7 @@ public class FineProductOfCategoryTest {
         List<Product> actual = FineProductOfCategoryProcessor.selectCategoryByAllList(newList, 6);
         assertEquals(newList, actual);
     }
+
     @Test
     public void selectCategoryByAllListNoneCategory() {
         List<Product> newList = new ArrayList<>();

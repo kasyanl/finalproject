@@ -3,8 +3,10 @@ package kasyanl.kasyanlfinalproject.util.service.proccesor;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class FinePersonalProductProcessorTest {

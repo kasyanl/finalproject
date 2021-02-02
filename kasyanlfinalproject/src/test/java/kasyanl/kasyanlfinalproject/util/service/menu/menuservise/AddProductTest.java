@@ -27,6 +27,6 @@ public class AddProductTest {
         newList2.add(new Product(2, Category.FRUITS, "Banana", 9.50, 20.0, 7.63));
 
         List<Product> actual = AddProduct.addProduct(newList2, new Product(3, Category.BERRIES, "Cherry", 25.00, 5.0, 23.75));
-   assertEquals(newList, actual);
+        assertEquals(newList, actual);
     }
 }

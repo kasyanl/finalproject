@@ -3,31 +3,33 @@ package kasyanl.kasyanlfinalproject.util.service.menu.menuservise;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.ProductService;
-import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumberService;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumber;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.UpdateCategoryServiceProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CreateProduct {
 
+    UpdateCategoryServiceProcessor updateCategoryServiceProcessor = new UpdateCategoryServiceProcessor();
     static final Logger log = LoggerFactory.getLogger(CreateProduct.class);
+    public static final String iterator = "________________";
 
-    public static Product createNewProduct() {
+    public Product createNewProduct( InputNumber inputNumber) {
 
-        String selectCategory = UpdateCategoryServiceProcessor.updateCategory();
+        String selectCategory = updateCategoryServiceProcessor.updateCategory(inputNumber);
         Category category = Category.valueOf(selectCategory);
         log.info(""+
-                "\n_________________"+
-                "\nВведите название продукта:");
-        String name = InputNumberService.readString();
+                "\n{}"+
+                "\nВведите название продукта:", iterator);
+        String name = inputNumber.readString();
         log.info(""+
-                "\n_________________"+
-                "\nВведите цену продукта (BYN): ");
-        double price = InputNumberService.readDouble();
+                "\n{}"+
+                "\nВведите цену продукта (BYN):", iterator);
+        double price = inputNumber.readDouble();
         log.info(""+
-                "\n_________________"+
-                "\nВведите скидку продукта (%): ");
-        double discount = InputNumberService.readDouble();
+                "\n{}"+
+                "\nВведите скидку продукта (%):", iterator);
+        double discount = inputNumber.readDouble();
 
       return ProductService.creatProduct(category, name, price, discount);
     }

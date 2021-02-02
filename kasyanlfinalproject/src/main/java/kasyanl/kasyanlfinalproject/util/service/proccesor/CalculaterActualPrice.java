@@ -2,7 +2,7 @@ package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 
-public class CalculaterActualPrice extends Product {
+public class CalculaterActualPrice{
 
     Product product;
 
@@ -10,8 +10,8 @@ public class CalculaterActualPrice extends Product {
         this.product = product;
     }
 
-    public static double calcuiating(double price, double discount){
-        return (price - (price* discount/100));
+    public static double calculating(double price, double discount) {
+        return (price - (price * discount / 100));
     }
 
 }

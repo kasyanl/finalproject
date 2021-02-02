@@ -9,7 +9,11 @@ import static kasyanl.kasyanlfinalproject.util.bean.Category.*;
 
 public class ProductDataBase implements ProductInterface  {
 
-    public static List<Product> createList (){
+  private ProductDataBase() {
+    throw new IllegalStateException("База данных");
+  }
+
+  public static List<Product> createList (){
 
       return listProduct;
     }

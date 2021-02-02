@@ -8,62 +8,68 @@ import org.slf4j.LoggerFactory;
 
 public class MenuStartService implements ProductInterface {
 
-    static final Logger log = LoggerFactory.getLogger(MenuStartService.class);
+    CreateProduct createProduct = new CreateProduct();
+    UpdateValueProduct updateValueProduct = new UpdateValueProduct();
+    DeleteProduct deleteProduct = new DeleteProduct();
+    UpdateCategoryDiscont updateCategoryDiscont = new UpdateCategoryDiscont();
+    InputNumber inputNumber = new InputNumber(System.in, System.out);
+    final Logger log = LoggerFactory.getLogger(MenuStartService.class);
+    public static final String iterator = "___________________________________";
 
-    public void headMenu() {
+    public void headMenu(InputNumber inputNumber) {
 
         boolean mainLoop = true;
         while (mainLoop) {
             Menu.firstMenu();
-            int imputedMenu  = InputNumberService.readNumber();
+            int imputedMenu = inputNumber.readNumber();
             switch (imputedMenu) {
                 case 1:
                     ReadProduct.fineAllproduct(listProduct);
                     break;
                 case 2:
-                    ReadProduct.fineCategoryProguct(listProduct);
+                    ReadProduct.fineCategoryProguct(listProduct, inputNumber);
                     break;
                 case 3:
-                    ReadProduct.finePersonalProduct();
+                    ReadProduct.finePersonalProduct(listProduct, inputNumber);
                     break;
                 case 4:
-                    AddProduct.addProduct(listProduct, CreateProduct.createNewProduct());
-                    log.info(""+
-                            "\n___________________________________" +
-                            "\n| Продукт успешно добавлен в базу! |"+
-                            "\n -----------------------------------");
+                    AddProduct.addProduct(listProduct, createProduct.createNewProduct(inputNumber));
+                    log.info("" +
+                            "\n{}" +
+                            "\n Продукт успешно добавлен в базу! " +
+                            "\n{}", iterator, iterator);
                     break;
                 case 5:
-                    DeleteProduct.deleteProductService(listProduct);
-                    log.info(""+
-                            "\n_________________________" +
+                    deleteProduct.deleteProductService(listProduct, inputNumber);
+                    log.info("" +
+                            "\n{}" +
                             "\n| Продукт удален из базы.|" +
-                            "\n------------------------");
+                            "\n{}", iterator, iterator);
                     break;
                 case 6:
-                    UpdateValueProduct.updateAnyProduct();
-                    log.info(""+
-                            "\n_______________________" +
-                            "\n| Ваш продукт изменен! |"+
-                            "\n -----------------------");
+                    updateValueProduct.updateAnyProduct(inputNumber, listProduct);
+                    log.info("" +
+                            "\n{}" +
+                            "\n| Ваш продукт изменен! |" +
+                            "\n{}", iterator, iterator);
                     break;
                 case 7:
-                    UpdateCategoryDiscont.discontCategory();
-                    log.info(""+
-                            "\n___________________________________" +
-                            "\n| Скидка для категории установлена! |"+
-                            "\n -----------------------------------");
+                    updateCategoryDiscont.discountCategory(listProduct, inputNumber, this.inputNumber);
+                    log.info("" +
+                            "\n{}" +
+                            "\n| Скидка для категории установлена! |" +
+                            "\n{}", iterator, iterator);
                     break;
                 case 8:
                     mainLoop = false;
-                    log.info(""+
-                            "\n____________" +
-                            "\nДо встречи!");
+                    log.info("" +
+                            "\n{}" +
+                            "\nДо встречи!", iterator);
                     break;
                 default:
-                    log.info(""+
-                            "\n____________" +
-                            "\nТакого пункта не существует, повторите выбор: ");
+                    log.info("" +
+                            "\n{}" +
+                            "\nТакого пункта не существует, повторите выбор:", iterator);
             }
         }
     }

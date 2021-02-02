@@ -1,20 +1,15 @@
 package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.service.menu.Menu;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class UpdateCategoryServiceProcessor {
 
-    static final Logger log = LoggerFactory.getLogger(UpdateCategoryServiceProcessor.class);
+    SelectCategoryProcessor selectCategoryProcessor = new SelectCategoryProcessor();
 
-    public static String updateCategory() {
+    public String updateCategory(InputNumber inputer) {
         Menu.menuCategory();
-        log.info(""+
-                "\n________________"+
-                "\nВыберите категорию");
-        int categorySelect = InputNumberService.readNumber();
-       return SelectCategoryProcessor.selectNumberCategory(categorySelect);
+        int categorySelect = inputer.readNumber();
+       return selectCategoryProcessor.selectNumberCategory(categorySelect);
 
     }
 }

@@ -5,18 +5,14 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumber;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
-@RunWith(MockitoJUnitRunner.class)
-public class ReadProductTest {
+public class UpdateCategoryDiscontTest {
 
     List<Product> newList;
 
@@ -45,46 +41,21 @@ public class ReadProductTest {
     }
 
     @Test
-    public void fineAllproduct() {
+    public void discontCategory() {
 
-        List<Product> actual = ReadProduct.fineAllproduct(newList);
-
-        assertEquals(newList, actual);
-    }
-
-    @Test
-    public void fineAllproductZeroSize() {
-
-        List<Product> newList = new ArrayList<>();
-        List<Product> actual = ReadProduct.fineAllproduct(newList);
-
-        assertEquals(newList, actual);
-    }
-
-    @Test
-    public void fineCategoryProguct() {
-
-        InputNumber inputNumber = mock(InputNumber.class);
-        when(inputNumber.readNumber()).thenReturn(4);
+        UpdateCategoryDiscont updateCategoryDiscont = new UpdateCategoryDiscont();
+        InputNumber inputNumber = Mockito.mock(InputNumber.class);
+        InputNumber input = Mockito.mock(InputNumber.class);
+        Mockito.when(inputNumber.readNumber()).thenReturn(1);
+        Mockito.when(input.readDouble()).thenReturn(20.0);
 
         List<Product> expected = new ArrayList<>();
-        expected.add(new Product(9, Category.MILK_PRODUCT, "Sour cream", 15.10, 10.0, 13.59));
-        expected.add(new Product(10, Category.MILK_PRODUCT, "Curd", 25.00, 00.0, 25.00));
-        expected.add(new Product(11, Category.MILK_PRODUCT, "Yogurt", 20.50, 10.0, 18.45));
-        List<Product> actual = ReadProduct.fineCategoryProguct(newList, inputNumber);
+        expected.add(new Product(0, Category.FRUITS, "Apple", 10.0, 50.0, 5.0));
+        expected.add(new Product(1, Category.FRUITS, "Orange", 12.10, 10.0, 10.89));
+        expected.add(new Product(2, Category.FRUITS, "Banana", 9.50, 20.0, 7.63));
+
+        List<Product> actual = updateCategoryDiscont.discountCategory(newList, inputNumber, input);
 
         assertEquals(expected.equals(actual), actual.equals(expected));
-    }
-
-    @Test
-    public void finePersonalProduct() {
-
-        InputNumber inputNumber = mock(InputNumber.class);
-        when(inputNumber.readNumber()).thenReturn(9);
-
-        Product expected = new Product(9, Category.MILK_PRODUCT, "Sour cream", 15.10, 10.0, 13.59);
-        Product actual = ReadProduct.finePersonalProduct(newList, inputNumber);
-
-        assertEquals(expected, actual);
     }
 }

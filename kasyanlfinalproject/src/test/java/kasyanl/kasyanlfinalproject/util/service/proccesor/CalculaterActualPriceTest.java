@@ -11,7 +11,7 @@ public class CalculaterActualPriceTest {
     CalculaterActualPrice calculaterActualPrice;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         product1 = new Product();
         calculaterActualPrice = new CalculaterActualPrice(product1);
     }
@@ -22,7 +22,7 @@ public class CalculaterActualPriceTest {
         product1.setPrice(20.0);
         product1.setDiscount(50.0);
         double expected = 10.0;
-        double actual = CalculaterActualPrice.calcuiating(20.0, 50.0);
+        double actual = CalculaterActualPrice.calculating(20.0, 50.0);
         assertEquals(expected, actual, 0.0);
     }
 }

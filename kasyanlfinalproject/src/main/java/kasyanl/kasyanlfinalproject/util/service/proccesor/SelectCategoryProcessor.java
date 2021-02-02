@@ -1,34 +1,23 @@
 package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class SelectCategoryProcessor {
 
-    static final Logger log = LoggerFactory.getLogger(SelectCategoryProcessor.class);
-
-    public static String selectNumberCategory(int number){
-        String category = "Такого варианта выбора нет, повторите его:";
+    public String selectNumberCategory(int number) {
         switch (number) {
             case 1:
-                category = "FRUITS";
-                break;
+                return "FRUITS";
             case 2:
-                category = "BERRIES";
-                break;
+                return "BERRIES";
             case 3:
-                category = "VEGETABLES";
-                break;
+                return"VEGETABLES";
             case 4:
-                category = "MILK_PRODUCT";
-                break;
+                return "MILK_PRODUCT";
             case 5:
-                category = "MEAT";
-                break;
+                return "MEAT";
             case 6:
-                category = "ALCOHOLIC_BEVERAGES";
-                break;
+                return "ALCOHOLIC_BEVERAGES";
+            default:
+                return "Такого варианта выбора нет, повторите его:";
         }
-        return category;
     }
 }
