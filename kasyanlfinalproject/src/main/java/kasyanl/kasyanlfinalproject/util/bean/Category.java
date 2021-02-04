@@ -1,11 +1,10 @@
 package kasyanl.kasyanlfinalproject.util.bean;
 
 public enum Category {
-    FRUITS,
+    ALCOHOLIC_BEVERAGES,
     BERRIES,
-    VEGETABLES,
+    FRUITS,
     MILK_PRODUCT,
     MEAT,
-    ALCOHOLIC_BEVERAGES
-
+    VEGETABLES
 }

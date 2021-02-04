@@ -16,45 +16,40 @@ public class UpdateCategoryDiscountProcessor {
 
     static final Logger log = LoggerFactory.getLogger(UpdateCategoryDiscountProcessor.class);
     public static final String MESSAGE = ""+
+                                        "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _"+
                                         "\nВведите новую скидку для категории (%):"+
-                                        "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
+                                        "\n- - - - - - - - - - - - - - - - - - - - - - ";
 
     public static List<Product> fineCategory(List<Product> listProduct, int category, InputNumber in) {
 
         switch (category) {
             case 1:
-                log.info("" +
-                        "\n{}: ", MESSAGE);
+                log.info("{}: ", MESSAGE);
                 double discount1 = in.readDouble();
                 FineCategoryProcessor.fineCategoryForSelectDiscount(listProduct, FRUITS, discount1);
                 break;
             case 2:
-                log.info("" +
-                        "\n{}: ", MESSAGE);
+                log.info("{}: ", MESSAGE);
                 double discount2 = in.readDouble();
                 FineCategoryProcessor.fineCategoryForSelectDiscount(listProduct, BERRIES, discount2);
                 break;
             case 3:
-                log.info("" +
-                        "\n{}: ", MESSAGE);
+                log.info("{}: ", MESSAGE);
                 double discount3 = in.readDouble();
                 FineCategoryProcessor.fineCategoryForSelectDiscount(listProduct, VEGETABLES, discount3);
                 break;
             case 4:
-                log.info("" +
-                        "\n{}: ", MESSAGE);
+                log.info("{}: ", MESSAGE);
                 double discount4 = in.readDouble();
                 FineCategoryProcessor.fineCategoryForSelectDiscount(listProduct, MILK_PRODUCT, discount4);
                 break;
             case 5:
-                log.info("" +
-                        "\n{}: ", MESSAGE);
+                log.info("{}: ", MESSAGE);
                 double discount5 = in.readDouble();
                 FineCategoryProcessor.fineCategoryForSelectDiscount(listProduct, MEAT, discount5);
                 break;
             case 6:
-                log.info("" +
-                        "\n{}: ", MESSAGE);
+                log.info("{}: ", MESSAGE);
                 double discount6 = in.readDouble();
                 FineCategoryProcessor.fineCategoryForSelectDiscount(listProduct, ALCOHOLIC_BEVERAGES, discount6);
                 break;

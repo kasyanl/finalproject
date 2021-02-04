@@ -8,7 +8,7 @@ import kasyanl.kasyanlfinalproject.util.service.proccesor.UpdateCategoryDiscount
 
 import java.util.List;
 
-public class UpdateCategoryDiscont implements ProductInterface {
+public class UpdateCategoryDiscount implements ProductInterface {
 
     public List<Product> discountCategory(List<Product> productList, InputNumber input, InputNumber in) {
 

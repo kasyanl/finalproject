@@ -3,6 +3,7 @@ package kasyanl.kasyanlfinalproject.util.service.menu;
 import kasyanl.kasyanlfinalproject.util.service.menu.menuservise.*;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.*;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.sort.MenuSort;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,23 +12,24 @@ public class MenuStartService implements ProductInterface {
     CreateProduct createProduct = new CreateProduct();
     UpdateValueProduct updateValueProduct = new UpdateValueProduct();
     DeleteProduct deleteProduct = new DeleteProduct();
-    UpdateCategoryDiscont updateCategoryDiscont = new UpdateCategoryDiscont();
-    InputNumber inputNumber = new InputNumber(System.in, System.out);
+    UpdateCategoryDiscount updateCategoryDiscont = new UpdateCategoryDiscount();
     final Logger log = LoggerFactory.getLogger(MenuStartService.class);
     public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
 
     public void headMenu(InputNumber inputNumber) {
-
+        log.info(""+
+                "\n" +
+                "\nЗдравствуйте! Вас приветствует Система учета продуктов.");
         boolean mainLoop = true;
         while (mainLoop) {
             Menu.firstMenu();
             int imputedMenu = inputNumber.readNumber();
             switch (imputedMenu) {
                 case 1:
-                    ReadProduct.fineAllproduct(listProduct);
+                    ReadProduct.fineAllProduct(listProduct);
                     break;
                 case 2:
-                    ReadProduct.fineCategoryProguct(listProduct, inputNumber);
+                    ReadProduct.fineCategoryProduct(listProduct, inputNumber);
                     break;
                 case 3:
                     ReadProduct.finePersonalProduct(listProduct, inputNumber);
@@ -54,13 +56,16 @@ public class MenuStartService implements ProductInterface {
                             "\n{}", ITERATOR, ITERATOR);
                     break;
                 case 7:
-                    updateCategoryDiscont.discountCategory(listProduct, inputNumber, this.inputNumber);
+                    updateCategoryDiscont.discountCategory(listProduct, inputNumber, inputNumber);
                     log.info("" +
                             "\n{}" +
                             "\n| Скидка для категории установлена! |" +
                             "\n{}", ITERATOR, ITERATOR);
                     break;
                 case 8:
+                    MenuSort.sortProduct(listProduct, inputNumber);
+                    break;
+                case 9:
                     mainLoop = false;
                     log.info("" +
                             "\n{}" +

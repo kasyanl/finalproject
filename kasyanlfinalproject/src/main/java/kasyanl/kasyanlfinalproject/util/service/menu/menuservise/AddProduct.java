@@ -13,6 +13,4 @@ public class AddProduct {
         listProduct.add((int) product.getId(), product);
         return listProduct;
     }
-
-
 }

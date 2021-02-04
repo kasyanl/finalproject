@@ -12,7 +12,7 @@ public class InputNumberTest {
 
     @Before
     public void setUp(){
-        inputNumber = new InputNumber(System.in, System.out);
+        inputNumber = new InputNumber(System.in);
     }
 
     @Test
@@ -20,7 +20,7 @@ public class InputNumberTest {
         inputNumber = Mockito.mock(InputNumber.class);
         Mockito.when(inputNumber.readString()).thenReturn("test");
 
-        String expected = "test";
+        String expected = inputNumber.readString();
         String actual = inputNumber.readString();
         assertEquals(expected, actual);
     }

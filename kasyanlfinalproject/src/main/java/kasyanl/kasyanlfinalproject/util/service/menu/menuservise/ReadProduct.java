@@ -21,7 +21,7 @@ public class ReadProduct implements ProductInterface {
     static final Logger log = LoggerFactory.getLogger(ReadProduct.class);
     public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
 
-    public static List<Product> fineAllproduct(List<Product> listProduct) {
+    public static List<Product> fineAllProduct(List<Product> listProduct) {
         if (!listProduct.isEmpty()) {
             log.info("" +
                     "\n" +
@@ -31,7 +31,7 @@ public class ReadProduct implements ProductInterface {
         return listProduct;
     }
 
-    public static List<Product> fineCategoryProguct(List<Product> listProduct, InputNumber input) {
+    public static List<Product> fineCategoryProduct(List<Product> listProduct, InputNumber input) {
         Menu.menuCategory();
         int categoryNumber = input.readNumber();
         return FineProductOfCategoryProcessor.selectCategoryByAllList(listProduct, categoryNumber);

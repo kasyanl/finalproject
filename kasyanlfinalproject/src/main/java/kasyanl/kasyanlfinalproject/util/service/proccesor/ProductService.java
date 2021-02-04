@@ -23,7 +23,7 @@ public class ProductService{
         long id = idCounter;
         if (ProductInterface.listProduct.isEmpty()) id = 0;
         else if (!ProductInterface.listProduct.isEmpty()) {
-            int i = 1;
+            long i = 1;
             for (Product product : ProductInterface.listProduct) {
                 if (product.getId() == i) i++;
                 id = i;
@@ -39,9 +39,9 @@ public class ProductService{
         log.info("{}", product);
     }
 
-    public static List<Product> deleteProduct(List<Product> listProduct, int id) {
+    public static void deleteProduct(List<Product> listProduct, long id) {
         listProduct.removeIf(nextProduct -> nextProduct.getId() == id);
-        return listProduct;
+
     }
 }
 

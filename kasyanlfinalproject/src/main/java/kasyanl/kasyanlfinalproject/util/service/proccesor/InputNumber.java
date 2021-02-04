@@ -1,16 +1,13 @@
 package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 import java.io.InputStream;
-import java.io.PrintStream;
 import java.util.Scanner;
 
 public class InputNumber {
     private final Scanner scanner;
-    private final PrintStream out;
 
-    public InputNumber(InputStream in, PrintStream out) {
+    public InputNumber(InputStream in) {
         scanner = new Scanner(in);
-        this.out = out;
     }
 
     public String readString() {

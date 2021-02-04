@@ -23,6 +23,10 @@ public class Product {
     public Product() {
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -33,6 +37,10 @@ public class Product {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     public void setPrice(double price) {
@@ -55,6 +63,9 @@ public class Product {
         this.actualPrice = actualPrice;
     }
 
+    public double getActualPrice() {
+        return actualPrice;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -75,9 +86,9 @@ public class Product {
                 "id=" + id +
                 ",category=" + category +
                 ", name='" + name +
-                "', price=" + price+" BYN" +
-                ", discount=" + discount+" %" +
-                ", actualPrice=" + (price - (price * discount / 100))+" BYN" +
+                "', price=" + price + " BYN" +
+                ", discount=" + discount + " %" +
+                ", actualPrice=" + (price - (price * discount / 100)) + " BYN" +
                 '}';
     }
 }

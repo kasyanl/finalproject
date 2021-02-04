@@ -16,7 +16,7 @@ public class UpdateValueProductProcessor {
 
     static final Logger log = LoggerFactory.getLogger(UpdateValueProductProcessor.class);
 
-    public static Product selectCategory(InputNumber input, Product product) {
+    public static void selectCategory(InputNumber input, Product product) {
 
         UpdateCategoryServiceProcessor updateCategoryServiceProcessor = new UpdateCategoryServiceProcessor();
 
@@ -25,36 +25,33 @@ public class UpdateValueProductProcessor {
         product.setCategory(category);
         ProductService.readProduct(product);
 
-        return product;
     }
 
     public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
     public static final String MESSAGE = "Введите новое название: ";
-    public static Product selectName(InputNumber input, Product product) {
+
+    public static void selectName(InputNumber input, Product product) {
         log.info("" +
                 "\n{}" +
                 "\n{}", ITERATOR, MESSAGE);
         product.setName(input.readString());
         ProductService.readProduct(product);
-        return product;
     }
 
-    public static Product selectPrice(InputNumber input, Product product) {
+    public static void selectPrice(InputNumber input, Product product) {
         log.info("" +
                 "\n{}" +
                 "\n{}", ITERATOR, MESSAGE);
         product.setPrice(input.readDouble());
         ProductService.readProduct(product);
-        return product;
     }
 
-    public static Product selectDiscount(InputNumber input, Product product) {
+    public static void selectDiscount(InputNumber input, Product product) {
         log.info("" +
                 "\n{}" +
                 "\n{}", ITERATOR, MESSAGE);
         product.setDiscount(input.readDouble());
         ProductService.readProduct(product);
-        return product;
     }
 }
 

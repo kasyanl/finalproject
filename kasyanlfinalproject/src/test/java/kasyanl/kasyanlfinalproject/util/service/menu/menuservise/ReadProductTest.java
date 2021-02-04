@@ -49,7 +49,7 @@ public class ReadProductTest {
     @Test
     public void fineAllproduct() {
 
-        List<Product> actual = ReadProduct.fineAllproduct(newList);
+        List<Product> actual = ReadProduct.fineAllProduct(newList);
 
         assertEquals(newList, actual);
     }
@@ -58,7 +58,7 @@ public class ReadProductTest {
     public void fineAllproductZeroSize() {
 
         List<Product> newList = new ArrayList<>();
-        List<Product> actual = ReadProduct.fineAllproduct(newList);
+        List<Product> actual = ReadProduct.fineAllProduct(newList);
 
         assertEquals(newList, actual);
     }
@@ -73,7 +73,7 @@ public class ReadProductTest {
         expected.add(new Product(9, Category.MILK_PRODUCT, "Sour cream", 15.10, 10.0, 13.59));
         expected.add(new Product(10, Category.MILK_PRODUCT, "Curd", 25.00, 00.0, 25.00));
         expected.add(new Product(11, Category.MILK_PRODUCT, "Yogurt", 20.50, 10.0, 18.45));
-        List<Product> actual = ReadProduct.fineCategoryProguct(newList, inputNumber);
+        List<Product> actual = ReadProduct.fineCategoryProduct(newList, inputNumber);
 
         assertEquals(expected.equals(actual), actual.equals(expected));
     }

@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class UpdateCategoryDiscontTest {
+public class UpdateCategoryDiscountTest {
 
     List<Product> newList;
 
@@ -43,7 +43,7 @@ public class UpdateCategoryDiscontTest {
     @Test
     public void discontCategory() {
 
-        UpdateCategoryDiscont updateCategoryDiscont = new UpdateCategoryDiscont();
+        UpdateCategoryDiscount updateCategoryDiscont = new UpdateCategoryDiscount();
         InputNumber inputNumber = Mockito.mock(InputNumber.class);
         InputNumber input = Mockito.mock(InputNumber.class);
         Mockito.when(inputNumber.readNumber()).thenReturn(1);
