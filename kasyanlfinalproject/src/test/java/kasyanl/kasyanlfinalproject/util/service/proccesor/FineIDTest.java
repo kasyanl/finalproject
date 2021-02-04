@@ -1,7 +1,6 @@
-package kasyanl.kasyanlfinalproject.util.service.proccesor.update_value;
+package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumber;
 import org.junit.Before;
 import org.junit.Test;
 

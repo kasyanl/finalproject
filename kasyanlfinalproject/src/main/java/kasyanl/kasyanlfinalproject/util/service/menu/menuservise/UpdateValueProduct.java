@@ -3,7 +3,7 @@ package kasyanl.kasyanlfinalproject.util.service.menu.menuservise;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.FinePersonalProductProcessor;
 import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumber;
-import kasyanl.kasyanlfinalproject.util.service.proccesor.update_value.FineID;
+import kasyanl.kasyanlfinalproject.util.service.proccesor.FineID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

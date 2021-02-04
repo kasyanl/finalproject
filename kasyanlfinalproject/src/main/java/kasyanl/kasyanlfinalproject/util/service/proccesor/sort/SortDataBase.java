@@ -34,4 +34,40 @@ public class SortDataBase implements ProductInterface {
         Comparator<Product> sortById = new SortById();
         listProduct.sort(sortById);
     }
+
+    static class SortByName extends Product implements Comparator<Product>{
+
+        @Override
+        public int compare(Product o1, Product o2) {
+            return o1.getName().compareTo(o2.getName());
+        }
+    }
+    static class SortByActualPrice implements Comparator<Product> {
+
+        @Override
+        public int compare(Product o1, Product o2) {
+            return (int) o1.getActualPrice() - (int) o2.getActualPrice();
+        }
+    }
+    static class SortByCategory implements Comparator<Product> {
+
+        @Override
+        public int compare(Product o1, Product o2) {
+            return o1.getCategory().compareTo(o2.getCategory());
+        }
+    }
+    static class SortById implements Comparator<Product> {
+
+        @Override
+        public int compare(Product o1, Product o2) {
+            return (int) o1.getId() - (int) o2.getId();
+        }
+    }
+    static class SortByPrice implements Comparator<Product> {
+
+        @Override
+        public int compare(Product o1, Product o2) {
+            return (int) o1.getPrice() - (int) o2.getPrice();
+        }
+    }
 }

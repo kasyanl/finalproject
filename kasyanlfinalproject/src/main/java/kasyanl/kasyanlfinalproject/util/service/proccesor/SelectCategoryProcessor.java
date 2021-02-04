@@ -1,8 +1,11 @@
 package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 public class SelectCategoryProcessor {
+    private SelectCategoryProcessor() {
+        throw new UnsupportedOperationException();
+    }
 
-    public String selectNumberCategory(int number) {
+    public static String selectNumberCategory(int number) {
         switch (number) {
             case 1:
                 return "FRUITS";

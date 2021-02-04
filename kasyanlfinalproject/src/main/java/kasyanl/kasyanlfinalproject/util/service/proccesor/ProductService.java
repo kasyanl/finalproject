@@ -10,10 +10,8 @@ import java.util.List;
 
 public class ProductService{
 
-    Product product;
-
-    public ProductService(Product product) {
-        this.product = product;
+    private ProductService() {
+        throw new UnsupportedOperationException();
     }
 
     private static long idCounter ;
