@@ -9,7 +9,7 @@ import java.util.List;
 public class FinePersonalProductProcessor {
 
     private FinePersonalProductProcessor() {
-        throw new IllegalStateException("Класс для поиска конкретного продукта");
+        throw new UnsupportedOperationException();
     }
 
     static final Logger log = LoggerFactory.getLogger(FinePersonalProductProcessor.class);

@@ -2,12 +2,15 @@ package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
 import static org.junit.Assert.*;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -121,5 +124,15 @@ public class UpdateCategoryDiscountProcessorTest {
         List<Product> actual = UpdateCategoryDiscountProcessor.fineCategory(newList, 6, input);
         assertEquals(expected.equals(actual), actual.equals(expected));
     }
-
+    @Test(expected = UnsupportedOperationException.class)
+    public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
+        final Constructor<UpdateCategoryDiscountProcessor> constructor =
+                UpdateCategoryDiscountProcessor.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        try {
+            constructor.newInstance();
+        } catch (InvocationTargetException e) {
+            throw (UnsupportedOperationException) e.getTargetException();
+        }
+    }
 }

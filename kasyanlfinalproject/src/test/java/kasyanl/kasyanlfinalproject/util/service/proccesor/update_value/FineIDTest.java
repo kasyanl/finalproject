@@ -5,6 +5,9 @@ import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumber;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 import static kasyanl.kasyanlfinalproject.util.bean.Category.FRUITS;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
@@ -59,4 +62,14 @@ public class FineIDTest {
         assertEquals(expected.equals(actual), actual.equals(expected));
     }
 
+    @Test(expected = UnsupportedOperationException.class)
+    public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
+        final Constructor<FineID> constructor = FineID.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        try {
+            constructor.newInstance();
+        } catch (InvocationTargetException e) {
+            throw (UnsupportedOperationException) e.getTargetException();
+        }
+    }
 }

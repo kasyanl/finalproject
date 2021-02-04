@@ -4,6 +4,8 @@ import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,5 +47,16 @@ public class FinePersonalProductProcessorTest {
         Product expected = new Product();
         Product actual = FinePersonalProductProcessor.personalProductProcessor(newList, 20);
         assertEquals(expected, actual);
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
+        final Constructor<FinePersonalProductProcessor> constructor = FinePersonalProductProcessor.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        try {
+            constructor.newInstance();
+        } catch (InvocationTargetException e) {
+            throw (UnsupportedOperationException) e.getTargetException();
+        }
     }
 }

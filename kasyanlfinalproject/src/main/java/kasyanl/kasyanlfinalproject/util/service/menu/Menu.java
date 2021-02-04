@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 public class Menu {
 
     private Menu() {
-        throw new IllegalStateException("Текстовое меню");
+        throw new UnsupportedOperationException();
     }
 
     static final Logger log = LoggerFactory.getLogger(Menu.class);

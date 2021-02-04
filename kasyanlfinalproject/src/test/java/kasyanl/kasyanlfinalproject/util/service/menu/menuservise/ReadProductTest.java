@@ -8,6 +8,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,5 +88,15 @@ public class ReadProductTest {
         Product actual = ReadProduct.finePersonalProduct(newList, inputNumber);
 
         assertEquals(expected, actual);
+    }
+    @Test(expected = UnsupportedOperationException.class)
+    public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
+        final Constructor<ReadProduct> constructor = ReadProduct.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        try {
+            constructor.newInstance();
+        } catch (InvocationTargetException e) {
+            throw (UnsupportedOperationException) e.getTargetException();
+        }
     }
 }

@@ -16,15 +16,14 @@ public class ProductService{
         this.product = product;
     }
 
-    private static long idCounter;
+    private static long idCounter ;
     static final Logger log = LoggerFactory.getLogger(ProductService.class);
 
     public static Product creatProduct(Category category, String name, double price, double discount) {
-
         long id = idCounter;
-        if (ProductInterface.listProduct.size() == 0) id = 0;
-        else if (ProductInterface.listProduct.size() > 0) {
-            int i = 0;
+        if (ProductInterface.listProduct.isEmpty()) id = 0;
+        else if (!ProductInterface.listProduct.isEmpty()) {
+            int i = 1;
             for (Product product : ProductInterface.listProduct) {
                 if (product.getId() == i) i++;
                 id = i;
@@ -36,9 +35,8 @@ public class ProductService{
         return product;
     }
 
-    public static Product readProduct(Product product) {
+    public static void readProduct(Product product) {
         log.info("{}", product);
-        return product;
     }
 
     public static List<Product> deleteProduct(List<Product> listProduct, int id) {

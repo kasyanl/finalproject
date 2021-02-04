@@ -5,6 +5,9 @@ import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumber;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 import static kasyanl.kasyanlfinalproject.util.bean.Category.BERRIES;
 import static kasyanl.kasyanlfinalproject.util.bean.Category.FRUITS;
 import static org.junit.Assert.*;
@@ -58,5 +61,15 @@ public class UpdateValueProductProcessorTest {
         Product expected = new Product(2, FRUITS, "Banana", 10.00, 40.0, 6.0);
         Product actual = UpdateValueProductProcessor.selectDiscount(inputNumber, product);
         assertEquals(expected.equals(actual), actual.equals(expected));
+    }
+    @Test(expected = UnsupportedOperationException.class)
+    public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
+        final Constructor<UpdateValueProductProcessor> constructor = UpdateValueProductProcessor.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        try {
+            constructor.newInstance();
+        } catch (InvocationTargetException e) {
+            throw (UnsupportedOperationException) e.getTargetException();
+        }
     }
 }

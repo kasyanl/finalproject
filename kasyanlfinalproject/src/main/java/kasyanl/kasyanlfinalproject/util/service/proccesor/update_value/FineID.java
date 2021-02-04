@@ -7,8 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class FineID {
-    private FineID() {
-        throw new IllegalStateException("Класс обновления конкретного продукта");
+    private FineID(){
+        throw new UnsupportedOperationException();
     }
 
     static final Logger log = LoggerFactory.getLogger(FineID.class);

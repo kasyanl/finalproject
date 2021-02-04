@@ -15,15 +15,15 @@ import java.util.List;
 public class ReadProduct implements ProductInterface {
 
     private ReadProduct() {
-        throw new IllegalStateException("Класс для просмотра продуктов");
+        throw new UnsupportedOperationException();
     }
 
     static final Logger log = LoggerFactory.getLogger(ReadProduct.class);
     public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
 
     public static List<Product> fineAllproduct(List<Product> listProduct) {
-        if (listProduct.size() == 0) {
-            System.out.println("" +
+        if (!listProduct.isEmpty()) {
+            log.info("" +
                     "\n" +
                     "\nВ базе отсутствуют элементы!");
         }

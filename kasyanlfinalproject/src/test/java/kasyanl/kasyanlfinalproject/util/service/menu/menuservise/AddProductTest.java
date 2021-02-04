@@ -5,6 +5,8 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,4 +31,16 @@ public class AddProductTest {
         List<Product> actual = AddProduct.addProduct(newList2, new Product(3, Category.BERRIES, "Cherry", 25.00, 5.0, 23.75));
         assertEquals(newList, actual);
     }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
+        final Constructor<AddProduct> constructor = AddProduct.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        try {
+            constructor.newInstance();
+        } catch (InvocationTargetException e) {
+            throw (UnsupportedOperationException) e.getTargetException();
+        }
+    }
+
 }

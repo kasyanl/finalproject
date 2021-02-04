@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 public class UpdateValueProductProcessor {
 
     private UpdateValueProductProcessor() {
-        throw new IllegalStateException("Класс для обновления параметров продукта");
+        throw new UnsupportedOperationException();
     }
 
     static final Logger log = LoggerFactory.getLogger(UpdateValueProductProcessor.class);

@@ -14,7 +14,7 @@ public class CreateProduct {
     static final Logger log = LoggerFactory.getLogger(CreateProduct.class);
     public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
 
-    public Product createNewProduct( InputNumber inputNumber) {
+    public Product createNewProduct(InputNumber inputNumber) {
 
         String selectCategory = updateCategoryServiceProcessor.updateCategory(inputNumber);
         Category category = Category.valueOf(selectCategory);

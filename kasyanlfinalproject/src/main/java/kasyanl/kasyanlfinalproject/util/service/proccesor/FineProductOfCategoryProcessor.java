@@ -11,7 +11,7 @@ import static kasyanl.kasyanlfinalproject.util.bean.Category.*;
 public class FineProductOfCategoryProcessor {
 
     private FineProductOfCategoryProcessor() {
-        throw new IllegalStateException("Класс для выбора категории");
+        throw new UnsupportedOperationException();
     }
 
     static final Logger log = LoggerFactory.getLogger(FineProductOfCategoryProcessor.class);

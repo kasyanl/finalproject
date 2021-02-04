@@ -4,6 +4,8 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 import org.junit.AfterClass;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +45,16 @@ public class ProductDataBaseTest implements ProductInterface {
     @AfterClass
     public static void afterClass() {
         listProduct.clear();
+    }
+    @Test(expected = UnsupportedOperationException.class)
+    public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
+        final Constructor<ProductDataBase> constructor = ProductDataBase.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        try {
+            constructor.newInstance();
+        } catch (InvocationTargetException e) {
+            throw (UnsupportedOperationException) e.getTargetException();
+        }
     }
 }
 

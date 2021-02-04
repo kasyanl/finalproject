@@ -2,6 +2,9 @@ package kasyanl.kasyanlfinalproject.util.service.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
+import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
+import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -44,10 +47,12 @@ public class ProductServiceTest {
 
     @Test
     public void creatProductNullPozition() {
-        ProductService.deleteProduct(newList, 5);
 
-        Product expected = new Product(0, Category.BERRIES, "Strawberry", 50.20, 15.0, 42.67);
-        Product actual = ProductService.creatProduct(Category.BERRIES, "Strawberry", 50.20, 15.0);
+       ProductDataBase.createList();
+       ProductService.deleteProduct(ProductInterface.listProduct, 15);
+
+        Product expected = new Product(0, Category.ALCOHOLIC_BEVERAGES, "Wine", 40.10, 00.0, 40.10);
+        Product actual = ProductService.creatProduct(Category.ALCOHOLIC_BEVERAGES, "Wine", 40.10, 00.0);
 
         assertEquals(expected, actual);
     }
@@ -76,6 +81,12 @@ public class ProductServiceTest {
 
         List<Product> actual = ProductService.deleteProduct(newList, 3);
         assertEquals(newList2, actual);
+
+    }
+    @After
+    public void setDown(){
+        ProductInterface.listProduct.clear();
+        newList.clear();
 
     }
 }
