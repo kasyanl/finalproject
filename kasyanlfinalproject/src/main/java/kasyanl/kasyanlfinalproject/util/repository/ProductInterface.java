@@ -6,6 +6,5 @@ import java.util.List;
 
 public interface ProductInterface {
 
-
     List<Product> listProduct= new ArrayList<>();
 }

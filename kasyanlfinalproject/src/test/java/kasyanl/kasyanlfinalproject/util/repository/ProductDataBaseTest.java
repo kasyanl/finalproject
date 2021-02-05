@@ -1,7 +1,7 @@
 package kasyanl.kasyanlfinalproject.util.repository;
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import org.junit.AfterClass;
+
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;
@@ -36,16 +36,11 @@ public class ProductDataBaseTest implements ProductInterface {
         list.add(new Product(16, ALCOHOLIC_BEVERAGES, "Whisky", 100.00, 00.0, 100.00));
         list.add(new Product(17, ALCOHOLIC_BEVERAGES, "Wine", 40.10, 00.0, 40.10));
 
-        String expected = list.toString();
-
-        String actual = ProductDataBase.createList().toString();
+        List<Product> expected = ProductDataBase.createList();
+        List<Product> actual = ProductDataBase.createList();
         assertEquals(expected, actual);
     }
 
-    @AfterClass
-    public static void afterClass() {
-        listProduct.clear();
-    }
     @Test(expected = UnsupportedOperationException.class)
     public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
         final Constructor<ProductDataBase> constructor = ProductDataBase.class.getDeclaredConstructor();

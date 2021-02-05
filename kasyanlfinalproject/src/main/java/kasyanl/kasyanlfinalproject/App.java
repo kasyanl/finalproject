@@ -1,8 +1,8 @@
 package kasyanl.kasyanlfinalproject;
 
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
-import kasyanl.kasyanlfinalproject.util.service.menu.MenuStartService;
-import kasyanl.kasyanlfinalproject.util.service.proccesor.InputNumber;
+import kasyanl.kasyanlfinalproject.util.menu.MenuStartService;
+import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
 
 public class App {
     public static void main(String[] args) {
