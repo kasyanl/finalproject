@@ -6,9 +6,7 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
-
 import static org.junit.Assert.*;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;

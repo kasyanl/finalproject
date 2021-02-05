@@ -2,15 +2,12 @@ package kasyanl.kasyanlfinalproject.util.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import org.junit.Before;
 import org.junit.Test;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-
 import static kasyanl.kasyanlfinalproject.util.bean.Category.FRUITS;
 import static org.junit.Assert.*;
 

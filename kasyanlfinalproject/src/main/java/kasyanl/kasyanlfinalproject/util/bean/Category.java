@@ -7,4 +7,5 @@ public enum Category {
     MILK_PRODUCT,
     MEAT,
     VEGETABLES
+
 }

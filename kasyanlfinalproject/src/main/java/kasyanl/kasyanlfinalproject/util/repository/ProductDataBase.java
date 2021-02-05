@@ -18,6 +18,7 @@ public class ProductDataBase implements ProductInterface {
         return listProduct;
     }
 
+
     static {
         listProduct.add(CrudOperation.creatProduct(FRUITS, "Apple", 10.0, 50.0));
         listProduct.add(CrudOperation.creatProduct(FRUITS, "Orange", 12.10, 10.0));

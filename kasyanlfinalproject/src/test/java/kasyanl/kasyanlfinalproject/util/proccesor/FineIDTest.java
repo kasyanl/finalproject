@@ -3,18 +3,13 @@ package kasyanl.kasyanlfinalproject.util.proccesor;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-
 import static kasyanl.kasyanlfinalproject.util.bean.Category.FRUITS;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-@RunWith(value = Parameterized.class)
 public class FineIDTest {
 
     Product product;

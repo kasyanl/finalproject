@@ -6,7 +6,6 @@ import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
 import kasyanl.kasyanlfinalproject.util.proccesor.FineID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.List;
 
 public class UpdateValueProduct {

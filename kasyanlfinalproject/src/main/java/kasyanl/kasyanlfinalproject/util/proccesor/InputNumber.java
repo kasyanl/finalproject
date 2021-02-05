@@ -4,6 +4,7 @@ import java.io.InputStream;
 import java.util.Scanner;
 
 public class InputNumber {
+
     private final Scanner scanner;
 
     public InputNumber(InputStream in) {

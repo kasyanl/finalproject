@@ -80,6 +80,7 @@ public class Product {
         return Objects.hash(id, category, name, price, discount, actualPrice);
     }
 
+
     @Override
     public String toString() {
         return "Product{" +

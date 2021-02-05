@@ -3,7 +3,6 @@ package kasyanl.kasyanlfinalproject.util.proccesor;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.List;
 
 public class FinePersonalProduct {

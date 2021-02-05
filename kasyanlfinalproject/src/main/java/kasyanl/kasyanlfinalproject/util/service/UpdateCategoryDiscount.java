@@ -4,7 +4,6 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import kasyanl.kasyanlfinalproject.util.menu.Menu;
 import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
-
 import java.util.List;
 
 public class UpdateCategoryDiscount implements ProductInterface {

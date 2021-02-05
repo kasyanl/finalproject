@@ -64,6 +64,7 @@ public class UpdateCategoryDiscount {
         return listProduct;
     }
 
+
     public static List<Product> fineCategoryForSelectDiscount(List<Product> listProduct, Category category, double discont) {
         List<Product> newListForSelectDiscount = new ArrayList<>();
         for (Product product : listProduct) {

@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class FineID {
+
     private FineID() {
         throw new UnsupportedOperationException();
     }

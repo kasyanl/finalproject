@@ -2,10 +2,7 @@ package kasyanl.kasyanlfinalproject.util.service;
 
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-
-import kasyanl.kasyanlfinalproject.util.service.AddProduct;
 import org.junit.Test;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;

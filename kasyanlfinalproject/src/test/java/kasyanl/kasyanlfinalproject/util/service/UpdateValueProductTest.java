@@ -4,7 +4,6 @@ import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 

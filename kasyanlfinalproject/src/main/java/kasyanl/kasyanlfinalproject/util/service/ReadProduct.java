@@ -9,7 +9,6 @@ import kasyanl.kasyanlfinalproject.util.proccesor.FineProductOfCategory;
 import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.util.List;
 
 public class ReadProduct implements ProductInterface {

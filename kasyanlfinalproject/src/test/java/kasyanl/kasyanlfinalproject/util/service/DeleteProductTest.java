@@ -3,7 +3,6 @@ package kasyanl.kasyanlfinalproject.util.service;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
-import kasyanl.kasyanlfinalproject.util.service.DeleteProduct;
 import org.junit.Test;
 
 import java.util.ArrayList;

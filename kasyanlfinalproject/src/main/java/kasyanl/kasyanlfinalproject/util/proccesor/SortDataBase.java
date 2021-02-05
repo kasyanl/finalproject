@@ -2,7 +2,6 @@ package kasyanl.kasyanlfinalproject.util.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
-
 import java.util.Comparator;
 import java.util.List;
 
@@ -35,6 +34,7 @@ public class SortDataBase implements ProductInterface {
         Comparator<Product> sortById = new SortById();
         listProduct.sort(sortById);
     }
+
 
     static class SortByName extends Product implements Comparator<Product> {
 

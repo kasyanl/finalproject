@@ -16,6 +16,7 @@ public class MenuStartService implements ProductInterface {
     final Logger log = LoggerFactory.getLogger(MenuStartService.class);
     public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
 
+
     public void headMenu(InputNumber inputNumber) {
         log.info("" +
                 "\n" +

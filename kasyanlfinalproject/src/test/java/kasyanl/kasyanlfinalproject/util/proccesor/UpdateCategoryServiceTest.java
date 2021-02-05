@@ -2,14 +2,12 @@ package kasyanl.kasyanlfinalproject.util.proccesor;
 
 import org.junit.Test;
 import org.mockito.Mockito;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 import static org.junit.Assert.*;
 
 public class UpdateCategoryServiceTest {
-
 
     @Test
     public void updateCategory() {
