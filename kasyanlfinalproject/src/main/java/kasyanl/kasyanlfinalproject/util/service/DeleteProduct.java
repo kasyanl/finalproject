@@ -11,6 +11,10 @@ import java.util.List;
 
 public class DeleteProduct implements ProductInterface {
 
+    private DeleteProduct() {
+        throw new UnsupportedOperationException();
+    }
+
     static final Logger log = LoggerFactory.getLogger(DeleteProduct.class);
 
     public static List<Product> deleteProductService(List<Product> listProduct, InputNumber inputNumber) {

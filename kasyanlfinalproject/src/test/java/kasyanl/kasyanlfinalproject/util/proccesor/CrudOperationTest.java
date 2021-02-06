@@ -5,6 +5,7 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -38,11 +39,12 @@ public class CrudOperationTest {
     @Test
     public void creatProduct() {
 
-        Product expected = new Product(0, FRUITS, "Apple", 20.0, 50.0, 10.0);
+        Product expected = new Product(2, FRUITS, "Apple", 20.0, 50.0, 10.0);
         Product actual = CrudOperation.creatProduct(FRUITS, "Apple", 20.0, 50.0);
 
         assertEquals(expected, actual);
     }
+
 
     @Test(expected = UnsupportedOperationException.class)
     public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {

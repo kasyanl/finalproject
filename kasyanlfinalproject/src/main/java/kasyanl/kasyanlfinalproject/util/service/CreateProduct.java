@@ -10,6 +10,10 @@ import org.slf4j.LoggerFactory;
 
 public class CreateProduct {
 
+    private CreateProduct() {
+        throw new UnsupportedOperationException();
+    }
+
     static final Logger log = LoggerFactory.getLogger(CreateProduct.class);
     public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
 

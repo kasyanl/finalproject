@@ -11,6 +11,10 @@ import java.util.List;
 
 public class UpdateValueProduct {
 
+    private UpdateValueProduct() {
+        throw new UnsupportedOperationException();
+    }
+
     static final Logger log = LoggerFactory.getLogger(UpdateValueProduct.class);
 
     public static Product updateAnyProduct(InputNumber inputer, List<Product> listProduct) {

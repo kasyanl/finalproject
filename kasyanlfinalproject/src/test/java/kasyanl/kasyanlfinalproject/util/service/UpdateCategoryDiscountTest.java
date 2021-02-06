@@ -3,11 +3,12 @@ package kasyanl.kasyanlfinalproject.util.service;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
-import kasyanl.kasyanlfinalproject.util.service.UpdateCategoryDiscount;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +45,6 @@ public class UpdateCategoryDiscountTest {
     @Test
     public void discontCategory() {
 
-        UpdateCategoryDiscount updateCategoryDiscont = new UpdateCategoryDiscount();
         InputNumber inputNumber = Mockito.mock(InputNumber.class);
         InputNumber input = Mockito.mock(InputNumber.class);
         Mockito.when(inputNumber.readNumber()).thenReturn(1);
@@ -55,8 +55,18 @@ public class UpdateCategoryDiscountTest {
         expected.add(new Product(1, Category.FRUITS, "Orange", 12.10, 10.0, 10.89));
         expected.add(new Product(2, Category.FRUITS, "Banana", 9.50, 20.0, 7.63));
 
-        List<Product> actual = updateCategoryDiscont.discountCategory(newList, inputNumber, input);
+        List<Product> actual = UpdateCategoryDiscount.discountCategory(newList, inputNumber, input);
 
         assertEquals(expected.equals(actual), actual.equals(expected));
+    }
+    @Test(expected = UnsupportedOperationException.class)
+    public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
+        final Constructor<UpdateCategoryDiscount> constructor = UpdateCategoryDiscount.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        try {
+            constructor.newInstance();
+        } catch (InvocationTargetException e) {
+            throw (UnsupportedOperationException) e.getTargetException();
+        }
     }
 }

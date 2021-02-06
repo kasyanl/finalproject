@@ -15,9 +15,9 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <java.version>15</java.version>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <sonar.projectKey>kasyanl_finalproject</sonar.projectKey>
         <sonar.organization>kasyanl</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -121,7 +121,7 @@
                                 <rule>
                                     <limits>
                                         <limit>
-                                            <minimum>0.1</minimum>
+                                            <minimum>0.7</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
@@ -135,7 +135,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>15</release>
+                    <release>11</release>
                 </configuration>
             </plugin>
 

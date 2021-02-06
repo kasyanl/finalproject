@@ -3,9 +3,10 @@ package kasyanl.kasyanlfinalproject.util.service;
 import kasyanl.kasyanlfinalproject.util.bean.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
-import kasyanl.kasyanlfinalproject.util.service.DeleteProduct;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,6 @@ public class DeleteProductTest {
     @Test
     public void deleteProductService() {
 
-        DeleteProduct deleteProduct = new DeleteProduct();
         InputNumber inputNumber = mock(InputNumber.class);
         when(inputNumber.readNumber()).thenReturn(2);
 
@@ -33,7 +33,17 @@ public class DeleteProductTest {
         expected.add(new Product(1, Category.FRUITS, "Orange", 12.10, 10.0, 10.89));
         expected.add(new Product(3, Category.BERRIES, "Cherry", 25.00, 5.0, 23.75));
 
-        List<Product> actual = deleteProduct.deleteProductService(newList, inputNumber);
+        List<Product> actual = DeleteProduct.deleteProductService(newList, inputNumber);
         assertEquals(expected, actual);
+    }
+    @Test(expected = UnsupportedOperationException.class)
+    public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
+        final Constructor<DeleteProduct> constructor = DeleteProduct.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        try {
+            constructor.newInstance();
+        } catch (InvocationTargetException e) {
+            throw (UnsupportedOperationException) e.getTargetException();
+        }
     }
 }

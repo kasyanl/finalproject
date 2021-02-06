@@ -20,7 +20,7 @@ public class CrudOperation {
     public static Product creatProduct(Category category, String name, double price, double discount) {
         long id = idCounter;
         if (ProductInterface.listProduct.isEmpty()) id = 0;
-        else if (!ProductInterface.listProduct.isEmpty()) {
+        if (!ProductInterface.listProduct.isEmpty()) {
             long i = 1;
             for (Product product : ProductInterface.listProduct) {
                 if (product.getId() == i) i++;

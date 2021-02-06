@@ -22,7 +22,7 @@ public class ReadProduct implements ProductInterface {
     public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
 
     public static List<Product> fineAllProduct(List<Product> listProduct) {
-        if (!listProduct.isEmpty()) {
+        if (listProduct.isEmpty()) {
             log.info("" +
                     "\n" +
                     "\nВ базе отсутствуют элементы!");

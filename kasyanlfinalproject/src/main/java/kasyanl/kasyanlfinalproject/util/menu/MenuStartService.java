@@ -1,7 +1,6 @@
 package kasyanl.kasyanlfinalproject.util.menu;
 
 import kasyanl.kasyanlfinalproject.util.proccesor.*;
-import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
 import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
 import kasyanl.kasyanlfinalproject.util.service.*;
 import kasyanl.kasyanlfinalproject.util.service.UpdateCategoryDiscount;
@@ -10,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class MenuStartService implements ProductInterface {
 
-    public MenuStartService() {
+    private MenuStartService() {
         throw new UnsupportedOperationException();
     }
 
@@ -21,7 +20,6 @@ public class MenuStartService implements ProductInterface {
         log.info("" +
                 "\n" +
                 "\nЗдравствуйте! Вас приветствует Система учета продуктов.");
-        ProductDataBase.createList();
         boolean mainLoop = true;
         while (mainLoop) {
             Menu.firstMenu();

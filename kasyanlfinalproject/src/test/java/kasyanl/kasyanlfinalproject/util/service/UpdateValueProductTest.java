@@ -5,6 +5,8 @@ import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,14 +29,23 @@ public class UpdateValueProductTest {
         newList.add(new Product(13, Category.MEAT, "Beef", 66.15, 00.0, 66.15));
         newList.add(new Product(14, Category.MEAT, "Chicken meat", 15.10, 00.0, 15.10));
 
-        UpdateValueProduct updateValueProduct = new UpdateValueProduct();
 
         InputNumber inputNumberService = mock(InputNumber.class);
         when(inputNumberService.readNumber()).thenReturn(11);
 
         Product expected = new Product(11, Category.MILK_PRODUCT, "Yogurt", 20.50, 10.0, 18.45);
-        Product actual = updateValueProduct.updateAnyProduct(inputNumberService, newList);
+        Product actual = UpdateValueProduct.updateAnyProduct(inputNumberService, newList);
 
         assertEquals(expected, actual);
+    }
+    @Test(expected = UnsupportedOperationException.class)
+    public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
+        final Constructor<UpdateValueProduct> constructor = UpdateValueProduct.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        try {
+            constructor.newInstance();
+        } catch (InvocationTargetException e) {
+            throw (UnsupportedOperationException) e.getTargetException();
+        }
     }
 }

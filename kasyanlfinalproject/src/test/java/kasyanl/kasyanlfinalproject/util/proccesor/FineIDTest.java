@@ -14,7 +14,6 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-@RunWith(value = Parameterized.class)
 public class FineIDTest {
 
     Product product;

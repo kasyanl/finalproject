@@ -9,6 +9,10 @@ import java.util.List;
 
 public class UpdateCategoryDiscount implements ProductInterface {
 
+    private UpdateCategoryDiscount() {
+        throw new UnsupportedOperationException();
+    }
+
     public static List<Product> discountCategory(List<Product> productList, InputNumber input, InputNumber in) {
 
         Menu.menuCategory();
