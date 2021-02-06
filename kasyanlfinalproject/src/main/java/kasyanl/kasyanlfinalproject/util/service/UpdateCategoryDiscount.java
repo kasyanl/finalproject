@@ -9,7 +9,7 @@ import java.util.List;
 
 public class UpdateCategoryDiscount implements ProductInterface {
 
-    public List<Product> discountCategory(List<Product> productList, InputNumber input, InputNumber in) {
+    public static List<Product> discountCategory(List<Product> productList, InputNumber input, InputNumber in) {
 
         Menu.menuCategory();
         int categoryNumber = input.readNumber();

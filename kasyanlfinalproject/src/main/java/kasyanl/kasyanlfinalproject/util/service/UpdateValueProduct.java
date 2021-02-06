@@ -13,7 +13,7 @@ public class UpdateValueProduct {
 
     static final Logger log = LoggerFactory.getLogger(UpdateValueProduct.class);
 
-    public Product updateAnyProduct(InputNumber inputer, List<Product> listProduct) {
+    public static Product updateAnyProduct(InputNumber inputer, List<Product> listProduct) {
         log.info("" +
                 "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" +
                 "\nВведите ID продукта");

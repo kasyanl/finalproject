@@ -13,7 +13,7 @@ public class DeleteProduct implements ProductInterface {
 
     static final Logger log = LoggerFactory.getLogger(DeleteProduct.class);
 
-    public List<Product> deleteProductService(List<Product> listProduct, InputNumber inputNumber) {
+    public static List<Product> deleteProductService(List<Product> listProduct, InputNumber inputNumber) {
         log.info("" +
                 "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" +
                 "\nВведите ID продукта");

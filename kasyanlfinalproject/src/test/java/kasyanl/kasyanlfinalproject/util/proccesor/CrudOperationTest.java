@@ -25,8 +25,8 @@ public class CrudOperationTest {
 
     @Test
     public void creatProductNullPozition() {
-        ProductDataBase.createList();
-        CrudOperation.deleteProduct(ProductInterface.listProduct, 5);
+
+        CrudOperation.deleteProduct(ProductDataBase.createList(), 5);
 
         Product expected = new Product(5, Category.BERRIES, "Strawberry", 50.20, 15.0, 42.67);
         Product actual = CrudOperation.creatProduct(Category.BERRIES, "Strawberry", 50.20, 15.0);

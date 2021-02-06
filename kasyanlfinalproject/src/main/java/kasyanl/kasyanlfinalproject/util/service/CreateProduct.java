@@ -13,7 +13,7 @@ public class CreateProduct {
     static final Logger log = LoggerFactory.getLogger(CreateProduct.class);
     public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
 
-    public Product createNewProduct(InputNumber inputNumber) {
+    public static Product createNewProduct(InputNumber inputNumber) {
 
         String selectCategory = UpdateCategoryService.updateCategory(inputNumber);
         Category category = Category.valueOf(selectCategory);
