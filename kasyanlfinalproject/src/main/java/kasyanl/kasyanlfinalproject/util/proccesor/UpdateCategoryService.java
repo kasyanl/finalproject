@@ -1,6 +1,6 @@
 package kasyanl.kasyanlfinalproject.util.proccesor;
 
-import kasyanl.kasyanlfinalproject.util.menu.Menu;
+import kasyanl.kasyanlfinalproject.util.menu.MainMenu;
 
 public class UpdateCategoryService {
 
@@ -8,9 +8,9 @@ public class UpdateCategoryService {
         throw new UnsupportedOperationException();
     }
 
-    public static String updateCategory(InputNumber inputer) {
-        Menu.menuCategory();
-        int categorySelect = inputer.readNumber();
+    public static String updateCategory(InputNumber input) {
+        MainMenu.menuCategory();
+        int categorySelect = input.readNumber();
         switch (categorySelect) {
             case 1:
                 return "FRUITS";
@@ -29,10 +29,3 @@ public class UpdateCategoryService {
         }
     }
 }
-
-
-
-
-
-
-

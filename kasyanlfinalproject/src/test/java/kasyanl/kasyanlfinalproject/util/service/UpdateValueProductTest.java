@@ -1,6 +1,6 @@
 package kasyanl.kasyanlfinalproject.util.service;
 
-import kasyanl.kasyanlfinalproject.util.bean.Category;
+import kasyanl.kasyanlfinalproject.util.enums.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
 import org.junit.Test;

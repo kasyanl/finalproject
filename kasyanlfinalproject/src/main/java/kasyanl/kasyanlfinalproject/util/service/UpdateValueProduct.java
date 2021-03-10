@@ -3,26 +3,24 @@ package kasyanl.kasyanlfinalproject.util.service;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import kasyanl.kasyanlfinalproject.util.proccesor.FinePersonalProduct;
 import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
-import kasyanl.kasyanlfinalproject.util.proccesor.FineID;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import kasyanl.kasyanlfinalproject.util.proccesor.UpdateProductFromID;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
-public class UpdateValueProduct {
+import static kasyanl.kasyanlfinalproject.util.enums.MessageFormat.EMPTY_STRING;
+import static kasyanl.kasyanlfinalproject.util.enums.MessageFormat.LINE_STRING;
+
+@Slf4j
+public final class UpdateValueProduct {
 
     private UpdateValueProduct() {
         throw new UnsupportedOperationException();
     }
 
-    static final Logger log = LoggerFactory.getLogger(UpdateValueProduct.class);
-
-    public static Product updateAnyProduct(InputNumber inputer, List<Product> listProduct) {
-        log.info("" +
-                "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" +
-                "\nВведите ID продукта");
-        int id = inputer.readNumber();
-        return FineID.fineProductByID(inputer, FinePersonalProduct.personalProductProcessor(listProduct, id));
-
+    public static Product updateAnyProduct(InputNumber input, List<Product> listProduct) {
+        log.info("{}{} Введите ID продукта {}", EMPTY_STRING, LINE_STRING, LINE_STRING);
+        int id = input.readNumber();
+        return UpdateProductFromID.fineProductByID(input, FinePersonalProduct.personalProductProcessor(listProduct, id));
     }
 }

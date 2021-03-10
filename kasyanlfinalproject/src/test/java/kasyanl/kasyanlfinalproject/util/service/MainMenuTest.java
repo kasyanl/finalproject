@@ -1,16 +1,16 @@
 package kasyanl.kasyanlfinalproject.util.service;
 
-import kasyanl.kasyanlfinalproject.util.menu.Menu;
+import kasyanl.kasyanlfinalproject.util.menu.MainMenu;
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-public class MenuTest {
+public class MainMenuTest {
 
     @Test(expected = UnsupportedOperationException.class)
     public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
-        final Constructor<Menu> constructor = Menu.class.getDeclaredConstructor();
+        final Constructor<MainMenu> constructor = MainMenu.class.getDeclaredConstructor();
         constructor.setAccessible(true);
         try {
             constructor.newInstance();

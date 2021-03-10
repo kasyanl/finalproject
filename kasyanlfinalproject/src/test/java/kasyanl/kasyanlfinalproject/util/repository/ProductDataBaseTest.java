@@ -9,10 +9,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static kasyanl.kasyanlfinalproject.util.bean.Category.*;
+import static kasyanl.kasyanlfinalproject.util.enums.Category.*;
 import static org.junit.Assert.*;
 
-public class ProductDataBaseTest implements ProductInterface {
+public class ProductDataBaseTest implements ProductRepository {
 
     @Test
     public void createBase() {

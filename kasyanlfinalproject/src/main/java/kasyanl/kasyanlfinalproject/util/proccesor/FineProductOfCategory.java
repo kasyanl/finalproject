@@ -1,22 +1,23 @@
 package kasyanl.kasyanlfinalproject.util.proccesor;
 
-import kasyanl.kasyanlfinalproject.util.bean.Category;
+import kasyanl.kasyanlfinalproject.util.enums.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static kasyanl.kasyanlfinalproject.util.bean.Category.*;
+import static kasyanl.kasyanlfinalproject.util.enums.Category.*;
+import static kasyanl.kasyanlfinalproject.util.enums.MessageFormat.EMPTY_STRING;
+import static kasyanl.kasyanlfinalproject.util.enums.MessageFormat.LINE_STRING;
+import static kasyanl.kasyanlfinalproject.util.menu.MenuStartService.headMenu;
 
-public class FineProductOfCategory {
+@Slf4j
+public final class FineProductOfCategory {
 
     private FineProductOfCategory() {
         throw new UnsupportedOperationException();
     }
-
-    static final Logger log = LoggerFactory.getLogger(FineProductOfCategory.class);
 
     public static List<Product> selectCategoryByAllList(List<Product> listProduct, int number) {
 
@@ -40,10 +41,7 @@ public class FineProductOfCategory {
                 fineCategoryForRead(listProduct, ALCOHOLIC_BEVERAGES);
                 break;
             default:
-                log.info("" +
-                        "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ " +
-                        "\n!!!Такого пункта не существует. Попробуйте выбрать еще раз!!!" +
-                        "\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+                log.info("{} {}!!!Такого пункта не существует. Попробуйте выбрать еще раз!!! {}", EMPTY_STRING, LINE_STRING, LINE_STRING);
         }
         return listProduct;
     }
@@ -52,7 +50,7 @@ public class FineProductOfCategory {
         List<Product> newListForRead = new ArrayList<>();
         for (Product product : listProduct) {
             if (product.getCategory().equals(category)) {
-                CrudOperation.readProduct(product);
+                ProductService.readProduct(product);
                 newListForRead.add(product);
             }
         }

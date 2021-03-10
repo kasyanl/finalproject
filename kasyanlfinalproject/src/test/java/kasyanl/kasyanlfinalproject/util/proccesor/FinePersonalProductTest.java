@@ -1,6 +1,6 @@
 package kasyanl.kasyanlfinalproject.util.proccesor;
 
-import kasyanl.kasyanlfinalproject.util.bean.Category;
+import kasyanl.kasyanlfinalproject.util.enums.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import org.junit.Test;
 
@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class FinePersonalProductTest {
 

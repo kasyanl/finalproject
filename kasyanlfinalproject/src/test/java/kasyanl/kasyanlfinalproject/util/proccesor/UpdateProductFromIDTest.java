@@ -3,18 +3,16 @@ package kasyanl.kasyanlfinalproject.util.proccesor;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-import static kasyanl.kasyanlfinalproject.util.bean.Category.FRUITS;
+import static kasyanl.kasyanlfinalproject.util.enums.Category.FRUITS;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class FineIDTest {
+public class UpdateProductFromIDTest {
 
     Product product;
 
@@ -29,7 +27,7 @@ public class FineIDTest {
         when(inputNumber.readNumber()).thenReturn(1);
 
         Product expected = new Product(2, FRUITS, "Banana", 10.00, 20.0, 8.0);
-        Product actual = FineID.fineProductByID(inputNumber, product);
+        Product actual = UpdateProductFromID.fineProductByID(inputNumber, product);
         assertEquals(expected, actual);
     }
 
@@ -39,7 +37,7 @@ public class FineIDTest {
         when(inputNumber.readNumber()).thenReturn(2);
 
         Product expected = new Product(2, FRUITS, null, 10.00, 20.0, 8.0);
-        Product actual = FineID.fineProductByID(inputNumber, product);
+        Product actual = UpdateProductFromID.fineProductByID(inputNumber, product);
         assertEquals(expected, actual);
     }
 
@@ -49,7 +47,7 @@ public class FineIDTest {
         when(inputNumber.readNumber()).thenReturn(3);
 
         Product expected = new Product(2, FRUITS, "Banana", 0.0, 20.0, 8.0);
-        Product actual = FineID.fineProductByID(inputNumber, product);
+        Product actual = UpdateProductFromID.fineProductByID(inputNumber, product);
         assertEquals(expected, actual);
     }
 
@@ -59,13 +57,13 @@ public class FineIDTest {
         when(inputNumber.readNumber()).thenReturn(4);
 
         Product expected = new Product(2, FRUITS, "Banana", 10.00, 00.0, 10.0);
-        Product actual = FineID.fineProductByID(inputNumber, product);
+        Product actual = UpdateProductFromID.fineProductByID(inputNumber, product);
         assertEquals(expected.equals(actual), actual.equals(expected));
     }
 
     @Test(expected = UnsupportedOperationException.class)
     public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
-        final Constructor<FineID> constructor = FineID.class.getDeclaredConstructor();
+        final Constructor<UpdateProductFromID> constructor = UpdateProductFromID.class.getDeclaredConstructor();
         constructor.setAccessible(true);
         try {
             constructor.newInstance();

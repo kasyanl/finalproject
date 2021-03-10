@@ -1,21 +1,20 @@
 package kasyanl.kasyanlfinalproject.util.proccesor;
 
-import kasyanl.kasyanlfinalproject.util.bean.Category;
+import kasyanl.kasyanlfinalproject.util.enums.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
 
 import kasyanl.kasyanlfinalproject.util.repository.ProductDataBase;
-import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
-import org.junit.After;
+import kasyanl.kasyanlfinalproject.util.repository.ProductRepository;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-import static kasyanl.kasyanlfinalproject.util.bean.Category.FRUITS;
+import static kasyanl.kasyanlfinalproject.util.enums.Category.FRUITS;
 import static org.junit.Assert.*;
 
-public class CrudOperationTest {
+public class ProductServiceTest {
 
     Product product1;
 
@@ -27,20 +26,20 @@ public class CrudOperationTest {
     @Test
     public void creatProductNullPozition() {
 
-        CrudOperation.deleteProduct(ProductDataBase.createList(), 5);
+        ProductService.deleteProduct(ProductDataBase.createList(), 5);
 
         Product expected = new Product(5, Category.BERRIES, "Strawberry", 50.20, 15.0, 42.67);
-        Product actual = CrudOperation.creatProduct(Category.BERRIES, "Strawberry", 50.20, 15.0);
+        Product actual = ProductService.creatProduct(Category.BERRIES, "Strawberry", 50.20, 15.0);
 
         assertEquals(expected, actual);
-        ProductInterface.listProduct.clear();
+        ProductRepository.listProduct.clear();
     }
 
     @Test
     public void creatProduct() {
 
-        Product expected = new Product(2, FRUITS, "Apple", 20.0, 50.0, 10.0);
-        Product actual = CrudOperation.creatProduct(FRUITS, "Apple", 20.0, 50.0);
+        Product expected = new Product(0, FRUITS, "Apple", 20.0, 50.0, 10.0);
+        Product actual = ProductService.creatProduct(FRUITS, "Apple", 20.0, 50.0);
 
         assertEquals(expected, actual);
     }
@@ -48,7 +47,7 @@ public class CrudOperationTest {
 
     @Test(expected = UnsupportedOperationException.class)
     public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {
-        final Constructor<CrudOperation> constructor = CrudOperation.class.getDeclaredConstructor();
+        final Constructor<ProductService> constructor = ProductService.class.getDeclaredConstructor();
         constructor.setAccessible(true);
         try {
             constructor.newInstance();

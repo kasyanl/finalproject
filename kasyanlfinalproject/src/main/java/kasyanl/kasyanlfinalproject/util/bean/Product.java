@@ -1,5 +1,7 @@
 package kasyanl.kasyanlfinalproject.util.bean;
 
+import kasyanl.kasyanlfinalproject.util.enums.Category;
+
 import java.util.Objects;
 
 public class Product {
@@ -82,13 +84,13 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ",category=" + category +
-                ", name='" + name +
-                "', price=" + price + " BYN" +
-                ", discount=" + discount + " %" +
-                ", actualPrice=" + (price - (price * discount / 100)) + " BYN" +
+        return "Продукт{" +
+                "id = " + id +
+                ", КАТЕГОРИЯ = " + category +
+                ", НАИМЕНОВАНИЕ = '" + name +
+                "', ЦЕНА = " + price + " BYN" +
+                ", СКИДКА = " + discount + " %" +
+                ", АКТУАЛЬНАЯ ЦЕНА = " + (price - (price * discount / 100)) + " BYN" +
                 '}';
     }
 }

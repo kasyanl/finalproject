@@ -1,28 +1,27 @@
 package kasyanl.kasyanlfinalproject.util.service;
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
-import kasyanl.kasyanlfinalproject.util.proccesor.CrudOperation;
+import kasyanl.kasyanlfinalproject.util.repository.ProductRepository;
+import kasyanl.kasyanlfinalproject.util.proccesor.ProductService;
 import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
-public class DeleteProduct implements ProductInterface {
+import static kasyanl.kasyanlfinalproject.util.enums.MessageFormat.EMPTY_STRING;
+import static kasyanl.kasyanlfinalproject.util.enums.MessageFormat.LINE_STRING;
+
+@Slf4j
+public class DeleteProduct implements ProductRepository {
 
     private DeleteProduct() {
         throw new UnsupportedOperationException();
     }
 
-    static final Logger log = LoggerFactory.getLogger(DeleteProduct.class);
-
     public static List<Product> deleteProductService(List<Product> listProduct, InputNumber inputNumber) {
-        log.info("" +
-                "\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" +
-                "\nВведите ID продукта");
+        log.info("{}{} Введите ID продукта {}", EMPTY_STRING, LINE_STRING, LINE_STRING);
         int id = inputNumber.readNumber();
-        CrudOperation.deleteProduct(listProduct, id);
+        ProductService.deleteProduct(listProduct, id);
         return listProduct;
     }
 }

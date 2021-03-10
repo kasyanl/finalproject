@@ -1,12 +1,12 @@
 package kasyanl.kasyanlfinalproject.util.proccesor;
 
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
+import kasyanl.kasyanlfinalproject.util.repository.ProductRepository;
 
 import java.util.Comparator;
 import java.util.List;
 
-public class SortDataBase implements ProductInterface {
+public final class SortDataBase implements ProductRepository {
     private SortDataBase() {
         throw new UnsupportedOperationException();
     }

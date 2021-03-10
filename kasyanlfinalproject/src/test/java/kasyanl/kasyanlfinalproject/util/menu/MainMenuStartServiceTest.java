@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-public class MenuStartServiceTest {
+public class MainMenuStartServiceTest {
 
     @Test(expected = UnsupportedOperationException.class)
     public void utilityClassTest() throws NoSuchMethodException, IllegalAccessException, InstantiationException {

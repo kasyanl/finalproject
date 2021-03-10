@@ -1,28 +1,27 @@
 package kasyanl.kasyanlfinalproject.util.proccesor;
 
-import kasyanl.kasyanlfinalproject.util.bean.Category;
+import kasyanl.kasyanlfinalproject.util.enums.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.repository.ProductInterface;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import kasyanl.kasyanlfinalproject.util.repository.ProductRepository;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 
-public class CrudOperation {
+@Slf4j
+public final class ProductService {
 
-    private CrudOperation() {
+    private ProductService() {
         throw new UnsupportedOperationException();
     }
 
     private static long idCounter;
-    static final Logger log = LoggerFactory.getLogger(CrudOperation.class);
 
     public static Product creatProduct(Category category, String name, double price, double discount) {
         long id = idCounter;
-        if (ProductInterface.listProduct.isEmpty()) id = 0;
-        if (!ProductInterface.listProduct.isEmpty()) {
+        if (ProductRepository.listProduct.isEmpty()) id = 0;
+        else if (!ProductRepository.listProduct.isEmpty()) {
             long i = 1;
-            for (Product product : ProductInterface.listProduct) {
+            for (Product product : ProductRepository.listProduct) {
                 if (product.getId() == i) i++;
                 id = i;
             }
@@ -37,11 +36,9 @@ public class CrudOperation {
 
     public static void deleteProduct(List<Product> listProduct, long id) {
         listProduct.removeIf(nextProduct -> nextProduct.getId() == id);
-
     }
 
     public static double calculating(double price, double discount) {
         return (price - (price * discount / 100));
     }
 }
-

@@ -1,39 +1,33 @@
 package kasyanl.kasyanlfinalproject.util.service;
 
-import kasyanl.kasyanlfinalproject.util.bean.Category;
+import kasyanl.kasyanlfinalproject.util.enums.Category;
 import kasyanl.kasyanlfinalproject.util.bean.Product;
-import kasyanl.kasyanlfinalproject.util.proccesor.CrudOperation;
+import kasyanl.kasyanlfinalproject.util.proccesor.ProductService;
 import kasyanl.kasyanlfinalproject.util.proccesor.InputNumber;
 import kasyanl.kasyanlfinalproject.util.proccesor.UpdateCategoryService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
-public class CreateProduct {
+import static kasyanl.kasyanlfinalproject.util.enums.MessageFormat.EMPTY_STRING;
+import static kasyanl.kasyanlfinalproject.util.enums.MessageFormat.LINE_STRING;
+
+@Slf4j
+public final class CreateProduct {
 
     private CreateProduct() {
         throw new UnsupportedOperationException();
     }
 
-    static final Logger log = LoggerFactory.getLogger(CreateProduct.class);
-    public static final String ITERATOR = "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _";
-
     public static Product createNewProduct(InputNumber inputNumber) {
 
         String selectCategory = UpdateCategoryService.updateCategory(inputNumber);
         Category category = Category.valueOf(selectCategory);
-        log.info("" +
-                "\n{}" +
-                "\nВведите название продукта:", ITERATOR);
+        log.info("{}{} Введите название продукта: {}", EMPTY_STRING, LINE_STRING, LINE_STRING);
         String name = inputNumber.readString();
-        log.info("" +
-                "\n{}" +
-                "\nВведите цену продукта (BYN):", ITERATOR);
+        log.info("{}{} Введите цену продукта (BYN): {}", EMPTY_STRING, LINE_STRING, LINE_STRING);
         double price = inputNumber.readDouble();
-        log.info("" +
-                "\n{}" +
-                "\nВведите скидку продукта (%):", ITERATOR);
+        log.info("{}{} Введите скидку продукта (%): {}", EMPTY_STRING, LINE_STRING, LINE_STRING);
         double discount = inputNumber.readDouble();
 
-        return CrudOperation.creatProduct(category, name, price, discount);
+        return ProductService.creatProduct(category, name, price, discount);
     }
 }

@@ -1,5 +1,6 @@
 package kasyanl.kasyanlfinalproject.util.bean;
 
+import kasyanl.kasyanlfinalproject.util.enums.Category;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -35,13 +36,13 @@ public class ProductTest {
         product.setPrice(20.0000);
         product.setDiscount(50.0000);
         product.setActualPrice(10.0);
-        String expected = "Product{" +
-                "id=2" +
-                ",category=FRUITS" +
-                ", name='Cocos'" +
-                ", price=20.0 BYN" +
-                ", discount=50.0 %" +
-                ", actualPrice=10.0 BYN}";
+        String expected = "Продукт{" +
+                "id = 2" +
+                ", КАТЕГОРИЯ = Фрукты" +
+                ", НАИМЕНОВАНИЕ = 'Cocos'" +
+                ", ЦЕНА = 20.0 BYN" +
+                ", СКИДКА = 50.0 %" +
+                ", АКТУАЛЬНАЯ ЦЕНА = 10.0 BYN}";
         String actual = product.toString();
         assertEquals(expected, actual);
     }
